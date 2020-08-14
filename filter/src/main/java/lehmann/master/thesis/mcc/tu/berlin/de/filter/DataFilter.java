@@ -135,6 +135,7 @@ public class DataFilter {
 		log.info("Last processed record for topic " + TOPIC +  " on startup: " + lastProcessed);
 		
 		long highestTimestamp = 0;
+		long highestOffset = lastProcessed;
 		
 		ArrayDeque<ConsumerRecord<Long, RawDataEntry>> buffer = new ArrayDeque<ConsumerRecord<Long, RawDataEntry>>(maxValues);
 		try {
@@ -147,9 +148,15 @@ public class DataFilter {
 				
 				for (ConsumerRecord<Long, RawDataEntry> consumerRecord : records) {
 					
-					if(consumerRecord.value().getTimestamp() > highestTimestamp) {
+					if(consumerRecord.value().getTimestamp() >= highestTimestamp && consumerRecord.offset() > highestOffset) {
+						
+						if(consumerRecord.offset() != highestOffset + 1) {
+							log.error(String.format("Potentially skipped one or more records, current record with offset: %d and timestamp %d but highest timestamp was %d and highest offset was %d", 
+									consumerRecord.offset(), consumerRecord.value().getTimestamp(), highestTimestamp, highestOffset));
+						}
 						
 						highestTimestamp = consumerRecord.value().getTimestamp();
+						highestOffset = consumerRecord.offset();
 						
 						if(buffer.size() == maxValues) buffer.poll();
 						
@@ -191,8 +198,8 @@ public class DataFilter {
 						}
 						
 					} else {
-						log.error(String.format("Received message with offset: %d and timestamp %d but highest timestamp was %d", 
-								consumerRecord.offset(), consumerRecord.value().getTimestamp(), highestTimestamp));
+						log.error(String.format("Received message with offset: %d and timestamp %d but highest timestamp was %d and highest offset was %d", 
+								consumerRecord.offset(), consumerRecord.value().getTimestamp(), highestTimestamp, highestOffset));
 					}
 					
 				}
