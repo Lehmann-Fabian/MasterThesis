@@ -159,7 +159,7 @@ public class CheckEverythingInspector implements Inspector {
 		int currentSecond = (int) (producedElements / (1000.0 / frequencyInMs));
 		
 		
-		if (!changedBack && lastSecondChange + 3 < currentSecond) {
+		if (!changedBack && lastSecondChange + 3 < currentSecond && !scg.outstandingChange()) {
 			changedBack = true;
 			scg.setNextAmplitude(startAmplitude);
 			scg.setPeriodLength(startPeriodLength);
@@ -167,6 +167,8 @@ public class CheckEverythingInspector implements Inspector {
 		}
 		
 		if (lastChecked != currentSecond) {
+			
+			System.out.println(currentSecond);
 			
 			lastChecked = currentSecond;
 			

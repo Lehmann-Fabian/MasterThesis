@@ -3,11 +3,15 @@ package lehmann.master.thesis.mcc.tu.berlin.de.producer;
 import java.util.Random;
 import java.util.function.Function;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import lehmann.master.thesis.mcc.tu.berlin.de.inspector.DoNothingInspector;
 import lehmann.master.thesis.mcc.tu.berlin.de.inspector.Inspector;
 
 public class SineCurveGenerator implements Function<Long, Float>{
 	
+	private static Logger log = LoggerFactory.getLogger(SineCurveGenerator.class);
 	private int periodLength;
 	private int nextPeriodLength;
 	private double amplitude;
@@ -42,12 +46,13 @@ public class SineCurveGenerator implements Function<Long, Float>{
 		
 		
 		if(pos == 0) {
-			if(periodLength != nextPeriodLength || amplitude != nextAmplitude) {
+			if(outstandingChange()) {
 				this.inspector.informChange(nextAmplitude, nextPeriodLength);
 			}
 			this.periodLength = nextPeriodLength;
 			this.amplitude = nextAmplitude;
 			this.lastPeriodEnd = x;
+			log.info(String.format("New Period with a = %.2f & pl = %d", amplitude, periodLength));
 		}
 		
 		double x_value = (pos / (double) periodLength) * (2 * Math.PI);
@@ -64,6 +69,10 @@ public class SineCurveGenerator implements Function<Long, Float>{
 
 	public int getPeriodLength() {
 		return periodLength;
+	}
+	
+	public boolean outstandingChange() {
+		return periodLength != nextPeriodLength || amplitude != nextAmplitude;
 	}
 	
 	

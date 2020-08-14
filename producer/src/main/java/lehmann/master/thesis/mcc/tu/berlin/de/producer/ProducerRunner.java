@@ -17,7 +17,7 @@ import lehmann.master.thesis.mcc.tu.berlin.de.inspector.Inspector;
 public class ProducerRunner {
 	
 	private static Logger log = LoggerFactory.getLogger(ProducerRunner.class);
-	private final static String TOPIC = "t18";
+	private final static String TOPIC = "t21";
     private final static String BOOTSTRAP_SERVERS = "localhost:9093";
     private final static String OUTPUT_PATH = "data";
     private final static int FREQUENCY_IN_MS = 5;
@@ -38,7 +38,7 @@ public class ProducerRunner {
 			HashSet<Integer> secondsToChange = new HashSet<Integer>();
 			List<Integer> times = new LinkedList<Integer>();
 			for (int i = 0; i < 500; i++) {
-				times.add(i * 15);
+				times.add(i * 25);
 			}
 					
 			Arrays.asList(10, 30, 70, 80, 95, 110, 115, 118, 145, 150, 165, 188, 200, 220, 225, 260);
