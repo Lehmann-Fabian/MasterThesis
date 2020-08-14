@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 public class AnalystRunner {
 	
 	private static Logger log = LoggerFactory.getLogger(AnalystRunner.class);
-	private final static String TOPIC = "t19";
+	private final static String TOPIC = "t21";
     private final static String BOOTSTRAP_SERVERS = "localhost:9093";
     private final static String ZOOKEEPER_SERVERS = "localhost:2182";
 	
