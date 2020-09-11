@@ -17,21 +17,38 @@ import lehmann.master.thesis.mcc.tu.berlin.de.inspector.Inspector;
 public class ProducerRunner {
 	
 	private static Logger log = LoggerFactory.getLogger(ProducerRunner.class);
-	private final static String TOPIC = "t21";
-    private final static String BOOTSTRAP_SERVERS = "localhost:9093";
+	private static String TOPIC = "t1";
+    private static String BOOTSTRAP_SERVERS = "localhost:9093";
     private final static String OUTPUT_PATH = "data";
     private final static int FREQUENCY_IN_MS = 5;
 	
 	public static void main(String[] args) throws Exception {
 		
+		boolean prod = false;
+		boolean checkEverything = true;
+		
+		if(args.length >= 5) {
+			BOOTSTRAP_SERVERS = args[0];
+			TOPIC = args[1];
+			String nodestart = args[2];
+			TOPIC = TOPIC.substring(nodestart.length());
+			if(TOPIC.length() == 0) {
+				TOPIC = "t1";
+			}else {
+				TOPIC = "t" + TOPIC;
+			}
+			System.out.println("Use server: " + BOOTSTRAP_SERVERS);
+			System.out.println("Use topic: " + TOPIC);
+			prod = args[3].toLowerCase().equals("true");
+			checkEverything = args[4].toLowerCase().equals("true");
+			System.out.println("Run Prod: " + prod);
+			System.out.println("Inspect all: " + prod);
+		}
 		
 		try {
 			PropertyConfigurator.configure("log4j.properties");
 			
 			log.info("Start");
-			
-			//TODO Read from args or env
-			boolean checkEverything = true;
 			
 			SineCurveGenerator scg = new SineCurveGenerator(1000, 3);
 			
@@ -73,14 +90,14 @@ public class ProducerRunner {
 			log.error("Error while running", e);
 		}
 		
-		
-	    try {
-	        System.in.read();
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	    }
-	    System.exit(0);
-		
+		if(!prod) {
+		    try {
+		        System.in.read();
+		    } catch (IOException e) {
+		        e.printStackTrace();
+		    }
+		    System.exit(0);
+		}
     	
 	}
 
