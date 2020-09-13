@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: analyst
+  namespace: kafka
+  labels:
+    app: analyst
+spec:
+  selector:
+    matchLabels:
+      app: analyst
+  serviceName: "analyst"
+  #Number must match amount of labeles nodes.
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: analyst
+    spec:
+      containers:
+      - name: analyst
+        image: reh69113/masterthesis:analyst
+        imagePullPolicy: Always
+        env:
+        - name: SERVER
+          value: "kafka.kafka.svc.cluster.local:9092"
+        - name: TOPIC
+          valueFrom:
+            fieldRef:
+              #pod name
+              fieldPath: metadata.name
+        - name: NODENAME
+          value: "analyst-"

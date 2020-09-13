@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: filter
+  namespace: kafka
+  labels:
+    app: filter
+spec:
+  selector:
+    matchLabels:
+      app: filter
+  serviceName: "filter"
+  #Number must match amount of labeles nodes.
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: filter
+    spec:
+      containers:
+      - name: filter
+        image: reh69113/masterthesis:filter
+        imagePullPolicy: Always
+        env:
+        - name: SERVER
+          value: "kafka.kafka.svc.cluster.local:9092"
+        - name: TOPIC
+          valueFrom:
+            fieldRef:
+              #pod name
+              fieldPath: metadata.name
+        - name: NODENAME
+          value: "filter-"
