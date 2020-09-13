@@ -52,7 +52,8 @@ public class DataProducer {
         long time = System.currentTimeMillis();
         try {
         	long i = 0;
-        	while(!Thread.interrupted()) {
+        	//Stop after 15min
+        	while(!Thread.interrupted() && time + 900_000 > System.currentTimeMillis()) {
         		final RawDataEntry data = new RawDataEntry(System.currentTimeMillis(), getNextMeasurement.apply(i));
 	    		final ProducerRecord<Long, RawDataEntry> record = new ProducerRecord<>(TOPIC, data);
 	

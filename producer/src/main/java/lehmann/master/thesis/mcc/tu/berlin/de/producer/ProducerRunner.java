@@ -50,7 +50,9 @@ public class ProducerRunner {
 			
 			log.info("Start");
 			
-			SineCurveGenerator scg = new SineCurveGenerator(1000, 3);
+//			SineCurveGenerator scg = new SineCurveGenerator(1000, 3);
+			
+			SingleValueProducer scg = new SingleValueProducer();
 			
 			HashSet<Integer> secondsToChange = new HashSet<Integer>();
 			List<Integer> times = new LinkedList<Integer>();

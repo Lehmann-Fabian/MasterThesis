@@ -4,12 +4,16 @@ import java.util.Arrays;
 import java.util.function.Function;
 
 
-public class MedianFilter implements Function<Float[], Float>{
+public class MeanFilter implements Function<Float[], Float>{
 
 	@Override
 	public Float apply(Float[] a) {
-		Arrays.sort(a);
-		return a[a.length - 1];
+		float sum = 0;
+		for (Float f : a) {
+			sum += f;
+		}
+		
+		return sum / a.length;
 	}
 
 }

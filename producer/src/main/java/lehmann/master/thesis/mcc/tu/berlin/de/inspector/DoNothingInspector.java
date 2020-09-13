@@ -12,7 +12,8 @@ public class DoNothingInspector implements Inspector {
 	@Override
 	public void addProducedRecord(long sendTime, Future<RecordMetadata> send) {}
 
+
 	@Override
-	public void informChange(double amplitude, long periodLength) {}
+	public void informChange(double value) {}
 
 }

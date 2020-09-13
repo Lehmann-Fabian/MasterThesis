@@ -47,7 +47,7 @@ public class SineCurveGenerator implements Function<Long, Float>{
 		
 		if(pos == 0) {
 			if(outstandingChange()) {
-				this.inspector.informChange(nextAmplitude, nextPeriodLength);
+				this.inspector.informChange(nextPeriodLength);
 			}
 			this.periodLength = nextPeriodLength;
 			this.amplitude = nextAmplitude;

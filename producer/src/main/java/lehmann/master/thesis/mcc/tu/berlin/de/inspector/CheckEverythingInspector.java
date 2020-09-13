@@ -11,12 +11,14 @@ import java.util.Queue;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.function.Function;
 
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.SineCurveGenerator;
+import lehmann.master.thesis.mcc.tu.berlin.de.producer.SingleValueProducer;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.FilteredDataEntry;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.FilteredDataEntryDeserializer;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.Pair;
@@ -28,7 +30,7 @@ import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.WarningDeserializer;
 public class CheckEverythingInspector implements Inspector {
 	
 	private static Logger log = LoggerFactory.getLogger(CheckEverythingInspector.class);
-	private final SineCurveGenerator scg;
+	private final SingleValueProducer getNextMeasurement;
 	private final Queue<Pair> producedData =  new LinkedBlockingQueue<Pair>();
 	private long producedElements = 0;
 	private double startAmplitude;
@@ -39,10 +41,8 @@ public class CheckEverythingInspector implements Inspector {
 	private final String outputFolder;
 	private final PrintWriter modelChangeWriter;
 
-	public CheckEverythingInspector(SineCurveGenerator scg, int frequencyInMs, HashSet<Integer> secondsToChange, String BOOTSTRAP_SERVERS, String TOPIC, String outputPath) {
-		this.scg = scg;
-		this.startAmplitude = this.scg.getAmplitude();
-		this.startPeriodLength = this.scg.getPeriodLength();
+	public CheckEverythingInspector(SingleValueProducer getNextMeasurement, int frequencyInMs, HashSet<Integer> secondsToChange, String BOOTSTRAP_SERVERS, String TOPIC, String outputPath) {
+		this.getNextMeasurement = getNextMeasurement;
 		this.frequencyInMs = frequencyInMs;
 		this.secondsToChange = secondsToChange;
 		
@@ -54,13 +54,11 @@ public class CheckEverythingInspector implements Inspector {
 		PrintWriter pw = null;
 		try {
 			pw = new PrintWriter(this.outputFolder + TOPIC + "_modelchange.csv");
-			pw.println("timestamp,amplitude,phase length");
+			pw.println("timestamp,value");
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		this.modelChangeWriter = pw;
-		
-		scg.registerInspector(this);
 		
 		init(BOOTSTRAP_SERVERS, TOPIC);
 	}
@@ -148,9 +146,9 @@ public class CheckEverythingInspector implements Inspector {
 	}
 
 
-	private int lastSecondChange = 0;
-	private int lastChecked = 0;
+	private long lastChange = 0;
 	private boolean changedBack = true;
+	private int lastChecked = 0;
 	@Override
 	public void addProducedRecord(long sendTime, Future<RecordMetadata> send) {
 		producedElements++;
@@ -159,11 +157,11 @@ public class CheckEverythingInspector implements Inspector {
 		int currentSecond = (int) (producedElements / (1000.0 / frequencyInMs));
 		
 		
-		if (!changedBack && lastSecondChange + 3 < currentSecond && !scg.outstandingChange()) {
+		if (!changedBack && lastChange + 100 < producedElements) {
 			changedBack = true;
-			scg.setNextAmplitude(startAmplitude);
-			scg.setPeriodLength(startPeriodLength);
-			log.info("Amplitude and periodLength reverted to default!");
+			getNextMeasurement.setAdditionalFactor(0);
+			informChange(0);
+			log.info("Value was reverted to default!");
 		}
 		
 		if (lastChecked != currentSecond) {
@@ -173,14 +171,13 @@ public class CheckEverythingInspector implements Inspector {
 			lastChecked = currentSecond;
 			
 			if(secondsToChange.contains(currentSecond)) {
-				lastSecondChange = currentSecond;
+				lastChange = producedElements;
 				changedBack = false;
-				double amplitude = startAmplitude + currentSecond % 3 + 1;
-				int periodLength = startPeriodLength + (currentSecond % 2 == 0 ? 200 : -200);
+				int value = 10;
 				
-				scg.setNextAmplitude(amplitude);
-				scg.setPeriodLength(periodLength);
-				log.info("Changed amplitude to " + amplitude + " and periodLength to " + periodLength);
+				getNextMeasurement.setAdditionalFactor(value);
+				informChange(10);
+				log.info("Value to " + value);
 			}
 			
 		}
@@ -203,8 +200,8 @@ public class CheckEverythingInspector implements Inspector {
 
 
 	@Override
-	public void informChange(double amplitude, long periodLength) {
-		this.modelChangeWriter.println(String.format(Locale.US, "%d,%f,%d", System.currentTimeMillis(), amplitude, periodLength));
+	public void informChange(double value) {
+		this.modelChangeWriter.println(String.format(Locale.US, "%d,%f", System.currentTimeMillis(), value));
 		this.modelChangeWriter.flush();
 	}
 

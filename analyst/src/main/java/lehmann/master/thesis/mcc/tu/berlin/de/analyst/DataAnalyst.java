@@ -52,7 +52,7 @@ public class DataAnalyst {
 		final Properties propsConsumer = new Properties();
 
         propsConsumer.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
-        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, this.TOPIC);
+        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, this.TOPIC + "b");
         propsConsumer.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, LongDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, FilteredDataEntryDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
@@ -84,7 +84,7 @@ public class DataAnalyst {
 	
 	public void runAnalysis() {
 		
-		log.info("Run analysis fpor topic: " + TOPIC);
+		log.info("Run analysis for topic: " + TOPIC);
 		
 		//TODO replica to 3
 		if(!zk.hasTopic(TOPIC_OUTPUT)) {

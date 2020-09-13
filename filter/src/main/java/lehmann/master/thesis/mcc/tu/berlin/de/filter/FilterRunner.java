@@ -28,7 +28,7 @@ public class FilterRunner {
 		
 		try {
 			PropertyConfigurator.configure("log4j.properties");
-			DataFilter dataFilter = new DataFilter(BOOTSTRAP_SERVERS, TOPIC, new MedianFilter(), 15);
+			DataFilter dataFilter = new DataFilter(BOOTSTRAP_SERVERS, TOPIC, new MeanFilter(), 10);
 			
 			dataFilter.runFilter();
 		}catch (Exception e) {

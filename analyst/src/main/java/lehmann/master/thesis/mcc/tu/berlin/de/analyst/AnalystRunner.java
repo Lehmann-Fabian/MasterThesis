@@ -28,7 +28,7 @@ public class AnalystRunner {
 		
 		try {
 			PropertyConfigurator.configure("log4j.properties");
-			DataAnalyst dataFilter = new DataAnalyst(BOOTSTRAP_SERVERS, TOPIC, new SineFitterAnalyst(200, 3, 1000, 0.1), 500);
+			DataAnalyst dataFilter = new DataAnalyst(BOOTSTRAP_SERVERS, TOPIC, new ValueFitterAnalyst(), 1);
 			
 			dataFilter.runAnalysis();
 		}catch (Exception e) {
