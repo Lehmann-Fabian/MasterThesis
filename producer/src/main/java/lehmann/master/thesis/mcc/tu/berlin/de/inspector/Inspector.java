@@ -10,6 +10,6 @@ public interface Inspector {
 
 	void close();
 	
-	void informChange(double value);
+	void informChange(double value, long producedElements);
 
 }

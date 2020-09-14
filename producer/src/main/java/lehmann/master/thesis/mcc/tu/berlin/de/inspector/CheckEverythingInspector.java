@@ -21,7 +21,7 @@ import lehmann.master.thesis.mcc.tu.berlin.de.producer.SineCurveGenerator;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.SingleValueProducer;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.FilteredDataEntry;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.FilteredDataEntryDeserializer;
-import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.Pair;
+import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.Triple;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.RawDataEntry;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.RawDataEntryDeserializer;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.Warning;
@@ -31,7 +31,7 @@ public class CheckEverythingInspector implements Inspector {
 	
 	private static Logger log = LoggerFactory.getLogger(CheckEverythingInspector.class);
 	private final SingleValueProducer getNextMeasurement;
-	private final Queue<Pair> producedData =  new LinkedBlockingQueue<Pair>();
+	private final Queue<Triple> producedData =  new LinkedBlockingQueue<Triple>();
 	private long producedElements = 0;
 	private double startAmplitude;
 	private int startPeriodLength;
@@ -54,7 +54,7 @@ public class CheckEverythingInspector implements Inspector {
 		PrintWriter pw = null;
 		try {
 			pw = new PrintWriter(this.outputFolder + TOPIC + "_modelchange.csv");
-			pw.println("timestamp,value");
+			pw.println("timestamp,value,producedElements");
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -96,15 +96,16 @@ public class CheckEverythingInspector implements Inspector {
 				
 				printWriter = new PrintWriter(outputFolder + TOPIC + "_produced.csv");
 				
-				printWriter.println("Kafka.Offset,Kafka.Timestamp,Consumer.Timestamp,Producer.Timestamp");
+				printWriter.println("Kafka.Offset,Kafka.Timestamp,Kafka.acktime.local,Producer.Timestamp,ProducedElements");
 				
 				while(!producedData.isEmpty() || !Thread.interrupted()) {
 					
 					try {
-						Pair poll = producedData.poll();
+						Triple poll = producedData.poll();
 						if(poll != null) {
 							long sendTimestamp = poll.getTimestamp();
 							Future<RecordMetadata> data = poll.getData();
+							long producedElements = poll.getProducedElements();
 							String line = null;
 							
 							boolean gotResult = false;
@@ -112,7 +113,7 @@ public class CheckEverythingInspector implements Inspector {
 							while(!gotResult) {
 								try {
 									RecordMetadata recordMetadata = data.get();
-									line = String.format("%d,%d,%d,%d", recordMetadata.offset(), recordMetadata.timestamp(), System.currentTimeMillis(), sendTimestamp);
+									line = String.format("%d,%d,%d,%d,%d", recordMetadata.offset(), recordMetadata.timestamp(), System.currentTimeMillis(), sendTimestamp, producedElements);
 									gotResult = true;
 								} catch (InterruptedException e) {
 									Thread.currentThread().interrupt();
@@ -151,8 +152,8 @@ public class CheckEverythingInspector implements Inspector {
 	private int lastChecked = 0;
 	@Override
 	public void addProducedRecord(long sendTime, Future<RecordMetadata> send) {
+		producedData.add(new Triple(sendTime, send, producedElements));
 		producedElements++;
-		producedData.add(new Pair(sendTime, send));
 		
 		int currentSecond = (int) (producedElements / (1000.0 / frequencyInMs));
 		
@@ -160,7 +161,8 @@ public class CheckEverythingInspector implements Inspector {
 		if (!changedBack && lastChange + 100 < producedElements) {
 			changedBack = true;
 			getNextMeasurement.setAdditionalFactor(0);
-			informChange(0);
+			//first data with new value will be producedElements + 1, thus we have to increment it before
+			informChange(0, producedElements);
 			log.info("Value was reverted to default!");
 		}
 		
@@ -176,7 +178,7 @@ public class CheckEverythingInspector implements Inspector {
 				int value = 10;
 				
 				getNextMeasurement.setAdditionalFactor(value);
-				informChange(10);
+				informChange(10, producedElements);
 				log.info("Value to " + value);
 			}
 			
@@ -200,8 +202,8 @@ public class CheckEverythingInspector implements Inspector {
 
 
 	@Override
-	public void informChange(double value) {
-		this.modelChangeWriter.println(String.format(Locale.US, "%d,%f", System.currentTimeMillis(), value));
+	public void informChange(double value, long producedElements) {
+		this.modelChangeWriter.println(String.format(Locale.US, "%d,%f,%d", System.currentTimeMillis(), value, producedElements));
 		this.modelChangeWriter.flush();
 	}
 

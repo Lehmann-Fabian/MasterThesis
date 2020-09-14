@@ -88,9 +88,19 @@ public class ProducerRunner {
 				}
 			}, "Shutdown-thread"));
 			log.warn("System is running");
+			
+			producerThread.join();
+			inspector.close();
+			
+			Thread.sleep(Integer.MAX_VALUE);
+			
 		}catch (Exception e) {
 			log.error("Error while running", e);
 		}
+		
+		
+		
+		
 		
 		if(!prod) {
 		    try {

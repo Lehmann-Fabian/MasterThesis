@@ -53,7 +53,7 @@ public class DataProducer {
         try {
         	long i = 0;
         	//Stop after 15min
-        	while(!Thread.interrupted() && time + 900_000 > System.currentTimeMillis()) {
+        	while(!Thread.interrupted() && time + 300_000 > System.currentTimeMillis()) {
         		final RawDataEntry data = new RawDataEntry(System.currentTimeMillis(), getNextMeasurement.apply(i));
 	    		final ProducerRecord<Long, RawDataEntry> record = new ProducerRecord<>(TOPIC, data);
 	
@@ -76,6 +76,7 @@ public class DataProducer {
 	            i++;
 	            
         	}
+        	System.out.println("DONE");
         } finally {
             producer.flush();
             producer.close();

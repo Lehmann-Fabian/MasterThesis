@@ -14,6 +14,6 @@ public class DoNothingInspector implements Inspector {
 
 
 	@Override
-	public void informChange(double value) {}
+	public void informChange(double value, long producedElements) {}
 
 }
