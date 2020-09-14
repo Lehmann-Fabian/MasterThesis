@@ -21,13 +21,14 @@ public class ProducerRunner {
     private static String BOOTSTRAP_SERVERS = "localhost:9093";
     private final static String OUTPUT_PATH = "data";
     private final static int FREQUENCY_IN_MS = 5;
+    private static int DURATION = 15;
 	
 	public static void main(String[] args) throws Exception {
 		
 		boolean prod = false;
 		boolean checkEverything = true;
 		
-		if(args.length >= 5) {
+		if(args.length >= 6) {
 			BOOTSTRAP_SERVERS = args[0];
 			TOPIC = args[1];
 			String nodestart = args[2];
@@ -37,13 +38,15 @@ public class ProducerRunner {
 			}else {
 				TOPIC = "t" + TOPIC;
 			}
-			System.out.println("Use server: " + BOOTSTRAP_SERVERS);
-			System.out.println("Use topic: " + TOPIC);
 			prod = args[3].toLowerCase().equals("true");
 			checkEverything = args[4].toLowerCase().equals("true");
-			System.out.println("Run Prod: " + prod);
-			System.out.println("Inspect all: " + prod);
+			DURATION = Integer.parseInt(args[5]);
 		}
+		System.out.println("Use server: " + BOOTSTRAP_SERVERS);
+		System.out.println("Use topic: " + TOPIC);
+		System.out.println("Run Prod: " + prod);
+		System.out.println("Inspect all: " + prod);
+		System.out.println("Run: " + DURATION + " min");
 		
 		try {
 			PropertyConfigurator.configure("log4j.properties");
@@ -69,7 +72,7 @@ public class ProducerRunner {
 					: new DoNothingInspector();
 					
 					
-			DataProducer dataProducer = new DataProducer(BOOTSTRAP_SERVERS, TOPIC, FREQUENCY_IN_MS, scg, inspector);
+			DataProducer dataProducer = new DataProducer(BOOTSTRAP_SERVERS, TOPIC, FREQUENCY_IN_MS, scg, inspector, DURATION);
 			
 			Thread producerThread = new Thread(() -> dataProducer.runProducer());
 			producerThread.start();

@@ -23,13 +23,15 @@ public class DataProducer {
 	private final Function<Long, Float> getNextMeasurement;
 	private final AdminConnection adminConnection;
 	private final Inspector inspector;
+	private final int durationInMs;
 	
-	public DataProducer(String server, String topic, int frequencyInMs, Function<Long, Float> getNextMeasurement, Inspector inspector) {
+	public DataProducer(String server, String topic, int frequencyInMs, Function<Long, Float> getNextMeasurement, Inspector inspector, int duration) {
 		
 		this.TOPIC = topic;
 		this.frequencyInMs = frequencyInMs;
 		this.getNextMeasurement = getNextMeasurement;
 		this.inspector = inspector;
+		this.durationInMs = duration * 1000 * 60;
 		
 		Properties props = new Properties();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, server);
@@ -53,7 +55,7 @@ public class DataProducer {
         try {
         	long i = 0;
         	//Stop after 15min
-        	while(!Thread.interrupted() && time + 300_000 > System.currentTimeMillis()) {
+        	while(!Thread.interrupted() && time + durationInMs > System.currentTimeMillis()) {
         		final RawDataEntry data = new RawDataEntry(System.currentTimeMillis(), getNextMeasurement.apply(i));
 	    		final ProducerRecord<Long, RawDataEntry> record = new ProducerRecord<>(TOPIC, data);
 	
