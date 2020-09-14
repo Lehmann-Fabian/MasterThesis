@@ -52,7 +52,7 @@ public class DataAnalyst {
 		final Properties propsConsumer = new Properties();
 
         propsConsumer.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
-        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, this.TOPIC + "b");
+        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, this.TOPIC);
         propsConsumer.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, LongDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, FilteredDataEntryDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
@@ -121,7 +121,9 @@ public class DataAnalyst {
 						if(currentIndex == maxValues) {
 							
 							extractValues(bufferData, data);
+							log.info("Offset: " + bufferData[0].offset() + " value: " + data[0]);
 							List<String> warnings = analyst.apply(data);
+							log.info(warnings.size() + " warnings");
 							for (String warningText : warnings) {
 								
 								Warning warning = new Warning(warningText, bufferData[0].offset(), bufferData[maxValues - 1].offset(), data, bufferData[0].value().getTimestamp(), bufferData[maxValues - 1].value().getTimestamp());
@@ -151,7 +153,7 @@ public class DataAnalyst {
 								offsets.put(partition, offsetAndMetadata);
 							}
 							
-							consumer.commitAsync(offsets, (a,b) -> {});
+							consumer.commitAsync(offsets, (a,b) -> {log.error("Problem while sending offsets", b.getCause());});
 						}
 						
 					}
