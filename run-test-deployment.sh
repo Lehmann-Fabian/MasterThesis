@@ -13,6 +13,8 @@ kubectl label nodes testcluster-worker3 monitor-patient-data=true
 kubectl label nodes testcluster-worker4 monitor-patient-data=true
 kubectl label nodes testcluster-worker5 monitor-patient-data=true
 
-kubectl apply -k .
+#kubectl apply -k .
 
 echo "run kubectl exec -it -n kafka producer-xyzyx -- /bin/sh"
+
+bash run-pipeline.sh
