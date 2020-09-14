@@ -1,0 +1,4 @@
+resources:
+- producer/producer.yaml
+- filter/filter.yaml
+- analyst/analyst.yaml
