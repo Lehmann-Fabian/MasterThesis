@@ -1,41 +1,38 @@
 #!/bin/bash
 
-state="wait"
-pods=`kubectl get pods -n kafka -o custom-columns=":metadata.name"`
-
 wait_ready(){
 
-    sleep 10s
+    state="wait"
 
-    while [ "wait" = "$state" ]; do
-        
+    counter=0
+    counter=$((counter+1))
 
-        error=false
+    while [ "$counter" -lt 5 ]; do
+
+        sleep 1s
+        counter=$((counter+1))
+
+        pods=`kubectl get pods -n kafka -o custom-columns=":metadata.name"`
 
         for pod in $pods
         do
             podState=`kubectl get pods -n kafka | grep "\b$pod\b" | awk '{print$2}'`
             podRunning=`kubectl get pods -n kafka | grep "\b$pod\b" | awk '{print$3}'`
-            
-            echo "state $podRunning"
 
             if [ "$podRunning" != "Running" ]; then
                 echo "wrong state $podRunning"
-                error=true
+                counter=0
             fi
             if [ "$podState" != "1/1" ]; then
                 echo "wrong state $podState"
-                error=true
+                counter=0
             fi
 
         done
 
-        if [ $error = false ]; then
-            sleep 10s
-            return
+        if [ "$counter" -gt 1 ]; then
+            sleep 5s
         fi
-
-        sleep 1s
 
     done
 
@@ -52,10 +49,10 @@ wait_ready
 
 echo "start filter"
 
-#kubectl apply -f analyst/filter.yaml
+kubectl apply -f filter/filter.yaml
 
-#wait_ready
+wait_ready
 
-#echo "start producer"
+echo "start producer"
 
-#kubectl apply -f analyst/producer.yaml
+kubectl apply -f producer/producer.yaml
