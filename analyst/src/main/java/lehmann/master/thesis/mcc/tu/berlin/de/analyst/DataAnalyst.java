@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
 import java.util.function.Function;
 
 import org.apache.kafka.clients.consumer.Consumer;
@@ -41,6 +42,7 @@ public class DataAnalyst {
 	private final int analyseSize;
 	private final KafkaProducer<Long, String> producer;
 	private final AdminConnection zk;
+	private final String BOOTSTRAP_SERVERS;
 	
 	public DataAnalyst(String BOOTSTRAP_SERVERS, String TOPIC, Function<float[], List<String>> filter, int analyseSize) {
 		
@@ -48,11 +50,12 @@ public class DataAnalyst {
 		this.TOPIC_OUTPUT = TOPIC + "_warnings";
 		this.analyst = filter;
 		this.analyseSize = analyseSize;
+		this.BOOTSTRAP_SERVERS = BOOTSTRAP_SERVERS;
 
 		final Properties propsConsumer = new Properties();
 
         propsConsumer.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
-        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, this.TOPIC + "b");
+        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, this.TOPIC);
         propsConsumer.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, LongDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, FilteredDataEntryDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
@@ -82,6 +85,42 @@ public class DataAnalyst {
 		}
 	}
 	
+	
+	/**
+	 * 
+	 * @return The offset to handle it correctly
+	 */
+	private long seekToStart() {
+		
+		log.info("Seek to start for topic: " + TOPIC);
+		
+		OffsetFinder offsetFinder = new OffsetFinder(BOOTSTRAP_SERVERS, TOPIC_OUTPUT, this.zk);
+		long offset = offsetFinder.getOffset();
+		
+		
+		log.info("New offset = " + offset + " for topic: " + TOPIC);
+		
+		int maxTrials = 10;
+		Set<TopicPartition> partitions;
+		do{
+			this.consumer.poll(Duration.ofMillis(1000));
+			partitions = this.consumer.assignment();
+		}while(partitions.isEmpty() && --maxTrials > 0);
+		
+		if(partitions.isEmpty()) throw new IllegalStateException("Cannot connect to topic: " + TOPIC);
+		else if(partitions.size() != 1) throw new IllegalStateException("Topic has more than one partition");
+		
+		if(offset < 0) {
+			this.consumer.seekToBeginning(partitions);
+		}else {
+			for (TopicPartition topicPartition : partitions) {
+				this.consumer.seek(topicPartition, offset);
+			}
+		}
+		
+		return offset;
+	}
+	
 	public void runAnalysis() {
 		
 		log.info("Run analysis for topic: " + TOPIC);
@@ -99,6 +138,8 @@ public class DataAnalyst {
 		ConsumerRecord<Long, FilteredDataEntry>[] bufferData = new ConsumerRecord[maxValues];
 				
 		long highestTimestamp = 0;
+		long highestOffset = seekToStart();
+		//Change to last offset written
 		int currentIndex = 0;
 		
 		try {
@@ -110,9 +151,10 @@ public class DataAnalyst {
 				
 				for (ConsumerRecord<Long, FilteredDataEntry> consumerRecord : records) {
 					
-					if(consumerRecord.value().getTimestamp() > highestTimestamp) {
+					if(consumerRecord.value().getTimestamp() >= highestTimestamp && consumerRecord.offset() > highestOffset) {
 						
 						highestTimestamp = consumerRecord.value().getTimestamp();
+						highestOffset = consumerRecord.offset();
 						
 						bufferData[currentIndex++] = consumerRecord;
 						
@@ -121,7 +163,9 @@ public class DataAnalyst {
 						if(currentIndex == maxValues) {
 							
 							extractValues(bufferData, data);
+							log.info("Offset: " + bufferData[0].offset() + " value: " + data[0]);
 							List<String> warnings = analyst.apply(data);
+							log.info(warnings.size() + " warnings");
 							for (String warningText : warnings) {
 								
 								Warning warning = new Warning(warningText, bufferData[0].offset(), bufferData[maxValues - 1].offset(), data, bufferData[0].value().getTimestamp(), bufferData[maxValues - 1].value().getTimestamp());
@@ -144,14 +188,14 @@ public class DataAnalyst {
 							currentIndex = 0;
 							
 							//Commit processed data
-							OffsetAndMetadata offsetAndMetadata = new OffsetAndMetadata(bufferData[maxValues - 1].offset());
-							Map<TopicPartition, OffsetAndMetadata> offsets = new HashMap<>();
-							
-							for(TopicPartition partition : consumer.assignment()) {
-								offsets.put(partition, offsetAndMetadata);
-							}
-							
-							consumer.commitAsync(offsets, (a,b) -> {});
+//							OffsetAndMetadata offsetAndMetadata = new OffsetAndMetadata(bufferData[maxValues - 1].offset());
+//							Map<TopicPartition, OffsetAndMetadata> offsets = new HashMap<>();
+//							
+//							for(TopicPartition partition : consumer.assignment()) {
+//								offsets.put(partition, offsetAndMetadata);
+//							}
+//							
+//							consumer.commitAsync(offsets, (a,b) -> {if (b != null) log.error("Problem while sending offsets", b.getCause());});
 						}
 						
 					}

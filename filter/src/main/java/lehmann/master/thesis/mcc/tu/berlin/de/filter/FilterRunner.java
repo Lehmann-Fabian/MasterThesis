@@ -17,11 +17,7 @@ public class FilterRunner {
 			TOPIC = args[1];
 			String podstart = args[2];
 			TOPIC = TOPIC.substring(podstart.length());
-			if(TOPIC.length() == 0) {
-				TOPIC = "t1";
-			}else {
-				TOPIC = "t" + TOPIC;
-			}
+			TOPIC = "t" + (Integer.parseInt(TOPIC) + 1);
 			System.out.println("Use server: " + BOOTSTRAP_SERVERS);
 			System.out.println("Use topic: " + TOPIC);
 		}
