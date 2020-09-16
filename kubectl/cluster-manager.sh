@@ -19,6 +19,24 @@ checkState(){
 
   done
 
+  # get unreachable Nodes
+  nodes=`kubectl get nodes | grep "\bNotReady\b" | awk '{print$1}'`
+
+  for node in $nodes
+  do
+      pods=`kubectl get pod -o=custom-columns=NAME:.metadata.name,NODE:.spec.nodeName -n kafka | grep "$node" | awk '{print$1}'`
+
+      for pod in $pods
+      do
+        if [ "$pod" != "${pod#analyst}" ] || [ "$pod" != "${pod#filter}" ]; then
+          kubectl delete pod $pod -n kafka --force
+          echo "Triggered restart!"
+          sleep 5s
+        fi
+      done
+
+  done
+
 }
 
 while [ true ]

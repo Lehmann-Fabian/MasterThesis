@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: cluster-manager
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: cluster-manager
@@ -44,4 +44,4 @@ roleRef:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: kcluster-manager-role
+  name: cluster-manager-role
