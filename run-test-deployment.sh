@@ -2,7 +2,7 @@
 #run this: bash run-test-deployment.sh 
 
 kind delete cluster --name testcluster
-kind create cluster --name=testcluster --config=./kind/config.yaml
+kind create cluster --name=testcluster --config=./kind/config.yaml --wait 5m
 
 sleep 10s
 
@@ -17,7 +17,14 @@ kubectl label nodes testcluster-worker3 monitor-patient-data=true
 kubectl label nodes testcluster-worker4 monitor-patient-data=true
 kubectl label nodes testcluster-worker5 monitor-patient-data=true
 
-bash kubectl/deploy.sh
+cd kubectl
+bash deploy.sh
+cd ..
 
 bash run-pipeline.sh
 #kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName -n kafka -w
+
+sleep 5m
+docker stop testcluster-worker6
+sleep 15m
+docker stop testcluster-worker7
