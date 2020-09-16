@@ -57,7 +57,7 @@ public class OffsetFinder {
 	public long getOffset() {
 		if(!zk.hasTopic(topic)) {
 			//TODO replica
-			zk.createTopic(topic, 1, (short) 1);
+			zk.createTopic(topic, 1, (short) 3);
 			return -1;
 		}
 		

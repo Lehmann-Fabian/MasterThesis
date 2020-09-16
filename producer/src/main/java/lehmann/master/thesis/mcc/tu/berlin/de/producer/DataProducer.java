@@ -49,7 +49,7 @@ public class DataProducer {
     	log.info("Run producer for topic " + this.TOPIC);
     	
     	//TODO set Replica to 3
-    	if(!adminConnection.hasTopic(TOPIC)) adminConnection.createTopic(TOPIC, 1, (short) 1);
+    	if(!adminConnection.hasTopic(TOPIC)) adminConnection.createTopic(TOPIC, 1, (short) 3);
     	
         long time = System.currentTimeMillis();
         try {

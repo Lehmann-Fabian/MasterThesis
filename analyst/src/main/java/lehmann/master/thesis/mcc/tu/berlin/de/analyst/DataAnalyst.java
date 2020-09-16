@@ -60,6 +60,7 @@ public class DataAnalyst {
         propsConsumer.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, FilteredDataEntryDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
         propsConsumer.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+        propsConsumer.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 2000);
 
         // Create the consumer using props.
         this.consumer = new KafkaConsumer<>(propsConsumer);
@@ -97,6 +98,11 @@ public class DataAnalyst {
 		OffsetFinder offsetFinder = new OffsetFinder(BOOTSTRAP_SERVERS, TOPIC_OUTPUT, this.zk);
 		long offset = offsetFinder.getOffset();
 		
+		//Create filtered topic if not exist
+		if(!zk.hasTopic(TOPIC)) {
+			zk.createTopic(TOPIC, 1, (short) 3);
+			return -1;
+		}
 		
 		log.info("New offset = " + offset + " for topic: " + TOPIC);
 		
@@ -127,7 +133,7 @@ public class DataAnalyst {
 		
 		//TODO replica to 3
 		if(!zk.hasTopic(TOPIC_OUTPUT)) {
-			zk.createTopic(TOPIC_OUTPUT, 1, (short) 1);
+			zk.createTopic(TOPIC_OUTPUT, 1, (short) 3);
 		}
 		
 		final int maxValues = analyseSize;
