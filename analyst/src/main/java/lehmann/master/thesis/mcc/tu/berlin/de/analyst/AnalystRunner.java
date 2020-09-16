@@ -29,6 +29,7 @@ public class AnalystRunner {
 			dataFilter.runAnalysis();
 		}catch (Exception e) {
 			log.error("Error while running", e);
+			e.printStackTrace();
 		}
     	
 	}
