@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cluster-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cluster-manager
+  template:
+    metadata:
+      labels:
+        app: cluster-manager
+    spec:
+      serviceAccountName: cluster-manager-role
+      containers:
+      - name: cluster-manager
+        imagePullPolicy: Always
+        image: lachlanevenson/k8s-kubectl
+        command: ["/scripts/cluster-manager.sh"]
+        #command: ["kubectl", "get", "pods", "-w"]
+        volumeMounts:
+        - name: cluster-manager
+          mountPath: /scripts
+      volumes:
+      - name: cluster-manager
+        configMap:
+          name: cluster-manager
+          defaultMode: 0744
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cluster-manager-role
+subjects:
+- kind: ServiceAccount
+  name: cluster-manager-role
+  namespace: default
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: kcluster-manager-role
