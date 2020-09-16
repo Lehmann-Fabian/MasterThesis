@@ -36,7 +36,7 @@ public class ProducerRunner {
 			if(TOPIC.length() == 0) {
 				TOPIC = "t1";
 			}else {
-				TOPIC = "t" + (Integer.parseInt(TOPIC) + 1);
+				TOPIC = "t" + (Integer.parseInt(TOPIC));
 			}
 			prod = args[3].toLowerCase().equals("true");
 			checkEverything = args[4].toLowerCase().equals("true");
