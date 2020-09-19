@@ -49,22 +49,24 @@ if __name__ == "__main__":
         output.write("   ansible_user: ec2-user\n")
 
     output.writelines(" children:\n")
-    all = printAll(nodes)
-    allOdd = nodes
-    if(len(nodes) % 2 == 0):
-        allOdd = sorted(nodes)
-        allOdd.pop(0)
+    all = printAll(sorted(nodes))
+    # allOdd = nodes
+    # if(len(nodes) % 2 == 0):
+    #     allOdd = sorted(nodes)
+    #     allOdd.pop(0)
 
-    allOdd = printAll(allOdd)
+    # allOdd = printAll(allOdd)
+
+    last3 = printAll(sorted(nodes)[-3:])
 
     output.writelines("  kube-master:\n")
-    output.writelines(all)
+    output.writelines(last3)
 
     output.writelines("  kube-node:\n")
     output.writelines(all)
     
     output.writelines("  etcd:\n")
-    output.writelines(allOdd)
+    output.writelines(last3)
 
     output.writelines("  k8s-cluster:\n")
     output.writelines("   children:\n")
