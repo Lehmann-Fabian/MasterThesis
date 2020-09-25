@@ -49,7 +49,7 @@ if __name__ == "__main__":
         output.write("   ansible_user: ec2-user\n")
 
     output.writelines(" children:\n")
-    all = printAll(sorted(nodes))
+    all = printAll(sorted(nodes, key = lambda x: int(x[6:])))
     # allOdd = nodes
     # if(len(nodes) % 2 == 0):
     #     allOdd = sorted(nodes)
@@ -57,7 +57,7 @@ if __name__ == "__main__":
 
     # allOdd = printAll(allOdd)
 
-    last3 = printAll(sorted(nodes)[-3:])
+    last3 = printAll(sorted(nodes, key = lambda x: int(x[6:]))[-3:])
 
     output.writelines("  kube-master:\n")
     output.writelines(last3)
