@@ -30,7 +30,7 @@ spec:
             fieldRef:
               fieldPath: spec.nodeName
         - name: NODENAME
-          value: "testcluster-worker"
+          value: "server"
         - name: PROD
           value: "true"
         - name: CHECKEVERYTHING
