@@ -4,4 +4,4 @@ metadata:
   name: kafka
   namespace: kafka
 spec:
-  replicas: 8
+  replicas: 7
