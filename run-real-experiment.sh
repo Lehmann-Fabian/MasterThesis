@@ -5,6 +5,8 @@ if [ -z "$1" ]; then
     exit 100
 fi
 
+export KUBECONFIG=~/MasterThesisCode/kubespray/inventory/mycluster/artifacts/admin.conf
+
 echo "install a default pvc provisioner"
 kubectl apply -f storage/default-storage.yml
 
