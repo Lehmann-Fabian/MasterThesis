@@ -1,6 +1,25 @@
 #!/bin/bash
 #run this: bash run-real-deployment.sh 
 
+
+if [ -z "$1" ]; then
+    echo "define a setup"
+    exit 100
+fi
+
+cd setup/
+case $1 in
+    1)
+    echo "Prepare Setup 1"
+    bash prepareSetup1.sh
+    ;;
+    *)
+    echo "Setup not valid"
+    exit 100
+    ;;
+esac
+cd ..
+
 #start instances
 cd MockFog2
 bash start.sh

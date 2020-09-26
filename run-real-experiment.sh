@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -z "$1" ]; then
+    echo "define a setup"
+    exit 100
+fi
+
 echo "install a default pvc provisioner"
 kubectl apply -f storage/default-storage.yml
 
@@ -31,7 +36,7 @@ bash run-pipeline.sh
 #kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName -n kafka -w
 
 #start logging
-pid=`nohup bash fetchResponsibilities.sh >> logs/responsibilities.log & echo $!`
+pid=`nohup bash fetchResponsibilities.sh >> ./results/setup$1/logs/responsibilities.log & echo $!`
 
 #start experiment manipulation
 cd MockFog2
@@ -41,5 +46,7 @@ cd ..
 sleep 7m
 
 kill $pid
+
+bash copyData.sh $1
 
 exit 0
