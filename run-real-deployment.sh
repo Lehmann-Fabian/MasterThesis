@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
     exit 100
 fi
 
-cd setup/
+cd setups/
 case $1 in
     1)
     echo "Prepare Setup 1"
