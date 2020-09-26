@@ -36,7 +36,7 @@ spec:
         - name: CHECKEVERYTHING
           value: "true"
         - name: DURATION
-          value: "15"
+          value: "20"
           #valueFrom:
           #  fieldRef:
               #pod name
