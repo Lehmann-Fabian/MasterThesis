@@ -37,6 +37,7 @@ cd ..
 bash run-pipeline.sh
 #kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName -n kafka -w
 
+mkdir ./results/setup$1/logs/
 #start logging
 pid=`nohup bash fetchResponsibilities.sh >> ./results/setup$1/logs/responsibilities.log & echo $!`
 
