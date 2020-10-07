@@ -7,8 +7,8 @@ if [ -z "$1" ]; then
     exit 100
 fi
 
-cp ../orchestration/case_$1.json ../MockFog2/node-manager/run/config/orchestration.jsonc
-cp ../orchestration/infrastructure.jsonc ../MockFog2/node-manager/run/config/infrastructure.jsonc
+cp ./orchestration/case_$1.json ./MockFog2/node-manager/run/config/orchestration.jsonc
+cp ./orchestration/infrastructure.jsonc ./MockFog2/node-manager/run/config/infrastructure.jsonc
 
 #start instances
 cd MockFog2
