@@ -5,6 +5,11 @@ if [ -z "$1" ]; then
     exit 100
 fi
 
+if [ -z "$2" ]; then
+    echo "define a run"
+    exit 100
+fi
+
 export KUBECONFIG=~/MasterThesisCode/kubespray/inventory/mycluster/artifacts/admin.conf
 
 echo "install a default pvc provisioner"
@@ -28,6 +33,16 @@ kubectl label nodes server5 monitor-patient-data=true
 kubectl label nodes server6 monitor-patient-data=true
 kubectl label nodes server7 monitor-patient-data=true
 
+
+#mark masters as unschedulable
+# masters=`kubectl get nodes | grep "master" | awk '{print$1}'`
+
+# for master in $masters
+# do
+#     kubectl patch node $master -p "{\"spec\":{\"unschedulable\":true}}"
+# done
+
+
 echo "Start observation tool"
 cd kubectl
 bash deploy.sh
@@ -37,10 +52,10 @@ cd ..
 bash run-pipeline.sh
 #kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName -n kafka -w
 
-rm -r ./results/setup$1/
-mkdir -p ./results/setup$1/logs/
+#rm -r ./results/setup$1/
+mkdir -p ./results/setup$1/$2/logs/
 #start logging
-pid=`nohup bash fetchResponsibilities.sh >> ./results/setup$1/logs/responsibilities.log & echo $!`
+pid=`nohup bash fetchResponsibilities.sh >> ./results/setup$1/$2/logs/responsibilities.log & echo $!`
 
 #start experiment manipulation
 cd MockFog2
@@ -51,6 +66,6 @@ sleep 7m
 
 kill $pid
 
-bash copyData.sh $1
+bash copyData.sh $1 $2
 
 exit 0
