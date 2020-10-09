@@ -2,6 +2,7 @@
 
 while true; 
 do 
-    (echo "%CPU %MEM ARGS $(date)" && ps -e -o pcpu,pmem,args --sort=pcpu | cut -d" " -f1-5) >> /tmp/ps.log; 
-    sleep 5; 
+    time=`date +%s`
+    (echo "%CPU %MEM ARGS $time" && ps -e -o pcpu,pmem,pid,time,args --sort=pid | cut -d" " -f1-10) >> /tmp/ps.log; 
+    sleep 2; 
 done

@@ -16,8 +16,8 @@ do
     then
         iph=`echo $ip | cut -c 11-`
         echo $server $iph
-        mkdir -p ./results/setup$1/$2/logs/$server
-        scp -i ./MockFog2/node-manager/run/MasterThesisKey.pem -o StrictHostKeyChecking=no ec2-user@$iph:/tmp/ps.log ./results/setup$1/$2/logs/$server/ps.log
+        mkdir -p ./results/setup$1/$2/logs/usage/$server
+        scp -i ./MockFog2/node-manager/run/MasterThesisKey.pem -o StrictHostKeyChecking=no ec2-user@$iph:/tmp/ps.log ./results/setup$1/$2/logs/usage/$server/ps.log
     fi
 
 done
