@@ -1,0 +1,2710 @@
+Trial 1 after 0 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug1" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 2 after 33 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug2" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 3 after 51 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug3" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 4 after 67 s
+Unable to use a TTY - input is not a terminal or the right kind of file
+If you don't see a command prompt, try pressing enter.
+Error attaching, falling back to logs: 
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug4" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 5 after 83 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug5" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 6 after 96 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug6" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 7 after 110 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug7" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 8 after 123 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug8" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 9 after 135 s
+Unable to use a TTY - input is not a terminal or the right kind of file
+If you don't see a command prompt, try pressing enter.
+Error attaching, falling back to logs: 
+pod "debug9" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 10 after 152 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug10" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 11 after 165 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug11" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 12 after 178 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug12" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 13 after 190 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug13" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 14 after 204 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug14" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 15 after 217 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug15" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 16 after 230 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug16" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 17 after 243 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug17" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 18 after 256 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug18" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 19 after 269 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug19" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 20 after 282 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug20" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 21 after 295 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug21" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 22 after 307 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug22" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 23 after 321 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug23" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 24 after 334 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug24" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 25 after 347 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug25" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 26 after 360 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug26" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 27 after 372 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug27" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 28 after 385 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug28" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 29 after 398 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug29" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 30 after 411 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug30" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
+Trial 31 after 424 s
+Metadata for all topics (from broker -1: kafka.kafka.svc.cluster.local:9092/bootstrap):
+ 7 brokers:
+  broker 0 at kafka-0.kafka.kafka.svc.cluster.local:9092 (controller)
+  broker 5 at kafka-5.kafka.kafka.svc.cluster.local:9092
+  broker 1 at kafka-1.kafka.kafka.svc.cluster.local:9092
+  broker 4 at kafka-4.kafka.kafka.svc.cluster.local:9092
+  broker 6 at kafka-6.kafka.kafka.svc.cluster.local:9092
+  broker 2 at kafka-2.kafka.kafka.svc.cluster.local:9092
+  broker 3 at kafka-3.kafka.kafka.svc.cluster.local:9092
+ 22 topics:
+  topic "t4" with 1 partitions:
+    partition 0, leader 6, replicas: 6,0,5, isrs: 6,0,5
+  topic "t5" with 1 partitions:
+    partition 0, leader 4, replicas: 4,6,2, isrs: 4,6,2
+  topic "t4_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t2_filtered" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t7_warnings" with 1 partitions:
+    partition 0, leader 2, replicas: 2,6,3, isrs: 2,6,3
+  topic "t1_filtered" with 1 partitions:
+    partition 0, leader 4, replicas: 4,0,5, isrs: 4,0,5
+  topic "t3" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t6" with 1 partitions:
+    partition 0, leader 1, replicas: 1,3,0, isrs: 1,3,0
+  topic "t6_filtered" with 1 partitions:
+    partition 0, leader 5, replicas: 5,3,0, isrs: 5,3,0
+  topic "t5_filtered" with 1 partitions:
+    partition 0, leader 0, replicas: 0,1,4, isrs: 0,1,4
+  topic "t7_filtered" with 1 partitions:
+    partition 0, leader 3, replicas: 3,1,4, isrs: 3,1,4
+  topic "__consumer_offsets" with 2 partitions:
+    partition 0, leader 6, replicas: 6,2, isrs: 6,2
+    partition 1, leader 0, replicas: 0,3, isrs: 0,3
+  topic "t2" with 1 partitions:
+    partition 0, leader 1, replicas: 1,2,3, isrs: 1,2,3
+  topic "t7" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t1_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,6,2, isrs: 1,6,2
+  topic "t6_warnings" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t2_warnings" with 1 partitions:
+    partition 0, leader 4, replicas: 4,5,1, isrs: 4,5,1
+  topic "t4_warnings" with 1 partitions:
+    partition 0, leader 5, replicas: 5,0,1, isrs: 5,0,1
+  topic "t3_filtered" with 1 partitions:
+    partition 0, leader 1, replicas: 1,0,5, isrs: 1,0,5
+  topic "t1" with 1 partitions:
+    partition 0, leader 2, replicas: 2,3,0, isrs: 2,3,0
+  topic "t5_warnings" with 1 partitions:
+    partition 0, leader 6, replicas: 6,2,3, isrs: 6,2,3
+  topic "t3_warnings" with 1 partitions:
+    partition 0, leader 3, replicas: 3,4,6, isrs: 3,4,6
+pod "debug31" deleted
+NAME             STATUS    NODE
+analyst-0        Running   server4
+analyst-1        Running   server1
+analyst-2        Running   server3
+analyst-3        Running   server7
+analyst-4        Running   server5
+analyst-5        Running   server6
+analyst-6        Running   server2
+filter-0         Running   server4
+filter-1         Running   server1
+filter-2         Running   server3
+filter-3         Running   server7
+filter-4         Running   server9
+filter-5         Running   server8
+filter-6         Running   server10
+kafka-0          Running   server3
+kafka-1          Running   server1
+kafka-2          Running   server4
+kafka-3          Running   server7
+kafka-4          Running   server2
+kafka-5          Running   server6
+kafka-6          Running   server5
+producer-492mg   Running   server5
+producer-972v9   Running   server1
+producer-b2948   Running   server7
+producer-dpngh   Running   server2
+producer-k5n6t   Running   server3
+producer-nh5db   Running   server6
+producer-tmt2w   Running   server4
+zoo-0            Running   server4
+zoo-1            Running   server5
+zoo-2            Running   server2
