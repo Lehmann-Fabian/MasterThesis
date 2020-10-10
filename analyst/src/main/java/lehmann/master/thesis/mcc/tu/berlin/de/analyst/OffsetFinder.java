@@ -15,7 +15,6 @@ import org.apache.kafka.common.serialization.LongDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import lehmann.master.thesis.mcc.tu.berlin.de.analyst.data.FilteredDataEntry;
 import lehmann.master.thesis.mcc.tu.berlin.de.analyst.data.Warning;
 import lehmann.master.thesis.mcc.tu.berlin.de.analyst.data.WarningDeserializer;
 
