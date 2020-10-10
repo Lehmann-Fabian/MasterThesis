@@ -78,11 +78,17 @@ public class DataProducer {
 	            i++;
 	            
         	}
-        	System.out.println("DONE");
         } finally {
             producer.flush();
             producer.close();
         }
+        System.out.println("Wait a minute!");
+        try {
+			Thread.sleep(60000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+        System.out.println("DONE");
     }
     
     
