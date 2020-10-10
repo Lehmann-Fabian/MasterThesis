@@ -11,7 +11,7 @@ spec:
       app: analyst
   serviceName: "analyst"
   #Number must match amount of labeles nodes.
-  replicas: 5
+  replicas: 7
   template:
     metadata:
       labels:
@@ -23,7 +23,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: SERVER
-          value: "kafka-0.kafka.kafka.svc.cluster.local:9092,kafka-1.kafka.kafka.svc.cluster.local:9092,kafka-2.kafka.kafka.svc.cluster.local:9092,kafka-4.kafka.kafka.svc.cluster.local:9092,kafka-5.kafka.kafka.svc.cluster.local:9092"
+          value: "kafka.kafka.svc.cluster.local:9092"
         - name: TOPIC
           valueFrom:
             fieldRef:

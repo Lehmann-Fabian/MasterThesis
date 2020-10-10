@@ -24,29 +24,24 @@ spec:
         imagePullPolicy: Always
         env:
         - name: SERVER
-          value: "kafka-0.kafka.kafka.svc.cluster.local:9092,kafka-1.kafka.kafka.svc.cluster.local:9092,kafka-2.kafka.kafka.svc.cluster.local:9092,kafka-4.kafka.kafka.svc.cluster.local:9092,kafka-5.kafka.kafka.svc.cluster.local:9092"
+          value: "kafka.kafka.svc.cluster.local:9092"
         - name: TOPIC
           valueFrom:
             fieldRef:
               fieldPath: spec.nodeName
         - name: NODENAME
-          value: "testcluster-worker"
+          value: "server"
         - name: PROD
           value: "true"
         - name: CHECKEVERYTHING
           value: "true"
         - name: DURATION
-          value: "15"
-          #valueFrom:
-          #  fieldRef:
-              #pod name
-          #    fieldPath: metadata.name
+          value: "20"
         resources:
           limits:
             memory: 200Mi
           requests:
             cpu: 100m
-            memory: 200Mi
         volumeMounts:
           - name: data
             mountPath: /app/data

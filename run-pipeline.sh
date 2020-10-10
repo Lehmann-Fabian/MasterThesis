@@ -56,5 +56,3 @@ wait_ready
 echo "start producer"
 
 kubectl apply -f producer/producer.yaml
-
-kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName  -w
