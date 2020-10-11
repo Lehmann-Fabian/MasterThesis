@@ -4,21 +4,11 @@ experiment=0
 counter=0
 
 
-while [ "$counter" -lt 2 ]; do
+while [ "$counter" -lt 3 ]; do
+
+    echo exp $experiment run $counter
     
-    bash run-real-deployment.sh $experiment
-
-    sleep 20s
-
-    bash run-real-experiment.sh $experiment $counter
-
-    sleep 20s
-
-    cd MockFog2
-
-    bash destroy.sh
-
-    cd ..
+    bash run-one-experiment.sh $experiment $counter &> results/runs/exp$experiment-$counter.log
 
     counter=$((counter+1))
 done
