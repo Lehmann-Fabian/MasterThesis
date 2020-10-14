@@ -48,14 +48,16 @@ cd kubectl
 bash deploy.sh
 cd ..
 
-#launch pipeline services
-bash run-pipeline.sh
-#kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName -n kafka -w
 
 bash start-metrics-collector.sh
 
 rm -r ./results/setup$1/$2/
 mkdir -p ./results/setup$1/$2/logs/
+
+#launch pipeline services
+bash run-pipeline.sh
+#kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName -n kafka -w
+
 #start logging
 pid=`nohup bash fetchResponsibilities.sh >> ./results/setup$1/$2/logs/responsibilities.log & echo $!`
 
@@ -64,9 +66,21 @@ cd MockFog2
 bash run-orchestration.sh
 cd ..
 
-sleep 7m
+#Experiment 0 has only one state
+if [ $1 -eq 0 ]; then
+    sleep 22m
+else
+    sleep 7m
+fi
 
 kill $pid
+
+#stop network manipulation ==> to copy faster
+cp ./orchestration/fast.json ./MockFog2/node-manager/run/config/orchestration.jsonc
+cd MockFog2
+bash run-orchestration.sh
+cd ..
+
 
 bash copyData.sh $1 $2
 
