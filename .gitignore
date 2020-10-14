@@ -19,3 +19,5 @@ TODO.txt
 **.log
 !results/**
 **.ipynb_checkpoints/
+kubespray
+MockFog2
