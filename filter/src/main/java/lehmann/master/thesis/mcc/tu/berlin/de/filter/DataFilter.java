@@ -146,7 +146,10 @@ public class DataFilter {
 		ArrayDeque<ConsumerRecord<Long, RawDataEntry>> buffer = new ArrayDeque<ConsumerRecord<Long, RawDataEntry>>(maxValues);
 		try {
 			
+			long i = 0;
+			
 			while(true) {
+				
 				
 				ConsumerRecords<Long, RawDataEntry> records = this.consumer.poll(Duration.ofSeconds(1));
 				
@@ -154,7 +157,10 @@ public class DataFilter {
 				
 				for (ConsumerRecord<Long, RawDataEntry> consumerRecord : records) {
 					
+					
 					if(consumerRecord.value().getTimestamp() >= highestTimestamp && consumerRecord.offset() > highestOffset) {
+						
+						i++;
 						
 						if(consumerRecord.offset() != highestOffset + 1) {
 							log.error(String.format("Potentially skipped one or more records, current record with offset: %d and timestamp %d but highest timestamp was %d and highest offset was %d", 
@@ -198,6 +204,9 @@ public class DataFilter {
 							
 							final ProducerRecord<Long, FilteredDataEntry> record = new ProducerRecord<>(TOPIC_OUTPUT, output);
 				    		producer.send(record);
+				    		
+				    		//Flush at least all 10 values
+				    		if(i % (10) == 0) producer.flush();
 							
 							log.info(String.format("Push record to topic: " + TOPIC_OUTPUT + " : o=%d, ts=%d, m=%f", 
 									output.getOffset(), output.getTimestamp(), output.getMeasurement()));
