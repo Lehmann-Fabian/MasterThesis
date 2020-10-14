@@ -97,8 +97,9 @@ public class CheckEverythingInspector implements Inspector {
 				printWriter = new PrintWriter(outputFolder + TOPIC + "_produced.csv");
 				
 				printWriter.println("Kafka.Offset,Kafka.Timestamp,Kafka.acktime.local,Producer.Timestamp,ProducedElements");
+				boolean interrupted = false;
 				
-				while(!producedData.isEmpty() || !Thread.interrupted()) {
+				while(!producedData.isEmpty() || (!Thread.interrupted() && !interrupted)) {
 					
 					try {
 						Triple poll = producedData.poll();
@@ -116,7 +117,7 @@ public class CheckEverythingInspector implements Inspector {
 									line = String.format("%d,%d,%d,%d,%d", recordMetadata.offset(), recordMetadata.timestamp(), System.currentTimeMillis(), sendTimestamp, producedElements);
 									gotResult = true;
 								} catch (InterruptedException e) {
-									Thread.currentThread().interrupt();
+									interrupted = true;
 									e.printStackTrace();
 								} catch (ExecutionException e) {
 									e.printStackTrace();
@@ -125,6 +126,8 @@ public class CheckEverythingInspector implements Inspector {
 								}
 							}
 							printWriter.println(line);
+						} else {
+							printWriter.flush();
 						}
 					}catch(Exception e) {
 						log.error("Topic: " + TOPIC, e);

@@ -63,8 +63,8 @@ public class DataProducer {
 	    		inspector.addProducedRecord(System.currentTimeMillis(), send);
 	    		log.info(String.format("New record: i = %d, ts = %d, m = %f", i, data.getTimestamp(), data.getMeasurement()));
 	    		
-	    		//Flush at least every second
-	    		if(i % (1000 / frequencyInMs) == 0) producer.flush();
+	    		//Flush at least all 10 values
+	    		if(i % 10 == 0) producer.flush();
 	
 	            long elapsedTime = System.currentTimeMillis() - time;
 	            long wait = - (elapsedTime - frequencyInMs * i);
@@ -78,11 +78,17 @@ public class DataProducer {
 	            i++;
 	            
         	}
-        	System.out.println("DONE");
         } finally {
             producer.flush();
             producer.close();
         }
+        System.out.println("Wait a minute!");
+        try {
+			Thread.sleep(60000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+        System.out.println("DONE");
     }
     
     
