@@ -68,6 +68,9 @@ public class DataAnalyst {
         propsProducer.put(ProducerConfig.CLIENT_ID_CONFIG, TOPIC_OUTPUT);
         propsProducer.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, LongSerializer.class.getName());
         propsProducer.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,  StringSerializer.class.getName());
+        propsProducer.put(ProducerConfig.LINGER_MS_CONFIG, 20);
+        propsProducer.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
+        propsProducer.put(ProducerConfig.BATCH_SIZE_CONFIG, 20);
         this.producer = new KafkaProducer<>(propsProducer);
 
         // Subscribe to the topic.
@@ -186,7 +189,7 @@ public class DataAnalyst {
 					    		producer.send(record);
 					    		log.info("Send warning: " + record + " to topic: " + TOPIC_OUTPUT);
 							}
-							if(!warnings.isEmpty()) producer.flush();
+//							if(!warnings.isEmpty()) producer.flush();
 							
 							currentIndex = 0;
 							

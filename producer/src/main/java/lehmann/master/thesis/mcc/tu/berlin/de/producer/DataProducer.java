@@ -1,17 +1,19 @@
 package lehmann.master.thesis.mcc.tu.berlin.de.producer;
-import org.apache.kafka.clients.producer.*;
+import java.util.Properties;
+import java.util.concurrent.Future;
+import java.util.function.Function;
+
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.clients.producer.RecordMetadata;
 import org.apache.kafka.common.serialization.LongSerializer;
-import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import lehmann.master.thesis.mcc.tu.berlin.de.inspector.Inspector;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.RawDataEntry;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.RawDataEntrySerializer;
-
-import java.util.Properties;
-import java.util.concurrent.Future;
-import java.util.function.Function;
 
 public class DataProducer {
 	
@@ -38,6 +40,9 @@ public class DataProducer {
         props.put(ProducerConfig.CLIENT_ID_CONFIG, "Sensor" + topic);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, LongSerializer.class.getName());
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,  RawDataEntrySerializer.class.getName());
+        props.put(ProducerConfig.LINGER_MS_CONFIG, 20);
+        props.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
+        props.put(ProducerConfig.BATCH_SIZE_CONFIG, 20);
         producer = new KafkaProducer<>(props);
         
         this.adminConnection = new AdminConnection(server);
@@ -64,7 +69,7 @@ public class DataProducer {
 	    		log.info(String.format("New record: i = %d, ts = %d, m = %f", i, data.getTimestamp(), data.getMeasurement()));
 	    		
 	    		//Flush at least all 10 values
-	    		if(i % 10 == 0) producer.flush();
+	    		//if(i % 10 == 0) producer.flush();
 	
 	            long elapsedTime = System.currentTimeMillis() - time;
 	            long wait = - (elapsedTime - frequencyInMs * i);
