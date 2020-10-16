@@ -2,7 +2,7 @@
 
 #start instances
 cd MockFog2
-#bash start.sh
+bash start.sh
 cd ..
 
 #create host.yaml file for k8n
