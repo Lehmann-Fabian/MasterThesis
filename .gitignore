@@ -19,3 +19,6 @@ TODO.txt
 **.log
 !results/**
 **.ipynb_checkpoints/
+eval/**
+eval**
+results**
