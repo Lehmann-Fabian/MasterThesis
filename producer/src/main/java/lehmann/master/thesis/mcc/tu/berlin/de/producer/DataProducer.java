@@ -42,7 +42,7 @@ public class DataProducer {
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,  RawDataEntrySerializer.class.getName());
         props.put(ProducerConfig.LINGER_MS_CONFIG, 20);
         props.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
-        props.put(ProducerConfig.BATCH_SIZE_CONFIG, 20);
+        props.put(ProducerConfig.BATCH_SIZE_CONFIG, 100);
         producer = new KafkaProducer<>(props);
         
         this.adminConnection = new AdminConnection(server);

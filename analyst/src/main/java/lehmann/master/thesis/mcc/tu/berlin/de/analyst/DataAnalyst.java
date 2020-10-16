@@ -70,7 +70,7 @@ public class DataAnalyst {
         propsProducer.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,  StringSerializer.class.getName());
         propsProducer.put(ProducerConfig.LINGER_MS_CONFIG, 20);
         propsProducer.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
-        propsProducer.put(ProducerConfig.BATCH_SIZE_CONFIG, 20);
+        propsProducer.put(ProducerConfig.BATCH_SIZE_CONFIG, 100);
         this.producer = new KafkaProducer<>(propsProducer);
 
         // Subscribe to the topic.
