@@ -16,6 +16,7 @@ import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.TopicPartition;
+import org.apache.kafka.common.errors.TimeoutException;
 import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.LongSerializer;
 import org.slf4j.Logger;
@@ -70,6 +71,10 @@ public class DataFilter {
         propsProducer.put(ProducerConfig.LINGER_MS_CONFIG, 20);
         propsProducer.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
         propsProducer.put(ProducerConfig.BATCH_SIZE_CONFIG, 100);
+        //actually time is in seconds
+        propsProducer.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 60);
+        //linger + request timeout
+        propsProducer.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, 60010);
         this.producer = new KafkaProducer<>(propsProducer);
 
         // Subscribe to the topic.
@@ -206,7 +211,17 @@ public class DataFilter {
 							lastProcessed = currentOffset;
 							
 							final ProducerRecord<Long, FilteredDataEntry> record = new ProducerRecord<>(TOPIC_OUTPUT, output);
-				    		producer.send(record);
+				    		producer.send(record, (metadata, exception) -> {
+				    			
+				    			if(exception != null) {
+				    				log.error(exception.getMessage());
+				    				if(exception instanceof TimeoutException) {
+				    					//There seems to be no connection, Kubernetes will reschedule a new service
+				    					System.exit(100);
+				    				}
+				    			}
+				    			
+				    		});
 				    		
 				    		//Flush at least all 10 values
 				    		//if(i % (10) == 0) producer.flush();

@@ -43,6 +43,9 @@ public class DataProducer {
         props.put(ProducerConfig.LINGER_MS_CONFIG, 20);
         props.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
         props.put(ProducerConfig.BATCH_SIZE_CONFIG, 100);
+        //Newer discard any records
+        props.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
+        props.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
         producer = new KafkaProducer<>(props);
         
         this.adminConnection = new AdminConnection(server);

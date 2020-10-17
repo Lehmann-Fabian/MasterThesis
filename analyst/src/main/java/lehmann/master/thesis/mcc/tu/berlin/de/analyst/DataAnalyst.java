@@ -71,6 +71,10 @@ public class DataAnalyst {
         propsProducer.put(ProducerConfig.LINGER_MS_CONFIG, 20);
         propsProducer.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
         propsProducer.put(ProducerConfig.BATCH_SIZE_CONFIG, 100);
+        //actually time is in seconds
+        propsProducer.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 60);
+        //linger + request timeout
+        propsProducer.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, 60010);
         this.producer = new KafkaProducer<>(propsProducer);
 
         // Subscribe to the topic.
