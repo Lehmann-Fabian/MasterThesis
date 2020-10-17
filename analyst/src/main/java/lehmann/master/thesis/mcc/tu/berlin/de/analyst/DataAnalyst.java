@@ -173,9 +173,9 @@ public class DataAnalyst {
 						if(currentIndex == maxValues) {
 							
 							extractValues(bufferData, data);
-							log.info("Offset: " + bufferData[0].offset() + " value: " + data[0]);
+//							log.info("Offset: " + bufferData[0].offset() + " value: " + data[0]);
 							List<String> warnings = analyst.apply(data);
-							log.info(warnings.size() + " warnings");
+//							log.info(warnings.size() + " warnings");
 							for (String warningText : warnings) {
 								
 								Warning warning = new Warning(warningText, bufferData[0].offset(), bufferData[maxValues - 1].offset(), data, bufferData[0].value().getTimestamp(), bufferData[maxValues - 1].value().getTimestamp());

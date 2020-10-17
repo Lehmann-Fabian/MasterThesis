@@ -226,8 +226,8 @@ public class DataFilter {
 				    		//Flush at least all 10 values
 				    		//if(i % (10) == 0) producer.flush();
 							
-							log.info(String.format("Push record to topic: " + TOPIC_OUTPUT + " : o=%d, ts=%d, m=%f", 
-									output.getOffset(), output.getTimestamp(), output.getMeasurement()));
+//							log.info(String.format("Push record to topic: " + TOPIC_OUTPUT + " : o=%d, ts=%d, m=%f", 
+//									output.getOffset(), output.getTimestamp(), output.getMeasurement()));
 						}
 						
 					} else {

@@ -69,7 +69,7 @@ public class DataProducer {
 	
 	    		Future<RecordMetadata> send = producer.send(record);
 	    		inspector.addProducedRecord(System.currentTimeMillis(), send);
-	    		log.info(String.format("New record: i = %d, ts = %d, m = %f", i, data.getTimestamp(), data.getMeasurement()));
+//	    		log.info(String.format("New record: i = %d, ts = %d, m = %f", i, data.getTimestamp(), data.getMeasurement()));
 	    		
 	    		//Flush at least all 10 values
 	    		//if(i % 10 == 0) producer.flush();
