@@ -46,6 +46,7 @@ public class DataProducer {
         //Newer discard any records
         props.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
         props.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
+        props.put(ProducerConfig.ACKS_CONFIG, "all");
         producer = new KafkaProducer<>(props);
         
         this.adminConnection = new AdminConnection(server);

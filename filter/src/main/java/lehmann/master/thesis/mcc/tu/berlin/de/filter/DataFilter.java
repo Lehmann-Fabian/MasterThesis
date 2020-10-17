@@ -75,6 +75,7 @@ public class DataFilter {
         propsProducer.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 60);
         //linger + request timeout
         propsProducer.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, 60010);
+        propsProducer.put(ProducerConfig.ACKS_CONFIG, "all");
         this.producer = new KafkaProducer<>(propsProducer);
 
         // Subscribe to the topic.
@@ -118,13 +119,16 @@ public class DataFilter {
 		//Not enough to move
 		if(move > offset) {
 			this.consumer.seekToBeginning(partitions);
+			return 0;
 		}else {
+			this.consumer.seekToEnd(partitions);
 			for (TopicPartition topicPartition : partitions) {
-				this.consumer.seek(topicPartition, offset - move);
+				long last = this.consumer.position(topicPartition);
+				this.consumer.seek(topicPartition, Math.min(offset - move, last));
 			}
+			return offset - move;
 		}
 		
-		return offset;
 	}
 	
 	private void extractValues(ConsumerRecord<Long, RawDataEntry>[] input, Float[] output) {
@@ -141,6 +145,8 @@ public class DataFilter {
 		int posActual = filterSize / 2;
 		
 		long lastProcessed = seekToStart(maxValues);
+		
+		long skipUntil = lastProcessed > 0 ? lastProcessed + (maxValues - 1) / 2 : 0;
 		
 		Float[] data = new Float[maxValues];
 		@SuppressWarnings("unchecked")
@@ -185,7 +191,7 @@ public class DataFilter {
 						FilteredDataEntry output = null;
 						long currentOffset = -1;
 						
-						if(buffer.size() <= maxValues / 2) {
+						if(buffer.size() <= maxValues / 2 && consumerRecord.offset() > skipUntil) {
 							
 							output = new FilteredDataEntry(consumerRecord.offset(), consumerRecord.value().getTimestamp(), consumerRecord.value().getMeasurement());
 							currentOffset = consumerRecord.offset();

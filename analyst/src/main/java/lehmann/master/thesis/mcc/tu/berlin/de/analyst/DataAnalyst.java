@@ -75,6 +75,7 @@ public class DataAnalyst {
         propsProducer.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 60);
         //linger + request timeout
         propsProducer.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, 60010);
+        propsProducer.put(ProducerConfig.ACKS_CONFIG, "all");
         this.producer = new KafkaProducer<>(propsProducer);
 
         // Subscribe to the topic.
@@ -123,9 +124,12 @@ public class DataAnalyst {
 		if(offset < 0) {
 			this.consumer.seekToBeginning(partitions);
 		}else {
+			this.consumer.seekToEnd(partitions);
 			for (TopicPartition topicPartition : partitions) {
-				this.consumer.seek(topicPartition, offset);
+				long last = this.consumer.position(topicPartition);
+				this.consumer.seek(topicPartition, Math.min(offset, last));
 			}
+			return offset;
 		}
 		
 		return offset;
@@ -191,7 +195,7 @@ public class DataAnalyst {
 								
 								final ProducerRecord<Long, String> record = new ProducerRecord<>(TOPIC_OUTPUT, warningJSON);
 					    		producer.send(record);
-					    		log.info("Send warning: " + record + " to topic: " + TOPIC_OUTPUT);
+//					    		log.info("Send warning: " + record + " to topic: " + TOPIC_OUTPUT);
 							}
 //							if(!warnings.isEmpty()) producer.flush();
 							
