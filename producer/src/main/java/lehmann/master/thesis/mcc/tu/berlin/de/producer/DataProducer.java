@@ -40,13 +40,14 @@ public class DataProducer {
         props.put(ProducerConfig.CLIENT_ID_CONFIG, "Sensor" + topic);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, LongSerializer.class.getName());
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,  RawDataEntrySerializer.class.getName());
-        props.put(ProducerConfig.LINGER_MS_CONFIG, 20);
+//        props.put(ProducerConfig.LINGER_MS_CONFIG, 20);
         props.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
-        props.put(ProducerConfig.BATCH_SIZE_CONFIG, 100);
+//        props.put(ProducerConfig.BATCH_SIZE_CONFIG, 100);
         //Newer discard any records
-        props.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
+//        props.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 5000);
         props.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
-        props.put(ProducerConfig.ACKS_CONFIG, "all");
+//        props.put(ProducerConfig.ACKS_CONFIG, "all");
+//        props.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, 1);
         producer = new KafkaProducer<>(props);
         
         this.adminConnection = new AdminConnection(server);
