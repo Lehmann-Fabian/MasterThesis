@@ -3,7 +3,9 @@ server1;w2;3;10;5;0.01
 server2;w2;3;10;5;0.01
 server3;w2;3;10;5;0.01
 server4;w2;3;10;5;0.01
+server7;w2;5;2;2;0.01
 server5;w2;2;10;1;0.01
 server6;w2;2;10;1;0.01
-server7;w2;5;2;2;0.01
+server9;w2;0;1000;0;0
 server10;w2;0;1000;0;0
+server13;w2;0;1000;0;0
