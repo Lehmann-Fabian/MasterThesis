@@ -10,12 +10,19 @@ if [ -z "$2" ]; then
     exit 100
 fi
 
+kill $(ps -auxww | grep "\bfetchResponsibilities.sh" | awk '{print$2}')
+
+cp ./orchestration/case_$1.json ./MockFog2/node-manager/run/config/orchestration.jsonc
+
 export KUBECONFIG=~/MasterThesisCode/kubespray/inventory/mycluster/artifacts/admin.conf
 
 echo "install a default pvc provisioner"
 kubectl apply -f storage/default-storage.yml
 
-kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
+#dont use online version since it is broken
+#kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
+#use old commit instead
+kubectl apply -f local-path-provisioner/deploy/local-path-storage.yaml
 
 echo "install kafka"
 kubectl apply -f ./kubernetes-kafka/00-namespace.yml
@@ -35,20 +42,20 @@ kubectl label nodes server7 monitor-patient-data=true
 
 
 #mark masters as unschedulable
-# masters=`kubectl get nodes | grep "master" | awk '{print$1}'`
+masters=`kubectl get nodes | grep "master" | awk '{print$1}'`
 
-# for master in $masters
-# do
-#     kubectl patch node $master -p "{\"spec\":{\"unschedulable\":true}}"
-# done
+for master in $masters
+do
+    kubectl patch node $master -p "{\"spec\":{\"unschedulable\":true}}"
+done
 
 
-echo "Start observation tool"
 cd kubectl
 bash deploy.sh
 cd ..
 
 
+echo "Start observation tool"
 bash start-metrics-collector.sh
 
 rm -r ./results/setup$1/$2/
@@ -60,6 +67,8 @@ bash run-pipeline.sh
 
 #start logging
 pid=`nohup bash fetchResponsibilities.sh >> ./results/setup$1/$2/logs/responsibilities.log & echo $!`
+
+echo responsibilities script has pid $pid
 
 #start experiment manipulation
 cd MockFog2
