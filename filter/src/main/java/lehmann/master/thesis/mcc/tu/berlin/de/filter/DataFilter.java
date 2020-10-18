@@ -77,6 +77,7 @@ public class DataFilter {
         propsProducer.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
 //        propsProducer.put(ProducerConfig.ACKS_CONFIG, "all");
 //        propsProducer.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, 1);
+        propsProducer.put(ProducerConfig.METADATA_MAX_AGE_CONFIG, 5000);
         this.producer = new KafkaProducer<>(propsProducer);
 
         // Subscribe to the topic.

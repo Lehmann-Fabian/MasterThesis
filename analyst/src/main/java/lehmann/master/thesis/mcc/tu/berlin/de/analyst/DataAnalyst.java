@@ -75,7 +75,8 @@ public class DataAnalyst {
 //        propsProducer.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 60);
         //linger + request timeout
         propsProducer.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
-//        propsProducer.put(ProducerConfig.ACKS_CONFIG, "all");
+        propsProducer.put(ProducerConfig.ACKS_CONFIG, "all");
+        propsProducer.put(ProducerConfig.METADATA_MAX_AGE_CONFIG, 5000);
 //        propsProducer.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, 1);
         this.producer = new KafkaProducer<>(propsProducer);
 

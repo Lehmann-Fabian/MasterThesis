@@ -48,6 +48,7 @@ public class DataProducer {
         props.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
 //        props.put(ProducerConfig.ACKS_CONFIG, "all");
 //        props.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, 1);
+        props.put(ProducerConfig.METADATA_MAX_AGE_CONFIG, 5000);
         producer = new KafkaProducer<>(props);
         
         this.adminConnection = new AdminConnection(server);
