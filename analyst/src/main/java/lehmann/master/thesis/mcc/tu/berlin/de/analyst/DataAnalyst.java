@@ -68,6 +68,13 @@ public class DataAnalyst {
         propsProducer.put(ProducerConfig.CLIENT_ID_CONFIG, TOPIC_OUTPUT);
         propsProducer.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, LongSerializer.class.getName());
         propsProducer.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,  StringSerializer.class.getName());
+        propsProducer.put(ProducerConfig.LINGER_MS_CONFIG, 20);
+        propsProducer.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
+        propsProducer.put(ProducerConfig.BATCH_SIZE_CONFIG, 100);
+        //actually time is in seconds
+        propsProducer.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 60);
+        //linger + request timeout
+        propsProducer.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, 60010);
         this.producer = new KafkaProducer<>(propsProducer);
 
         // Subscribe to the topic.
@@ -166,9 +173,9 @@ public class DataAnalyst {
 						if(currentIndex == maxValues) {
 							
 							extractValues(bufferData, data);
-							log.info("Offset: " + bufferData[0].offset() + " value: " + data[0]);
+//							log.info("Offset: " + bufferData[0].offset() + " value: " + data[0]);
 							List<String> warnings = analyst.apply(data);
-							log.info(warnings.size() + " warnings");
+//							log.info(warnings.size() + " warnings");
 							for (String warningText : warnings) {
 								
 								Warning warning = new Warning(warningText, bufferData[0].offset(), bufferData[maxValues - 1].offset(), data, bufferData[0].value().getTimestamp(), bufferData[maxValues - 1].value().getTimestamp());
@@ -186,7 +193,7 @@ public class DataAnalyst {
 					    		producer.send(record);
 					    		log.info("Send warning: " + record + " to topic: " + TOPIC_OUTPUT);
 							}
-							if(!warnings.isEmpty()) producer.flush();
+//							if(!warnings.isEmpty()) producer.flush();
 							
 							currentIndex = 0;
 							

@@ -16,6 +16,7 @@ import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.TopicPartition;
+import org.apache.kafka.common.errors.TimeoutException;
 import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.LongSerializer;
 import org.slf4j.Logger;
@@ -67,6 +68,13 @@ public class DataFilter {
         propsProducer.put(ProducerConfig.CLIENT_ID_CONFIG, TOPIC_OUTPUT);
         propsProducer.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, LongSerializer.class.getName());
         propsProducer.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,  FilteredDataEntrySerializer.class.getName());
+        propsProducer.put(ProducerConfig.LINGER_MS_CONFIG, 20);
+        propsProducer.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
+        propsProducer.put(ProducerConfig.BATCH_SIZE_CONFIG, 100);
+        //actually time is in seconds
+        propsProducer.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 60);
+        //linger + request timeout
+        propsProducer.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, 60010);
         this.producer = new KafkaProducer<>(propsProducer);
 
         // Subscribe to the topic.
@@ -146,7 +154,7 @@ public class DataFilter {
 		ArrayDeque<ConsumerRecord<Long, RawDataEntry>> buffer = new ArrayDeque<ConsumerRecord<Long, RawDataEntry>>(maxValues);
 		try {
 			
-			long i = 0;
+//			long i = 0;
 			
 			while(true) {
 				
@@ -160,7 +168,7 @@ public class DataFilter {
 					
 					if(consumerRecord.value().getTimestamp() >= highestTimestamp && consumerRecord.offset() > highestOffset) {
 						
-						i++;
+//						i++;
 						
 						if(consumerRecord.offset() != highestOffset + 1) {
 							log.error(String.format("Potentially skipped one or more records, current record with offset: %d and timestamp %d but highest timestamp was %d and highest offset was %d", 
@@ -203,13 +211,23 @@ public class DataFilter {
 							lastProcessed = currentOffset;
 							
 							final ProducerRecord<Long, FilteredDataEntry> record = new ProducerRecord<>(TOPIC_OUTPUT, output);
-				    		producer.send(record);
+				    		producer.send(record, (metadata, exception) -> {
+				    			
+				    			if(exception != null) {
+				    				log.error(exception.getMessage());
+				    				if(exception instanceof TimeoutException) {
+				    					//There seems to be no connection, Kubernetes will reschedule a new service
+				    					System.exit(100);
+				    				}
+				    			}
+				    			
+				    		});
 				    		
 				    		//Flush at least all 10 values
-				    		if(i % (10) == 0) producer.flush();
+				    		//if(i % (10) == 0) producer.flush();
 							
-							log.info(String.format("Push record to topic: " + TOPIC_OUTPUT + " : o=%d, ts=%d, m=%f", 
-									output.getOffset(), output.getTimestamp(), output.getMeasurement()));
+//							log.info(String.format("Push record to topic: " + TOPIC_OUTPUT + " : o=%d, ts=%d, m=%f", 
+//									output.getOffset(), output.getTimestamp(), output.getMeasurement()));
 						}
 						
 					} else {

@@ -17,10 +17,11 @@ TODO.txt
 **/.classpath
 **/.project
 **.log
-!results/**
+#!results/**
 **.ipynb_checkpoints/
+eval**
+results**
 kubespray
 MockFog2
-results/**
 local-path-provisioner/
 commands.txt
