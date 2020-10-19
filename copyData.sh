@@ -49,3 +49,19 @@ for pod in $pods
 do
     kubectl cp kafka/$pod:log.log ./results/setup$1/$2/logs/$pod/log.log
 done
+
+pods=`kubectl get pods -n kafka -o custom-columns=":metadata.name" | grep "\bkafka\b"`
+
+for pod in $pods
+do
+    mkdir results/setup$1/$2/logs/$pod/
+    kubectl logs $pod -n kafka >> ./results/setup$1/$2/logs/$pod/log.log
+done
+
+pods=`kubectl get pods -n kafka -o custom-columns=":metadata.name" | grep "\bzoo\b"`
+
+for pod in $pods
+do
+    mkdir results/setup$1/$2/logs/$pod/
+    kubectl logs $pod -n kafka >> ./results/setup$1/$2/logs/$pod/log.log
+done
