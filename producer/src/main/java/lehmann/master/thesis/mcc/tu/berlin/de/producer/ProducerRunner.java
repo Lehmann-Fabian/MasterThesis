@@ -25,6 +25,9 @@ public class ProducerRunner {
 	
 	public static void main(String[] args) throws Exception {
 		
+		PropertyConfigurator.configure("log4j.properties");
+		log.info("Start");
+		
 		boolean prod = false;
 		boolean checkEverything = true;
 		
@@ -42,14 +45,13 @@ public class ProducerRunner {
 			checkEverything = args[4].toLowerCase().equals("true");
 			DURATION = Integer.parseInt(args[5]);
 		}
-		System.out.println("Use server: " + BOOTSTRAP_SERVERS);
-		System.out.println("Use topic: " + TOPIC);
-		System.out.println("Run Prod: " + prod);
-		System.out.println("Inspect all: " + prod);
-		System.out.println("Run: " + DURATION + " min");
+		log.info("Use server: " + BOOTSTRAP_SERVERS);
+		log.info("Use topic: " + TOPIC);
+		log.info("Run Prod: " + prod);
+		log.info("Inspect all: " + prod);
+		log.info("Run: " + DURATION + " min");
 		
 		try {
-			PropertyConfigurator.configure("log4j.properties");
 			
 			log.info("Start");
 			

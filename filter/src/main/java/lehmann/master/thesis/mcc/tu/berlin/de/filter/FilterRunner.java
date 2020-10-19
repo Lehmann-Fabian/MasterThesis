@@ -11,6 +11,8 @@ public class FilterRunner {
     private static String BOOTSTRAP_SERVERS = "localhost:9093";
 	
 	public static void main(String[] args) throws Exception {
+		PropertyConfigurator.configure("log4j.properties");
+		log.info("Start");
 		
 		if(args.length >= 3) {
 			BOOTSTRAP_SERVERS = args[0];
@@ -23,7 +25,6 @@ public class FilterRunner {
 		}
 		
 		try {
-			PropertyConfigurator.configure("log4j.properties");
 			DataFilter dataFilter = new DataFilter(BOOTSTRAP_SERVERS, TOPIC, new MedianFilter(), 5);
 			
 			dataFilter.runFilter();

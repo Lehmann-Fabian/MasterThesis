@@ -41,6 +41,12 @@ public class ConsumerWriter <T extends DataEntry> {
         propsConsumer.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, deserializer);
         propsConsumer.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
         propsConsumer.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+        propsConsumer.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 2000);
+        
+        propsConsumer.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, 6000);
+        propsConsumer.put(ConsumerConfig.HEARTBEAT_INTERVAL_MS_CONFIG, 1000);
+        propsConsumer.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 6000);
+        propsConsumer.put(ConsumerConfig.REQUEST_TIMEOUT_MS_CONFIG, 10000);
         
         // Create the consumer using props.
         this.consumer = new KafkaConsumer<>(propsConsumer);
@@ -98,7 +104,7 @@ public class ConsumerWriter <T extends DataEntry> {
 				}catch (Exception e) {
 					log.error("Topic: " + this.TOPIC, e);
 				}finally {
-					pw.flush();
+//					pw.flush();
 				}
 				
 			}
@@ -106,7 +112,9 @@ public class ConsumerWriter <T extends DataEntry> {
 			e.printStackTrace();
 			log.error("Topic: " + this.TOPIC, e);
 		} finally {
-			if(pw != null) pw.close();
+			if(pw != null) {
+				pw.close();
+			}
 		}
 		
 		

@@ -11,6 +11,8 @@ public class AnalystRunner {
     private static String BOOTSTRAP_SERVERS = "localhost:9093";
 	
 	public static void main(String[] args) throws Exception {
+		PropertyConfigurator.configure("log4j.properties");
+		log.info("Start");
 		
 		if(args.length >= 3) {
 			BOOTSTRAP_SERVERS = args[0];
@@ -23,7 +25,6 @@ public class AnalystRunner {
 		}
 		
 		try {
-			PropertyConfigurator.configure("log4j.properties");
 			DataAnalyst dataFilter = new DataAnalyst(BOOTSTRAP_SERVERS, TOPIC, new ValueFitterAnalyst(), 1);
 			
 			dataFilter.runAnalysis();
