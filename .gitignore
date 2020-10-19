@@ -21,3 +21,6 @@ TODO.txt
 **.ipynb_checkpoints/
 kubespray
 MockFog2
+results/**
+local-path-provisioner/
+commands.txt
