@@ -52,7 +52,7 @@ public class DataFilter {
 		final Properties propsConsumer = new Properties();
 
         propsConsumer.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
-        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, TOPIC);
+//        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, TOPIC);
         propsConsumer.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, LongDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, RawDataEntryDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG,false);
@@ -63,6 +63,8 @@ public class DataFilter {
         propsConsumer.put(ConsumerConfig.HEARTBEAT_INTERVAL_MS_CONFIG, 1000);
         propsConsumer.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 6000);
         propsConsumer.put(ConsumerConfig.REQUEST_TIMEOUT_MS_CONFIG, 10000);
+        
+        propsConsumer.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, 1500);
 
         // Create the consumer using props.
         this.consumer = new KafkaConsumer<>(propsConsumer);
@@ -77,17 +79,18 @@ public class DataFilter {
         propsProducer.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
 //        propsProducer.put(ProducerConfig.BATCH_SIZE_CONFIG, 100);
         //actually time is in seconds
-//        propsProducer.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 60);
+        propsProducer.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 3000);
         //linger + request timeout
         propsProducer.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
 //        propsProducer.put(ProducerConfig.ACKS_CONFIG, "all");
-//        propsProducer.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, 1);
-        propsProducer.put(ProducerConfig.METADATA_MAX_AGE_CONFIG, 5000);
+        propsProducer.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, 1);
+        propsProducer.put(ProducerConfig.METADATA_MAX_AGE_CONFIG, 1500);
+        propsProducer.put(ProducerConfig.METADATA_MAX_IDLE_CONFIG, 1500);
         this.producer = new KafkaProducer<>(propsProducer);
 
         // Subscribe to the topic.
-        this.consumer.subscribe(Collections.singletonList(TOPIC));
-        
+        //this.consumer.subscribe(Collections.singletonList(TOPIC));
+        this.consumer.assign(Collections.singleton(new TopicPartition(this.TOPIC, 0)));
         this.zk = new AdminConnection(BOOTSTRAP_SERVERS);
 
 	}

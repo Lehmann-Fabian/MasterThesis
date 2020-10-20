@@ -34,18 +34,20 @@ public class OffsetFinder {
 
         propsConsumer.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
         //Always read from beginning
-        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, topic + Math.random());
+//        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, topic + Math.random());
         propsConsumer.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, LongDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, FilteredDataEntryDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG,false);
         propsConsumer.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
         propsConsumer.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 1);
+        propsConsumer.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, 1500);
 
         // Create the consumer using props.
         this.consumer = new KafkaConsumer<>(propsConsumer);
 
         // Subscribe to the topic.
-        this.consumer.subscribe(Collections.singletonList(topic));
+//        this.consumer.subscribe(Collections.singletonList(topic));
+        this.consumer.assign(Collections.singleton(new TopicPartition(topic, 0)));
         
 	}
 	

@@ -12,6 +12,8 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.LongDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +38,7 @@ public class ConsumerWriter <T extends DataEntry> {
 		String groupID = "ConsumerWriter_" + new Random().nextInt(Integer.MAX_VALUE);
 		
 		propsConsumer.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
-        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, groupID);
+//        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, groupID);
         propsConsumer.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, LongDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, deserializer);
         propsConsumer.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
@@ -48,11 +50,13 @@ public class ConsumerWriter <T extends DataEntry> {
         propsConsumer.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 6000);
         propsConsumer.put(ConsumerConfig.REQUEST_TIMEOUT_MS_CONFIG, 10000);
         
+        propsConsumer.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, 1500);
+        
         // Create the consumer using props.
         this.consumer = new KafkaConsumer<>(propsConsumer);
         
-        this.consumer.subscribe(Collections.singletonList(TOPIC));
-        
+//        this.consumer.subscribe(Collections.singletonList(TOPIC));
+        this.consumer.assign(Collections.singleton(new TopicPartition(this.TOPIC, 0)));
 
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
