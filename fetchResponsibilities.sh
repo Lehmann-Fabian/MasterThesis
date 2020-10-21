@@ -8,7 +8,7 @@ while true; do
     
     end=`date +%s`
     timeGone=$((end-start))
-    echo "Trial $i after $timeGone s"
+    echo "Trial $i after $timeGone s $end"
     kubectl run -i --tty --rm -n kafka debug$i --image=edenhill/kafkacat:1.6.0 --restart=Never -- -b kafka.kafka.svc.cluster.local:9092 -L
 
 
@@ -16,6 +16,6 @@ while true; do
 
     i=$[$i+1]
 
-    sleep 10s
+    sleep 1s
 
 done
