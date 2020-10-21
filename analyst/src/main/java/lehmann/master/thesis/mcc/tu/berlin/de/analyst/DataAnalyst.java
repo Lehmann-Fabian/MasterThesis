@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 
 import org.apache.kafka.clients.consumer.Consumer;
@@ -15,6 +16,8 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.Node;
+import org.apache.kafka.common.PartitionInfo;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.LongSerializer;
@@ -32,7 +35,8 @@ import lehmann.master.thesis.mcc.tu.berlin.de.analyst.data.Warning;
 public class DataAnalyst {
 	
 	private static Logger log = LoggerFactory.getLogger(DataAnalyst.class);
-	private final Consumer<Long, FilteredDataEntry> consumer;
+	private KafkaConsumer<Long, FilteredDataEntry> consumer;
+	private final Properties propsConsumer;
 	private final String TOPIC;
 	private final String TOPIC_OUTPUT;
 	private final Function<float[], List<String>> analyst;
@@ -40,6 +44,7 @@ public class DataAnalyst {
 	private final KafkaProducer<Long, String> producer;
 	private final AdminConnection zk;
 	private final String BOOTSTRAP_SERVERS;
+	private final AtomicInteger counter;
 	
 	public DataAnalyst(String BOOTSTRAP_SERVERS, String TOPIC, Function<float[], List<String>> filter, int analyseSize) {
 		
@@ -49,7 +54,7 @@ public class DataAnalyst {
 		this.analyseSize = analyseSize;
 		this.BOOTSTRAP_SERVERS = BOOTSTRAP_SERVERS;
 
-		final Properties propsConsumer = new Properties();
+		this.propsConsumer = new Properties();
 
         propsConsumer.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
 //        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, this.TOPIC);
@@ -64,6 +69,7 @@ public class DataAnalyst {
         propsConsumer.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 6000);
         propsConsumer.put(ConsumerConfig.REQUEST_TIMEOUT_MS_CONFIG, 10000);
         propsConsumer.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, 1500);
+        propsConsumer.put(ConsumerConfig.DEFAULT_API_TIMEOUT_MS_CONFIG, 3000);
 
         // Create the consumer using props.
         this.consumer = new KafkaConsumer<>(propsConsumer);
@@ -78,11 +84,11 @@ public class DataAnalyst {
         propsProducer.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
 //        propsProducer.put(ProducerConfig.BATCH_SIZE_CONFIG, 100);
         //actually time is in seconds
-        propsProducer.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 3000);
+        propsProducer.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 1000);
         //linger + request timeout
         propsProducer.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
         propsProducer.put(ProducerConfig.METADATA_MAX_AGE_CONFIG, 1500);
-        propsProducer.put(ProducerConfig.METADATA_MAX_IDLE_CONFIG, 1500);
+        propsProducer.put(ProducerConfig.METADATA_MAX_IDLE_CONFIG, 5000);
 //        propsProducer.put(ProducerConfig.ACKS_CONFIG, "all");
         propsProducer.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, 1);
         this.producer = new KafkaProducer<>(propsProducer);
@@ -91,6 +97,7 @@ public class DataAnalyst {
         this.consumer.assign(Collections.singleton(new TopicPartition(this.TOPIC, 0)));//.subscribe(Collections.singletonList(this.TOPIC));
         
         this.zk = new AdminConnection(BOOTSTRAP_SERVERS);
+        this.counter = new AtomicInteger(0);
 
 	}
 	
@@ -172,6 +179,25 @@ public class DataAnalyst {
 				
 				log.info("Got " + records.count() + " for topic: " + TOPIC);
 				
+				if(records.isEmpty()) {
+					
+					try {
+						consumer.unsubscribe();
+						TopicPartition topicPartition = new TopicPartition(this.TOPIC, 0);
+						this.consumer.assign(Collections.singleton(topicPartition));
+						this.consumer.seekToEnd(Collections.singleton(topicPartition));
+						long last = this.consumer.position(topicPartition);
+						if(highestOffset < 0) {
+							this.consumer.seekToBeginning(Collections.singleton(topicPartition));
+						}else {
+							this.consumer.seek(topicPartition, Math.min(highestOffset, last));
+						}
+					}catch (Exception e) {
+						log.error("While fetching partitions...", e);
+					}
+					
+				}
+				
 				for (ConsumerRecord<Long, FilteredDataEntry> consumerRecord : records) {
 					
 					if(consumerRecord.value().getTimestamp() >= highestTimestamp && consumerRecord.offset() > highestOffset) {
@@ -203,7 +229,14 @@ public class DataAnalyst {
 								}
 								
 								final ProducerRecord<Long, String> record = new ProducerRecord<>(TOPIC_OUTPUT, warningJSON);
-					    		producer.send(record);
+					    		producer.send(record, (metadata, exception) -> {
+					    			if(exception != null) {
+					    				log.error(exception.getMessage());
+					    			}else if(this.counter.incrementAndGet() % 200 == 0) {
+					    					log.info("Send message successfully " + metadata.offset());
+					    			}
+					    			
+					    		});
 //					    		log.info("Send warning: " + record + " to topic: " + TOPIC_OUTPUT);
 							}
 //							if(!warnings.isEmpty()) producer.flush();

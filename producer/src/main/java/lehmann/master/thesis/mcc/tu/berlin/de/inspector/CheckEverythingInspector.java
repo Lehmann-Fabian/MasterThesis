@@ -99,6 +99,8 @@ public class CheckEverythingInspector implements Inspector {
 				printWriter.println("Kafka.Offset,Kafka.Timestamp,Kafka.acktime.local,Producer.Timestamp,ProducedElements");
 				boolean interrupted = false;
 				
+				long l = 0;
+				
 				while(!producedData.isEmpty() || (!Thread.interrupted() && !interrupted)) {
 					
 					try {
@@ -115,6 +117,7 @@ public class CheckEverythingInspector implements Inspector {
 								try {
 									RecordMetadata recordMetadata = data.get();
 									line = String.format("%d,%d,%d,%d,%d", recordMetadata.offset(), recordMetadata.timestamp(), System.currentTimeMillis(), sendTimestamp, producedElements);
+									if(l++ % 200 == 0) log.info("Send message successfully " + recordMetadata.offset());
 									gotResult = true;
 								} catch (InterruptedException e) {
 									interrupted = true;

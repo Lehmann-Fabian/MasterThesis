@@ -5,14 +5,18 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Collections;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
+import java.util.Set;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.Node;
+import org.apache.kafka.common.PartitionInfo;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.LongDeserializer;
 import org.slf4j.Logger;
@@ -24,6 +28,7 @@ public class ConsumerWriter <T extends DataEntry> {
 	
 	private static Logger log = LoggerFactory.getLogger(ConsumerWriter.class);
 	private KafkaConsumer<Long, T> consumer;
+	private final Properties propsConsumer;
 	private final String outputPath;
 	private final String header;
 	private boolean writeHeader = true;
@@ -33,7 +38,7 @@ public class ConsumerWriter <T extends DataEntry> {
 		
 		this.TOPIC = TOPIC;
 		this.header = header;
-		final Properties propsConsumer = new Properties();
+		this.propsConsumer = new Properties();
 		
 		String groupID = "ConsumerWriter_" + new Random().nextInt(Integer.MAX_VALUE);
 		
@@ -51,6 +56,8 @@ public class ConsumerWriter <T extends DataEntry> {
         propsConsumer.put(ConsumerConfig.REQUEST_TIMEOUT_MS_CONFIG, 10000);
         
         propsConsumer.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, 1500);
+        
+        propsConsumer.put(ConsumerConfig.DEFAULT_API_TIMEOUT_MS_CONFIG, 3000);
         
         // Create the consumer using props.
         this.consumer = new KafkaConsumer<>(propsConsumer);
@@ -84,12 +91,34 @@ public class ConsumerWriter <T extends DataEntry> {
 			
 			boolean interrupted = false;
 			
+			long highestOffset = 0;
+			
 			while(!lastPollWasEmpty || !(interrupted = Thread.interrupted())) {
+				
 				
 				try {
 					ConsumerRecords<Long, T> records = this.consumer.poll(Duration.ofSeconds(1));
 					
 					lastPollWasEmpty = records.isEmpty();
+					
+					if(records.isEmpty()) {
+						
+						try {
+							consumer.unsubscribe();
+							TopicPartition topicPartition = new TopicPartition(this.TOPIC, 0);
+							this.consumer.assign(Collections.singleton(topicPartition));
+							this.consumer.seekToEnd(Collections.singleton(topicPartition));
+							long last = this.consumer.position(topicPartition);
+							if(highestOffset < 0) {
+								this.consumer.seekToBeginning(Collections.singleton(topicPartition));
+							}else {
+								this.consumer.seek(topicPartition, Math.min(highestOffset, last));
+							}
+						}catch (Exception e) {
+							log.error("While fetching partitions...", e);
+						}
+						
+					}
 					
 					long time = System.currentTimeMillis();
 					
@@ -97,8 +126,12 @@ public class ConsumerWriter <T extends DataEntry> {
 					
 					for (ConsumerRecord<Long, T> consumerRecord : records) {
 						
-						String line = String.format("%d,%d,%d,%s", time, consumerRecord.timestamp(), consumerRecord.offset(), consumerRecord.value().getCSVData());
-						pw.println(line);
+						if(highestOffset != consumerRecord.offset()) {
+							String line = String.format("%d,%d,%d,%s", time, consumerRecord.timestamp(), consumerRecord.offset(), consumerRecord.value().getCSVData());
+							pw.println(line);
+							
+							highestOffset = Math.max(highestOffset, consumerRecord.offset());							
+						}
 						
 					}
 				}catch (org.apache.kafka.common.errors.InterruptException e) {

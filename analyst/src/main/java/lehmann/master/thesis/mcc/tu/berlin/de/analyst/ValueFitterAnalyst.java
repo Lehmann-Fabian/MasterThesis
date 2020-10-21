@@ -20,7 +20,7 @@ public class ValueFitterAnalyst implements Function<float[], List<String>> {
 		LinkedList<String> result = new LinkedList<String>();
 		
 		for (float f : t) {
-			System.out.println(f);
+//			System.out.println(f);
 			if(f > 1.0) result.add("Was " + f + " expected a value between 0 and 1.");
 		}
 		
