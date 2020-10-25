@@ -1,5 +1,6 @@
 package lehmann.master.thesis.mcc.tu.berlin.de.producer;
 import java.util.Properties;
+import java.util.Random;
 import java.util.concurrent.Future;
 import java.util.function.Function;
 
@@ -35,22 +36,33 @@ public class DataProducer {
 		this.inspector = inspector;
 		this.durationInMs = duration * 1000 * 60;
 		
-		Properties props = new Properties();
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, server);
-        props.put(ProducerConfig.CLIENT_ID_CONFIG, "Sensor" + topic);
-        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, LongSerializer.class.getName());
-        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,  RawDataEntrySerializer.class.getName());
+		Properties propsProducer = new Properties();
+		propsProducer.put(ProducerConfig.CLIENT_ID_CONFIG, "Data-Producer-Producer" + new Random().nextInt());
+        propsProducer.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, server);
+        propsProducer.put(ProducerConfig.CLIENT_ID_CONFIG, "Sensor" + topic);
+        propsProducer.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, LongSerializer.class.getName());
+        propsProducer.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,  RawDataEntrySerializer.class.getName());
 //        props.put(ProducerConfig.LINGER_MS_CONFIG, 20);
-        props.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
+        propsProducer.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
 //        props.put(ProducerConfig.BATCH_SIZE_CONFIG, 100);
         //Newer discard any records
-        props.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 1000);
-        props.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
-//        props.put(ProducerConfig.ACKS_CONFIG, "all");
-        props.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, 1);
-        props.put(ProducerConfig.METADATA_MAX_AGE_CONFIG, 1500);
-        props.put(ProducerConfig.METADATA_MAX_IDLE_CONFIG, 5000);
-        producer = new KafkaProducer<>(props);
+        propsProducer.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 1000);
+        propsProducer.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
+        propsProducer.put(ProducerConfig.ACKS_CONFIG, "all");
+        propsProducer.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, 1);
+        propsProducer.put(ProducerConfig.METADATA_MAX_AGE_CONFIG, 1500);
+        propsProducer.put(ProducerConfig.METADATA_MAX_IDLE_CONFIG, 5000);
+        propsProducer.put(ProducerConfig.TRANSACTION_TIMEOUT_CONFIG, 2000);
+        
+        propsProducer.put(ProducerConfig.RETRY_BACKOFF_MS_CONFIG, 10);
+        propsProducer.put(ProducerConfig.RECONNECT_BACKOFF_MS_CONFIG, 10);
+        propsProducer.put(ProducerConfig.RECONNECT_BACKOFF_MAX_MS_CONFIG, 200);
+        
+        propsProducer.put(ProducerConfig.CONNECTIONS_MAX_IDLE_MS_CONFIG, 2000);
+        propsProducer.put(ProducerConfig.MAX_BLOCK_MS_CONFIG, 5000);
+        
+        propsProducer.put(ProducerConfig.METRICS_SAMPLE_WINDOW_MS_CONFIG, 5000);
+        producer = new KafkaProducer<>(propsProducer);
         
         this.adminConnection = new AdminConnection(server);
 		
@@ -68,11 +80,12 @@ public class DataProducer {
         	long i = 0;
         	//Stop after 15min
         	while(!Thread.interrupted() && time + durationInMs > System.currentTimeMillis()) {
-        		final RawDataEntry data = new RawDataEntry(System.currentTimeMillis(), getNextMeasurement.apply(i));
+        		long sendTime = System.currentTimeMillis();
+        		final RawDataEntry data = new RawDataEntry(sendTime, getNextMeasurement.apply(i));
 	    		final ProducerRecord<Long, RawDataEntry> record = new ProducerRecord<>(TOPIC, data);
 	
 	    		Future<RecordMetadata> send = producer.send(record);
-	    		inspector.addProducedRecord(System.currentTimeMillis(), send);
+	    		inspector.addProducedRecord(sendTime, send);
 //	    		log.info(String.format("New record: i = %d, ts = %d, m = %f", i, data.getTimestamp(), data.getMeasurement()));
 	    		
 	    		//Flush at least all 10 values

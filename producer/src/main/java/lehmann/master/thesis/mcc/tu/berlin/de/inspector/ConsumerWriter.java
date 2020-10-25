@@ -5,18 +5,13 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Collections;
-import java.util.List;
 import java.util.Properties;
 import java.util.Random;
-import java.util.Set;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.common.Node;
-import org.apache.kafka.common.PartitionInfo;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.LongDeserializer;
 import org.slf4j.Logger;
@@ -41,7 +36,7 @@ public class ConsumerWriter <T extends DataEntry> {
 		this.propsConsumer = new Properties();
 		
 		String groupID = "ConsumerWriter_" + new Random().nextInt(Integer.MAX_VALUE);
-		
+		propsConsumer.put(ConsumerConfig.CLIENT_ID_CONFIG, "Consumer-Writer-Consumer" + new Random().nextInt());
 		propsConsumer.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
 //        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, groupID);
         propsConsumer.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, LongDeserializer.class.getName());
@@ -57,7 +52,16 @@ public class ConsumerWriter <T extends DataEntry> {
         
         propsConsumer.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, 1500);
         
-        propsConsumer.put(ConsumerConfig.DEFAULT_API_TIMEOUT_MS_CONFIG, 3000);
+        propsConsumer.put(ConsumerConfig.DEFAULT_API_TIMEOUT_MS_CONFIG, 5000);
+        
+        
+        propsConsumer.put(ConsumerConfig.RECONNECT_BACKOFF_MS_CONFIG, 10);
+        propsConsumer.put(ConsumerConfig.RECONNECT_BACKOFF_MS_CONFIG, 10);
+        propsConsumer.put(ConsumerConfig.RECONNECT_BACKOFF_MAX_MS_CONFIG, 200);
+        
+        propsConsumer.put(ConsumerConfig.CONNECTIONS_MAX_IDLE_MS_CONFIG, 2000);
+        
+        propsConsumer.put(ConsumerConfig.METRICS_SAMPLE_WINDOW_MS_CONFIG, 5000);
         
         // Create the consumer using props.
         this.consumer = new KafkaConsumer<>(propsConsumer);
@@ -92,6 +96,7 @@ public class ConsumerWriter <T extends DataEntry> {
 			boolean interrupted = false;
 			
 			long highestOffset = 0;
+			long lastFlush = 0;
 			
 			while(!lastPollWasEmpty || !(interrupted = Thread.interrupted())) {
 				
@@ -101,24 +106,24 @@ public class ConsumerWriter <T extends DataEntry> {
 					
 					lastPollWasEmpty = records.isEmpty();
 					
-					if(records.isEmpty()) {
-						
-						try {
-							consumer.unsubscribe();
-							TopicPartition topicPartition = new TopicPartition(this.TOPIC, 0);
-							this.consumer.assign(Collections.singleton(topicPartition));
-							this.consumer.seekToEnd(Collections.singleton(topicPartition));
-							long last = this.consumer.position(topicPartition);
-							if(highestOffset < 0) {
-								this.consumer.seekToBeginning(Collections.singleton(topicPartition));
-							}else {
-								this.consumer.seek(topicPartition, Math.min(highestOffset, last));
-							}
-						}catch (Exception e) {
-							log.error("While fetching partitions...", e);
-						}
-						
-					}
+//					if(records.isEmpty()) {
+//						
+//						try {
+//							consumer.unsubscribe();
+//							TopicPartition topicPartition = new TopicPartition(this.TOPIC, 0);
+//							this.consumer.assign(Collections.singleton(topicPartition));
+//							this.consumer.seekToEnd(Collections.singleton(topicPartition));
+//							long last = this.consumer.position(topicPartition);
+//							if(highestOffset < 0) {
+//								this.consumer.seekToBeginning(Collections.singleton(topicPartition));
+//							}else {
+//								this.consumer.seek(topicPartition, Math.min(highestOffset, last));
+//							}
+//						}catch (Exception e) {
+//							log.error("While fetching partitions of " + TOPIC + "...", e);
+//						}
+//						
+//					}
 					
 					long time = System.currentTimeMillis();
 					
@@ -141,7 +146,14 @@ public class ConsumerWriter <T extends DataEntry> {
 				}catch (Exception e) {
 					log.error("Topic: " + this.TOPIC, e);
 				}finally {
-//					pw.flush();
+					if(lastFlush + 2000 < System.currentTimeMillis()) {
+						pw.flush();
+						lastFlush = System.currentTimeMillis();
+					}
+				}
+				
+				if(interrupted) {
+					Thread.currentThread().interrupt();
 				}
 				
 			}
@@ -149,6 +161,7 @@ public class ConsumerWriter <T extends DataEntry> {
 			e.printStackTrace();
 			log.error("Topic: " + this.TOPIC, e);
 		} finally {
+			log.info("Closed output for " + TOPIC);
 			if(pw != null) {
 				pw.close();
 			}

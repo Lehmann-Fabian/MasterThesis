@@ -5,6 +5,7 @@ import java.util.ArrayDeque;
 import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
@@ -56,7 +57,7 @@ public class DataFilter {
 		this.filterSize = filterSize;
 
 		this.propsConsumer = new Properties();
-
+		propsConsumer.put(ConsumerConfig.CLIENT_ID_CONFIG, "Data-Filter-Consumer" + new Random().nextInt());
         propsConsumer.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
 //        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, TOPIC);
         propsConsumer.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, LongDeserializer.class.getName());
@@ -70,13 +71,22 @@ public class DataFilter {
         propsConsumer.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 6000);
         propsConsumer.put(ConsumerConfig.REQUEST_TIMEOUT_MS_CONFIG, 10000);
         propsConsumer.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, 1500);
-        propsConsumer.put(ConsumerConfig.DEFAULT_API_TIMEOUT_MS_CONFIG, 3000);
+        propsConsumer.put(ConsumerConfig.DEFAULT_API_TIMEOUT_MS_CONFIG, 5000);
+        
+        propsConsumer.put(ConsumerConfig.RECONNECT_BACKOFF_MS_CONFIG, 10);
+        propsConsumer.put(ConsumerConfig.RECONNECT_BACKOFF_MS_CONFIG, 10);
+        propsConsumer.put(ConsumerConfig.RECONNECT_BACKOFF_MAX_MS_CONFIG, 200);
+        
+        propsConsumer.put(ConsumerConfig.CONNECTIONS_MAX_IDLE_MS_CONFIG, 2000);
+        
+        propsConsumer.put(ConsumerConfig.METRICS_SAMPLE_WINDOW_MS_CONFIG, 5000);
 
         // Create the consumer using props.
         this.consumer = new KafkaConsumer<>(propsConsumer);
         
         
         Properties propsProducer = new Properties();
+        propsProducer.put(ProducerConfig.CLIENT_ID_CONFIG, "Data-Filter-Producer" + new Random().nextInt());
         propsProducer.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
         propsProducer.put(ProducerConfig.CLIENT_ID_CONFIG, TOPIC_OUTPUT);
         propsProducer.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, LongSerializer.class.getName());
@@ -88,10 +98,20 @@ public class DataFilter {
         propsProducer.put(ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 1000);
         //linger + request timeout
         propsProducer.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, Integer.MAX_VALUE);
-//        propsProducer.put(ProducerConfig.ACKS_CONFIG, "all");
+        propsProducer.put(ProducerConfig.ACKS_CONFIG, "all");
         propsProducer.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, 1);
         propsProducer.put(ProducerConfig.METADATA_MAX_AGE_CONFIG, 1500);
         propsProducer.put(ProducerConfig.METADATA_MAX_IDLE_CONFIG, 5000);
+        propsProducer.put(ProducerConfig.TRANSACTION_TIMEOUT_CONFIG, 2000);
+        
+        propsProducer.put(ProducerConfig.RETRY_BACKOFF_MS_CONFIG, 10);
+        propsProducer.put(ProducerConfig.RECONNECT_BACKOFF_MS_CONFIG, 10);
+        propsProducer.put(ProducerConfig.RECONNECT_BACKOFF_MAX_MS_CONFIG, 200);
+        
+        propsProducer.put(ProducerConfig.CONNECTIONS_MAX_IDLE_MS_CONFIG, 2000);
+        propsProducer.put(ProducerConfig.MAX_BLOCK_MS_CONFIG, 5000);
+        
+        propsProducer.put(ProducerConfig.METRICS_SAMPLE_WINDOW_MS_CONFIG, 5000);
         this.producer = new KafkaProducer<>(propsProducer);
 
         // Subscribe to the topic.
@@ -119,6 +139,8 @@ public class DataFilter {
 			zk.createTopic(TOPIC, 1, (short) 3);
 			return -1;
 		}
+		
+		zk.close();
 		
 		log.info("New offset = " + offset + " for topic: " + TOPIC);
 		
@@ -185,24 +207,24 @@ public class DataFilter {
 				
 				log.info("Got " + records.count() + " for topic: " + TOPIC);
 				
-				if(records.isEmpty()) {
-					
-					try {
-						consumer.unsubscribe();
-						TopicPartition topicPartition = new TopicPartition(this.TOPIC, 0);
-						this.consumer.assign(Collections.singleton(topicPartition));
-						this.consumer.seekToEnd(Collections.singleton(topicPartition));
-						long last = this.consumer.position(topicPartition);
-						if(highestOffset < 0) {
-							this.consumer.seekToBeginning(Collections.singleton(topicPartition));
-						}else {
-							this.consumer.seek(topicPartition, Math.min(highestOffset, last));
-						}
-					}catch (Exception e) {
-						log.error("While fetching partitions...", e);
-					}
-					
-				}
+//				if(records.isEmpty()) {
+//					
+//					try {
+//						consumer.unsubscribe();
+//						TopicPartition topicPartition = new TopicPartition(this.TOPIC, 0);
+//						this.consumer.assign(Collections.singleton(topicPartition));
+//						this.consumer.seekToEnd(Collections.singleton(topicPartition));
+//						long last = this.consumer.position(topicPartition);
+//						if(highestOffset < 0) {
+//							this.consumer.seekToBeginning(Collections.singleton(topicPartition));
+//						}else {
+//							this.consumer.seek(topicPartition, Math.min(highestOffset, last));
+//						}
+//					}catch (Exception e) {
+//						log.error("While fetching partitions...", e);
+//					}
+//					
+//				}
 				
 				for (ConsumerRecord<Long, RawDataEntry> consumerRecord : records) {
 					
