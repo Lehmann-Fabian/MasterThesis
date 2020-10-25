@@ -24,11 +24,6 @@ kubectl apply -f storage/default-storage.yml
 #use old commit instead
 kubectl apply -f local-path-provisioner/deploy/local-path-storage.yaml
 
-echo "install kafka"
-kubectl apply -f ./kubernetes-kafka/00-namespace.yml
-
-sleep 10s
-kubectl apply -k ./kubernetes-kafka/variants/my-dev
 
 
 echo "which nodes are next to patients"
@@ -39,6 +34,21 @@ kubectl label nodes server4 monitor-patient-data=true
 kubectl label nodes server5 monitor-patient-data=true
 kubectl label nodes server6 monitor-patient-data=true
 kubectl label nodes server7 monitor-patient-data=true
+
+kubectl label nodes server8 topology.kubernetes.io/region=router-1 --overwrite
+kubectl label nodes server11 topology.kubernetes.io/region=router-1 --overwrite
+kubectl label nodes server12 topology.kubernetes.io/region=router-1 --overwrite
+
+kubectl label nodes server9 topology.kubernetes.io/region=router-2 --overwrite
+kubectl label nodes server10 topology.kubernetes.io/region=router-2 --overwrite
+kubectl label nodes server13 topology.kubernetes.io/region=router-2 --overwrite
+
+
+echo "install kafka"
+kubectl apply -f ./kubernetes-kafka/00-namespace.yml
+
+sleep 10s
+kubectl apply -k ./kubernetes-kafka/variants/my-dev
 
 
 #mark masters as unschedulable
