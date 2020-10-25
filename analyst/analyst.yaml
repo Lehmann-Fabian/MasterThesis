@@ -20,10 +20,10 @@ spec:
       containers:
       - name: analyst
         image: reh69113/masterthesis:analyst
-        imagePullPolicy: Always
+        imagePullPolicy: Never
         env:
         - name: SERVER
-          value: "kafka.kafka.svc.cluster.local:9092"
+          value: "kafka-0.kafka.kafka.svc.cluster.local:9092,kafka-1.kafka.kafka.svc.cluster.local:9092,kafka-2.kafka.kafka.svc.cluster.local:9092,kafka-3.kafka.kafka.svc.cluster.local:9092,kafka-4.kafka.kafka.svc.cluster.local:9092,kafka-5.kafka.kafka.svc.cluster.local:9092,kafka-6.kafka.kafka.svc.cluster.local:9092"
         - name: TOPIC
           valueFrom:
             fieldRef:
