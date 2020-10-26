@@ -54,7 +54,7 @@ data:
     num.replica.fetchers=2
     group.min.session.timeout.ms=0
     group.max.session.timeout.ms=2000
-    transaction.max.timeout.ms = 5000
+    transaction.max.timeout.ms = 3000
 
 
     # A comma seperated list of directories under which to store log files
