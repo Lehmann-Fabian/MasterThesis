@@ -28,6 +28,8 @@ public class ConsumerWriter <T extends DataEntry> {
 	private final String header;
 	private boolean writeHeader = true;
 	private final String TOPIC;
+	private boolean stopped = false;
+	private int remainingTrials = Integer.MAX_VALUE;
 
 	public ConsumerWriter(String BOOTSTRAP_SERVERS, String TOPIC, String deserializer, String outputFolder, String header) {
 		
@@ -45,23 +47,24 @@ public class ConsumerWriter <T extends DataEntry> {
         propsConsumer.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         propsConsumer.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 2000);
         
-        propsConsumer.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, 6000);
+        propsConsumer.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, 1000);
         propsConsumer.put(ConsumerConfig.HEARTBEAT_INTERVAL_MS_CONFIG, 1000);
-        propsConsumer.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 6000);
-        propsConsumer.put(ConsumerConfig.REQUEST_TIMEOUT_MS_CONFIG, 10000);
+        propsConsumer.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 1500);
+        propsConsumer.put(ConsumerConfig.REQUEST_TIMEOUT_MS_CONFIG, 1000);
         
         propsConsumer.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, 1500);
         
-        propsConsumer.put(ConsumerConfig.DEFAULT_API_TIMEOUT_MS_CONFIG, 5000);
+        propsConsumer.put(ConsumerConfig.DEFAULT_API_TIMEOUT_MS_CONFIG, 2000);
         
         
         propsConsumer.put(ConsumerConfig.RECONNECT_BACKOFF_MS_CONFIG, 10);
         propsConsumer.put(ConsumerConfig.RECONNECT_BACKOFF_MS_CONFIG, 10);
         propsConsumer.put(ConsumerConfig.RECONNECT_BACKOFF_MAX_MS_CONFIG, 200);
         
-        propsConsumer.put(ConsumerConfig.CONNECTIONS_MAX_IDLE_MS_CONFIG, 2000);
+        propsConsumer.put(ConsumerConfig.CONNECTIONS_MAX_IDLE_MS_CONFIG, 1500);
         
-        propsConsumer.put(ConsumerConfig.METRICS_SAMPLE_WINDOW_MS_CONFIG, 5000);
+        propsConsumer.put(ConsumerConfig.METRICS_SAMPLE_WINDOW_MS_CONFIG, 2000);
+        propsConsumer.put(ConsumerConfig.METRICS_NUM_SAMPLES_CONFIG, 1);
         
         // Create the consumer using props.
         this.consumer = new KafkaConsumer<>(propsConsumer);
@@ -93,13 +96,12 @@ public class ConsumerWriter <T extends DataEntry> {
 				
 			boolean lastPollWasEmpty = false;
 			
-			boolean interrupted = false;
-			
 			long highestOffset = 0;
 			long lastFlush = 0;
 			
-			while(!lastPollWasEmpty || !(interrupted = Thread.interrupted())) {
+			while(!lastPollWasEmpty || (!stopped || --remainingTrials > 0)) {
 				
+				if(stopped) log.info("Remaining trials for " + TOPIC + ": " + remainingTrials);
 				
 				try {
 					ConsumerRecords<Long, T> records = this.consumer.poll(Duration.ofSeconds(1));
@@ -141,8 +143,8 @@ public class ConsumerWriter <T extends DataEntry> {
 					}
 				}catch (org.apache.kafka.common.errors.InterruptException e) {
 					log.error("Topic: " + this.TOPIC, e);
-					lastPollWasEmpty = true;
-					Thread.currentThread().interrupt();
+					lastPollWasEmpty = false;
+					remainingTrials = 40;
 				}catch (Exception e) {
 					log.error("Topic: " + this.TOPIC, e);
 				}finally {
@@ -152,10 +154,6 @@ public class ConsumerWriter <T extends DataEntry> {
 					}
 				}
 				
-				if(interrupted) {
-					Thread.currentThread().interrupt();
-				}
-				
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -163,11 +161,19 @@ public class ConsumerWriter <T extends DataEntry> {
 		} finally {
 			log.info("Closed output for " + TOPIC);
 			if(pw != null) {
+				pw.flush();
 				pw.close();
 			}
+			this.consumer.close();
 		}
 		
 		
+	}
+	
+	public void stop() {
+		this.stopped = true;
+		log.info("Stopped " + TOPIC);
+		remainingTrials = 40;
 	}
 
 }

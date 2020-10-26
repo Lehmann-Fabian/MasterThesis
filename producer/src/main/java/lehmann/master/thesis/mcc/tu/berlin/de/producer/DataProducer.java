@@ -59,9 +59,10 @@ public class DataProducer {
         propsProducer.put(ProducerConfig.RECONNECT_BACKOFF_MAX_MS_CONFIG, 200);
         
         propsProducer.put(ProducerConfig.CONNECTIONS_MAX_IDLE_MS_CONFIG, 2000);
-        propsProducer.put(ProducerConfig.MAX_BLOCK_MS_CONFIG, 5000);
+        propsProducer.put(ProducerConfig.MAX_BLOCK_MS_CONFIG, 500);
         
-        propsProducer.put(ProducerConfig.METRICS_SAMPLE_WINDOW_MS_CONFIG, 5000);
+        propsProducer.put(ProducerConfig.METRICS_SAMPLE_WINDOW_MS_CONFIG, 2000);
+        propsProducer.put(ProducerConfig.METRICS_NUM_SAMPLES_CONFIG, 1);
         producer = new KafkaProducer<>(propsProducer);
         
         this.adminConnection = new AdminConnection(server);

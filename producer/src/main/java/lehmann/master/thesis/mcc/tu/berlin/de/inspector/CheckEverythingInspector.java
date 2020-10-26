@@ -11,19 +11,17 @@ import java.util.Queue;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.function.Function;
 
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import lehmann.master.thesis.mcc.tu.berlin.de.producer.SineCurveGenerator;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.SingleValueProducer;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.FilteredDataEntry;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.FilteredDataEntryDeserializer;
-import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.Triple;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.RawDataEntry;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.RawDataEntryDeserializer;
+import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.Triple;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.Warning;
 import lehmann.master.thesis.mcc.tu.berlin.de.producer.data.WarningDeserializer;
 
@@ -33,13 +31,13 @@ public class CheckEverythingInspector implements Inspector {
 	private final SingleValueProducer getNextMeasurement;
 	private final Queue<Triple> producedData =  new LinkedBlockingQueue<Triple>();
 	private long producedElements = 0;
-	private double startAmplitude;
-	private int startPeriodLength;
 	private final int frequencyInMs;
 	private HashSet<Integer> secondsToChange;
 	private final Thread[] threads = new Thread[4];
 	private final String outputFolder;
 	private final PrintWriter modelChangeWriter;
+	@SuppressWarnings("rawtypes")
+	private ConsumerWriter[] cw = new ConsumerWriter[3]; 
 
 	public CheckEverythingInspector(SingleValueProducer getNextMeasurement, int frequencyInMs, HashSet<Integer> secondsToChange, String BOOTSTRAP_SERVERS, String TOPIC, String outputPath) {
 		this.getNextMeasurement = getNextMeasurement;
@@ -67,9 +65,6 @@ public class CheckEverythingInspector implements Inspector {
 	private void init(final String BOOTSTRAP_SERVERS, final String TOPIC) {
 		
 		log.info("Init all consumer for topic: " + TOPIC);
-		
-		@SuppressWarnings("rawtypes")
-		ConsumerWriter[] cw = new ConsumerWriter[3]; 
 		
 		cw[0] = new ConsumerWriter<RawDataEntry>(BOOTSTRAP_SERVERS, TOPIC, RawDataEntryDeserializer.class.getName(), 
 				outputFolder, "Data.Timestamp,Data.Measurement");
@@ -193,10 +188,9 @@ public class CheckEverythingInspector implements Inspector {
 	@Override
 	public void close() {
 		log.warn("Stop all consumers!");
-		for (Thread thread : threads) {
-			thread.interrupt();
+		for (ConsumerWriter<?> consumerWriter : cw) {
+			consumerWriter.stop();
 		}
-		this.modelChangeWriter.close();
 		for (Thread thread : threads) {
 			try {
 				thread.join();
@@ -204,6 +198,7 @@ public class CheckEverythingInspector implements Inspector {
 				e.printStackTrace();
 			}
 		}
+		this.modelChangeWriter.close();
 	}
 
 
