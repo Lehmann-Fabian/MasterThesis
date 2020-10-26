@@ -48,9 +48,14 @@ data:
 
     replica.lag.time.max.ms=5000
     replica.socket.timeout.ms=3000
-    request.timeout.ms=3000
+    request.timeout.ms=2000
     zookeeper.session.timeout.ms=5000
     controller.socket.timeout.ms=5000
+    num.replica.fetchers=2
+    group.min.session.timeout.ms=0
+    group.max.session.timeout.ms=2000
+    transaction.max.timeout.ms = 3000
+
 
     # A comma seperated list of directories under which to store log files
     # Overrides log.dir

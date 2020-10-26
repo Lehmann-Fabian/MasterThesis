@@ -37,3 +37,4 @@ sleep 20s
 cd MockFog2
 bash destroy.sh
 cd ..
+exit 0

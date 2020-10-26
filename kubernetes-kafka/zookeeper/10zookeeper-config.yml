@@ -23,11 +23,11 @@ data:
 
   zookeeper.properties: |
     4lw.commands.whitelist=ruok
-    tickTime=2000
+    tickTime=130
     dataDir=/var/lib/zookeeper/data
     dataLogDir=/var/lib/zookeeper/log
     clientPort=2181
-    maxClientCnxns=3
+    maxClientCnxns=0
     initLimit=5
     syncLimit=2
     tcpKeepAlive=true
@@ -37,6 +37,7 @@ data:
     server.3=pzoo-2.pzoo:2888:3888:participant
     server.4=zoo-0.zoo:2888:3888:participant
     server.5=zoo-1.zoo:2888:3888:participant
+    maxSessionTimeout=3000
 
   log4j.properties: |-
     log4j.rootLogger=INFO, stdout

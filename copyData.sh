@@ -22,12 +22,16 @@ do
 
 done
 
+echo copy producer data
+
 pods=`kubectl get pods -n kafka -o custom-columns=":metadata.name" | grep "\bproducer\b"`
 
 for pod in $pods
 do
     kubectl cp kafka/$pod:data ./results/setup$1/$2/data/$pod
 done
+
+echo copy analyst logs
 
 pods=`kubectl get pods -n kafka -o custom-columns=":metadata.name" | grep "\banalyst\b"`
 
@@ -36,12 +40,16 @@ do
     kubectl cp kafka/$pod:log.log ./results/setup$1/$2/logs/$pod/log.log
 done
 
+echo copy filter logs
+
 pods=`kubectl get pods -n kafka -o custom-columns=":metadata.name" | grep "\bfilter\b"`
 
 for pod in $pods
 do
     kubectl cp kafka/$pod:log.log ./results/setup$1/$2/logs/$pod/log.log
 done
+
+echo copy producer logs
 
 pods=`kubectl get pods -n kafka -o custom-columns=":metadata.name" | grep "\bproducer\b"`
 
@@ -50,6 +58,8 @@ do
     kubectl cp kafka/$pod:log.log ./results/setup$1/$2/logs/$pod/log.log
 done
 
+echo copy kafka logs
+
 pods=`kubectl get pods -n kafka -o custom-columns=":metadata.name" | grep "\bkafka\b"`
 
 for pod in $pods
@@ -57,6 +67,8 @@ do
     mkdir results/setup$1/$2/logs/$pod/
     kubectl logs $pod -n kafka >> ./results/setup$1/$2/logs/$pod/log.log
 done
+
+echo copy zookeaper logs
 
 pods=`kubectl get pods -n kafka -o custom-columns=":metadata.name" | grep "\bzoo\b"`
 

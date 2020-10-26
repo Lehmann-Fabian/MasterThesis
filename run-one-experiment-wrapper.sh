@@ -9,3 +9,5 @@ while [[ "$code" -eq 124 ]]; do
     code=$?
 
 done
+
+exit 0
