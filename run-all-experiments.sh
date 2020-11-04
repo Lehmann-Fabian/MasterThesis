@@ -2,46 +2,21 @@
 
 mkdir -p ./results/runs/
 
-experiment=1
+experimentStart=0
 counter=0
 
 
-while [ "$counter" -lt 1 ]; do
+experiment=$experimentStart
 
-    echo exp $experiment run $counter
+while [ "$experiment" -lt 4 ]; do
+    while [ "$counter" -lt 3 ]; do
 
-    bash run-one-experiment-wrapper.sh $experiment $counter
-    
+        echo exp $experiment run $counter
 
-    counter=$((counter+1))
-done
+        bash run-one-experiment-wrapper.sh $experiment $counter
+        counter=$((counter+1))
 
-exit 0
-
-experiment=3
-counter=0
-
-
-while [ "$counter" -lt 2 ]; do
-
-    echo exp $experiment run $counter
-
-    bash run-one-experiment-wrapper.sh $experiment $counter
-    
-
-    counter=$((counter+1))
-done
-
-experiment=0
-counter=0
-
-
-while [ "$counter" -lt 3 ]; do
-
-    echo exp $experiment run $counter
-
-    bash run-one-experiment-wrapper.sh $experiment $counter
-    
-
-    counter=$((counter+1))
+    done
+    experiment=$((experiment+1))
+    counter=0
 done
