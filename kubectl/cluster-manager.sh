@@ -12,7 +12,7 @@ checkState(){
 
       if [ "$podState" = "Terminating" ]; then
           echo "Wrong state $podRunning $pod"
-          kubectl delete pod $pod -n kafka --force
+          kubectl delete pod $pod -n kafka  --grace-period=0 --force
           echo "Triggered restart!"
           sleep 5s
       fi
@@ -29,7 +29,7 @@ checkState(){
       for pod in $pods
       do
         if [ "$pod" != "${pod#analyst}" ] || [ "$pod" != "${pod#filter}" ]; then
-          kubectl delete pod $pod -n kafka --force
+          kubectl delete pod $pod -n kafka  --grace-period=0 --force
           echo "Triggered restart!"
           sleep 5s
         fi
