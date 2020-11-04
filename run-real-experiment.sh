@@ -60,7 +60,7 @@ do
 done
 
 
-cd kubectl
+cd manager
 bash deploy.sh
 cd ..
 
