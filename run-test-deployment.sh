@@ -4,18 +4,31 @@
 kind delete cluster --name testcluster
 kind create cluster --name=testcluster --config=./kind/config.yaml --wait 5m
 
-sleep 10s
-
-kubectl apply -f ./kubernetes-kafka/00-namespace.yml
-
-sleep 10s
-kubectl apply -k ./kubernetes-kafka/variants/my-dev
 
 kubectl label nodes testcluster-worker monitor-patient-data=true
 kubectl label nodes testcluster-worker2 monitor-patient-data=true
 kubectl label nodes testcluster-worker3 monitor-patient-data=true
 kubectl label nodes testcluster-worker4 monitor-patient-data=true
 kubectl label nodes testcluster-worker5 monitor-patient-data=true
+
+
+kubectl label nodes testcluster-worker topology.kubernetes.io/region=a --overwrite
+kubectl label nodes testcluster-worker2 topology.kubernetes.io/region=a --overwrite
+kubectl label nodes testcluster-worker3 topology.kubernetes.io/region=a --overwrite
+kubectl label nodes testcluster-worker4 topology.kubernetes.io/region=b --overwrite
+kubectl label nodes testcluster-worker5 topology.kubernetes.io/region=b --overwrite
+#kubectl label nodes testcluster-worker6 topology.kubernetes.io/region=c --overwrite
+#kubectl label nodes testcluster-worker7 topology.kubernetes.io/region=c --overwrite
+
+
+sleep 3s
+
+kubectl apply -f ./kubernetes-kafka/00-namespace.yml
+
+sleep 3s
+kubectl apply -k ./kubernetes-kafka/variants/my-dev
+
+exit 0
 
 cd kubectl
 bash deploy.sh
