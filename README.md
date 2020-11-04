@@ -1,31 +1,30 @@
 # Master's Thesis - Fabian Lehmann
 
-### Experiments
-Before you run the experiments: <br>
-
-```cd <project's root directory>```<br>
-```git clone https://github.com/rancher/local-path-provisioner.git```<br>
-```cd local-path-provisioner```<br>
+## Experiments
+#### Before you run the experiments: <br>
+1. ```cd <project's root directory>```<br>
+1. ```git clone https://github.com/rancher/local-path-provisioner.git```<br>
+1. ```cd local-path-provisioner```<br>
 The newest version had a bug; we use an older commit:<br>
-```git checkout c3192ec3f19f2bdb84a13a830d4160f44963c92c```<br>
-```cd ..```<br>
+1. ```git checkout c3192ec3f19f2bdb84a13a830d4160f44963c92c```<br>
+1. ```cd ..```<br>
 Furthermore, we need to clone our Kubespray's fork and MockFog2's fork into this project's root directory<br>
-```git clone https://github.com/Lehmann-Fabian/kubespray.git```<br>
-```git clone https://github.com/Lehmann-Fabian/MockFog2.git```<br>
-```cd MockFog2```<br>
+1. ```git clone https://github.com/Lehmann-Fabian/kubespray.git```<br>
+1. ```git clone https://github.com/Lehmann-Fabian/MockFog2.git```<br>
+1. ```cd MockFog2```<br>
 Switch to our development branch:<br>
-```git checkout development```<br>
+1. ```git checkout development```<br>
 
-To change an experiment's parameters:<br>
-Chnage parameters in `//<project's root>/orchestration/case<experiment ID>.csv` (experiments start with 0)<br>
+#### To change an experiment's parameters:<br>
+Change parameters in `//<project's root>/orchestration/case<experiment ID>.csv` (experiments start with 0)<br>
 Start Jupyter-Lab<br>
 - open /notebooks/Generator
 - Run all cells
 
-Run the experiments:<br>
+#### Run the experiments:<br>
 ```bash run-all-experiments.sh```<br>
 
-### Evaluation
+## Evaluation
 To run the evaluation, you need to install dictdiffer:<br>
 ```pip install dictdiffer```<br>
 Start Jupyter-Lab<br>
