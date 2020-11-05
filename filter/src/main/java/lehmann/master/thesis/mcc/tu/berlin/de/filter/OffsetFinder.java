@@ -3,6 +3,7 @@ package lehmann.master.thesis.mcc.tu.berlin.de.filter;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
+import java.util.Random;
 import java.util.Set;
 
 import org.apache.kafka.clients.consumer.Consumer;
@@ -31,21 +32,40 @@ public class OffsetFinder {
 		this.zk = zk;
 		
 		final Properties propsConsumer = new Properties();
-
+		propsConsumer.put(ConsumerConfig.CLIENT_ID_CONFIG, "Data-Filter-Offset-Finder-Consumer" + new Random().nextInt());
         propsConsumer.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
         //Always read from beginning
-        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, topic + Math.random());
+//        propsConsumer.put(ConsumerConfig.GROUP_ID_CONFIG, topic + Math.random());
         propsConsumer.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, LongDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, FilteredDataEntryDeserializer.class.getName());
         propsConsumer.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG,false);
         propsConsumer.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
         propsConsumer.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 1);
+        propsConsumer.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, 1500);
+        
+        propsConsumer.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, 1000);
+        propsConsumer.put(ConsumerConfig.HEARTBEAT_INTERVAL_MS_CONFIG, 1000);
+        propsConsumer.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 1500);
+        propsConsumer.put(ConsumerConfig.REQUEST_TIMEOUT_MS_CONFIG, 1000);
+        propsConsumer.put(ConsumerConfig.METADATA_MAX_AGE_CONFIG, 1500);
+        propsConsumer.put(ConsumerConfig.DEFAULT_API_TIMEOUT_MS_CONFIG, 2000);
 
+        
+        propsConsumer.put(ConsumerConfig.RECONNECT_BACKOFF_MS_CONFIG, 10);
+        propsConsumer.put(ConsumerConfig.RECONNECT_BACKOFF_MS_CONFIG, 10);
+        propsConsumer.put(ConsumerConfig.RECONNECT_BACKOFF_MAX_MS_CONFIG, 200);
+        
+        propsConsumer.put(ConsumerConfig.CONNECTIONS_MAX_IDLE_MS_CONFIG, 1500);
+        
+        propsConsumer.put(ConsumerConfig.METRICS_SAMPLE_WINDOW_MS_CONFIG, 2000);
+        propsConsumer.put(ConsumerConfig.METRICS_NUM_SAMPLES_CONFIG, 1);
+        
         // Create the consumer using props.
         this.consumer = new KafkaConsumer<>(propsConsumer);
 
         // Subscribe to the topic.
-        this.consumer.subscribe(Collections.singletonList(topic));
+//        this.consumer.subscribe(Collections.singletonList(topic));
+        this.consumer.assign(Collections.singleton(new TopicPartition(topic, 0)));
         
 	}
 	
@@ -56,7 +76,7 @@ public class OffsetFinder {
 	public long getOffset() {
 		if(!zk.hasTopic(topic)) {
 			//TODO replica
-			zk.createTopic(topic, 1, (short) 1);
+			zk.createTopic(topic, 1, (short) 3);
 			return -1;
 		}
 		
@@ -98,6 +118,10 @@ public class OffsetFinder {
 			}
 		}
 		throw new IllegalStateException("Something happened");
+	}
+	
+	public void close() {
+		new Thread(() -> this.consumer.close()).start();
 	}
 
 }

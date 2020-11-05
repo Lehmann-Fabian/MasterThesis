@@ -1,0 +1,810 @@
+[2020-10-26 20:31:10,487] INFO Registered kafka:type=kafka.Log4jController MBean (kafka.utils.Log4jControllerRegistration$)
+[2020-10-26 20:31:11,186] INFO Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation (org.apache.zookeeper.common.X509Util)
+[2020-10-26 20:31:11,252] INFO Registered signal handlers for TERM, INT, HUP (org.apache.kafka.common.utils.LoggingSignalHandler)
+[2020-10-26 20:31:11,258] INFO starting (kafka.server.KafkaServer)
+[2020-10-26 20:31:11,259] INFO Connecting to zookeeper on zookeeper:2181 (kafka.server.KafkaServer)
+[2020-10-26 20:31:11,293] INFO [ZooKeeperClient Kafka server] Initializing a new session to zookeeper:2181. (kafka.zookeeper.ZooKeeperClient)
+[2020-10-26 20:31:11,308] INFO Client environment:zookeeper.version=3.5.7-f0fdd52973d373ffd9c86b81d99842dc2c7f660e, built on 02/10/2020 11:30 GMT (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,310] INFO Client environment:host.name=kafka-6.kafka.kafka.svc.cluster.local (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,310] INFO Client environment:java.version=11.0.7 (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,310] INFO Client environment:java.vendor=AdoptOpenJDK (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,310] INFO Client environment:java.home=/opt/java/openjdk (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,311] INFO Client environment:java.class.path=/opt/kafka/libs/extensions/*:/opt/kafka/libs/activation-1.1.1.jar:/opt/kafka/libs/aopalliance-repackaged-2.5.0.jar:/opt/kafka/libs/argparse4j-0.7.0.jar:/opt/kafka/libs/audience-annotations-0.5.0.jar:/opt/kafka/libs/commons-cli-1.4.jar:/opt/kafka/libs/commons-lang3-3.8.1.jar:/opt/kafka/libs/connect-api-2.5.0.jar:/opt/kafka/libs/connect-basic-auth-extension-2.5.0.jar:/opt/kafka/libs/connect-file-2.5.0.jar:/opt/kafka/libs/connect-json-2.5.0.jar:/opt/kafka/libs/connect-mirror-2.5.0.jar:/opt/kafka/libs/connect-mirror-client-2.5.0.jar:/opt/kafka/libs/connect-runtime-2.5.0.jar:/opt/kafka/libs/connect-transforms-2.5.0.jar:/opt/kafka/libs/hk2-api-2.5.0.jar:/opt/kafka/libs/hk2-locator-2.5.0.jar:/opt/kafka/libs/hk2-utils-2.5.0.jar:/opt/kafka/libs/jackson-annotations-2.10.2.jar:/opt/kafka/libs/jackson-core-2.10.2.jar:/opt/kafka/libs/jackson-databind-2.10.2.jar:/opt/kafka/libs/jackson-dataformat-csv-2.10.2.jar:/opt/kafka/libs/jackson-datatype-jdk8-2.10.2.jar:/opt/kafka/libs/jackson-jaxrs-base-2.10.2.jar:/opt/kafka/libs/jackson-jaxrs-json-provider-2.10.2.jar:/opt/kafka/libs/jackson-module-jaxb-annotations-2.10.2.jar:/opt/kafka/libs/jackson-module-paranamer-2.10.2.jar:/opt/kafka/libs/jackson-module-scala_2.12-2.10.2.jar:/opt/kafka/libs/jakarta.activation-api-1.2.1.jar:/opt/kafka/libs/jakarta.annotation-api-1.3.4.jar:/opt/kafka/libs/jakarta.inject-2.5.0.jar:/opt/kafka/libs/jakarta.ws.rs-api-2.1.5.jar:/opt/kafka/libs/jakarta.xml.bind-api-2.3.2.jar:/opt/kafka/libs/javassist-3.22.0-CR2.jar:/opt/kafka/libs/javassist-3.26.0-GA.jar:/opt/kafka/libs/javax.servlet-api-3.1.0.jar:/opt/kafka/libs/javax.ws.rs-api-2.1.1.jar:/opt/kafka/libs/jaxb-api-2.3.0.jar:/opt/kafka/libs/jersey-client-2.28.jar:/opt/kafka/libs/jersey-common-2.28.jar:/opt/kafka/libs/jersey-container-servlet-2.28.jar:/opt/kafka/libs/jersey-container-servlet-core-2.28.jar:/opt/kafka/libs/jersey-hk2-2.28.jar:/opt/kafka/libs/jersey-media-jaxb-2.28.jar:/opt/kafka/libs/jersey-server-2.28.jar:/opt/kafka/libs/jetty-client-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-continuation-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-http-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-io-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-security-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-server-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-servlet-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-servlets-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-util-9.4.24.v20191120.jar:/opt/kafka/libs/jopt-simple-5.0.4.jar:/opt/kafka/libs/kafka-clients-2.5.0.jar:/opt/kafka/libs/kafka-log4j-appender-2.5.0.jar:/opt/kafka/libs/kafka-streams-2.5.0.jar:/opt/kafka/libs/kafka-streams-examples-2.5.0.jar:/opt/kafka/libs/kafka-streams-scala_2.12-2.5.0.jar:/opt/kafka/libs/kafka-streams-test-utils-2.5.0.jar:/opt/kafka/libs/kafka-tools-2.5.0.jar:/opt/kafka/libs/kafka_2.12-2.5.0-javadoc.jar:/opt/kafka/libs/kafka_2.12-2.5.0-scaladoc.jar:/opt/kafka/libs/kafka_2.12-2.5.0-sources.jar:/opt/kafka/libs/kafka_2.12-2.5.0-test-sources.jar:/opt/kafka/libs/kafka_2.12-2.5.0-test.jar:/opt/kafka/libs/kafka_2.12-2.5.0.jar:/opt/kafka/libs/log4j-1.2.17.jar:/opt/kafka/libs/lz4-java-1.7.1.jar:/opt/kafka/libs/maven-artifact-3.6.3.jar:/opt/kafka/libs/metrics-core-2.2.0.jar:/opt/kafka/libs/netty-buffer-4.1.45.Final.jar:/opt/kafka/libs/netty-codec-4.1.45.Final.jar:/opt/kafka/libs/netty-common-4.1.45.Final.jar:/opt/kafka/libs/netty-handler-4.1.45.Final.jar:/opt/kafka/libs/netty-resolver-4.1.45.Final.jar:/opt/kafka/libs/netty-transport-4.1.45.Final.jar:/opt/kafka/libs/netty-transport-native-epoll-4.1.45.Final.jar:/opt/kafka/libs/netty-transport-native-unix-common-4.1.45.Final.jar:/opt/kafka/libs/osgi-resource-locator-1.0.1.jar:/opt/kafka/libs/paranamer-2.8.jar:/opt/kafka/libs/plexus-utils-3.2.1.jar:/opt/kafka/libs/reflections-0.9.12.jar:/opt/kafka/libs/rocksdbjni-5.18.3.jar:/opt/kafka/libs/scala-java8-compat_2.12-0.9.0.jar:/opt/kafka/libs/scala-collection-compat_2.12-2.1.3.jar:/opt/kafka/libs/scala-library-2.12.10.jar:/opt/kafka/libs/scala-logging_2.12-3.9.2.jar:/opt/kafka/libs/scala-reflect-2.12.10.jar:/opt/kafka/libs/slf4j-api-1.7.30.jar:/opt/kafka/libs/slf4j-log4j12-1.7.30.jar:/opt/kafka/libs/snappy-java-1.1.7.3.jar:/opt/kafka/libs/validation-api-2.0.1.Final.jar:/opt/kafka/libs/zookeeper-3.5.7.jar:/opt/kafka/libs/zookeeper-jute-3.5.7.jar:/opt/kafka/libs/zstd-jni-1.4.4-7.jar (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,311] INFO Client environment:java.library.path=/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,311] INFO Client environment:java.io.tmpdir=/tmp (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,311] INFO Client environment:java.compiler=<NA> (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,312] INFO Client environment:os.name=Linux (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,312] INFO Client environment:os.arch=amd64 (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,312] INFO Client environment:os.version=4.14.193-149.317.amzn2.x86_64 (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,312] INFO Client environment:user.name=nonroot (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,312] INFO Client environment:user.home=/home/nonroot (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,312] INFO Client environment:user.dir=/opt/kafka (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,312] INFO Client environment:os.memory.free=983MB (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,312] INFO Client environment:os.memory.max=1024MB (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,312] INFO Client environment:os.memory.total=1024MB (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,315] INFO Initiating client connection, connectString=zookeeper:2181 sessionTimeout=5000 watcher=kafka.zookeeper.ZooKeeperClient$ZooKeeperClientWatcher$@2fd953a6 (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:31:11,324] INFO jute.maxbuffer value is 4194304 Bytes (org.apache.zookeeper.ClientCnxnSocket)
+[2020-10-26 20:31:11,331] INFO zookeeper.request.timeout value is 0. feature enabled= (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:31:11,336] INFO [ZooKeeperClient Kafka server] Waiting until connected. (kafka.zookeeper.ZooKeeperClient)
+[2020-10-26 20:31:11,390] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:31:11,407] INFO Socket connection established, initiating session, client: /10.233.109.4:49854, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:31:11,463] INFO Session establishment complete on server zookeeper/10.233.57.152:2181, sessionid = 0x300001a58cd0004, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:31:11,466] INFO [ZooKeeperClient Kafka server] Connected. (kafka.zookeeper.ZooKeeperClient)
+[2020-10-26 20:31:12,361] INFO Cluster ID = _d87QJhDSPG2ypD2nhferA (kafka.server.KafkaServer)
+[2020-10-26 20:31:12,367] WARN No meta.properties file under dir /var/lib/kafka/data/topics/meta.properties (kafka.server.BrokerMetadataCheckpoint)
+[2020-10-26 20:31:12,695] INFO KafkaConfig values: 
+	advertised.host.name = null
+	advertised.listeners = PLAINTEXT://:9092,OUTSIDE://10.0.2.51:32406
+	advertised.port = null
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = 
+	auto.create.topics.enable = false
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.id = 6
+	broker.id.generation.enable = true
+	broker.rack = null
+	client.quota.callback.class = null
+	compression.type = producer
+	connection.failed.authentication.delay.ms = 100
+	connections.max.idle.ms = 600000
+	connections.max.reauth.ms = 0
+	control.plane.listener.name = null
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 5000
+	controller.socket.timeout.ms = 5000
+	create.topic.policy.class.name = null
+	default.replication.factor = 3
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	fetch.max.bytes = 57671680
+	fetch.purgatory.purge.interval.requests = 1000
+	group.initial.rebalance.delay.ms = 0
+	group.max.session.timeout.ms = 2000
+	group.max.size = 2147483647
+	group.min.session.timeout.ms = 0
+	host.name = 
+	inter.broker.listener.name = PLAINTEXT
+	inter.broker.protocol.version = 2.5-IV0
+	kafka.metrics.polling.interval.secs = 10
+	kafka.metrics.reporters = []
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL,OUTSIDE:PLAINTEXT
+	listeners = PLAINTEXT://:9092,OUTSIDE://:9094
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 134217728
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.max.compaction.lag.ms = 9223372036854775807
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = /tmp/kafka-logs
+	log.dirs = /var/lib/kafka/data/topics
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.message.downconversion.enable = true
+	log.message.format.version = 2.5-IV0
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = -1
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 60000
+	max.connections = 2147483647
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	message.max.bytes = 1048588
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 2
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 1
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 2
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 10080
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 2
+	offsets.topic.replication.factor = 5
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	port = 9092
+	principal.builder.class = null
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.consumer.default = 9223372036854775807
+	quota.producer.default = 9223372036854775807
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	replica.lag.time.max.ms = 5000
+	replica.selector.class = null
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 3000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 2000
+	reserved.broker.max.id = 1000
+	sasl.client.callback.handler.class = null
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	sasl.server.callback.handler.class = null
+	security.inter.broker.protocol = PLAINTEXT
+	security.providers = null
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.principal.mapping.rules = DEFAULT
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 10000
+	transaction.max.timeout.ms = 3000
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 2
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 3
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	zookeeper.clientCnxnSocket = null
+	zookeeper.connect = zookeeper:2181
+	zookeeper.connection.timeout.ms = 3000
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.session.timeout.ms = 5000
+	zookeeper.set.acl = false
+	zookeeper.ssl.cipher.suites = null
+	zookeeper.ssl.client.enable = false
+	zookeeper.ssl.crl.enable = false
+	zookeeper.ssl.enabled.protocols = null
+	zookeeper.ssl.endpoint.identification.algorithm = HTTPS
+	zookeeper.ssl.keystore.location = null
+	zookeeper.ssl.keystore.password = null
+	zookeeper.ssl.keystore.type = null
+	zookeeper.ssl.ocsp.enable = false
+	zookeeper.ssl.protocol = TLSv1.2
+	zookeeper.ssl.truststore.location = null
+	zookeeper.ssl.truststore.password = null
+	zookeeper.ssl.truststore.type = null
+	zookeeper.sync.time.ms = 2000
+ (kafka.server.KafkaConfig)
+[2020-10-26 20:31:12,725] INFO KafkaConfig values: 
+	advertised.host.name = null
+	advertised.listeners = PLAINTEXT://:9092,OUTSIDE://10.0.2.51:32406
+	advertised.port = null
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = 
+	auto.create.topics.enable = false
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.id = 6
+	broker.id.generation.enable = true
+	broker.rack = null
+	client.quota.callback.class = null
+	compression.type = producer
+	connection.failed.authentication.delay.ms = 100
+	connections.max.idle.ms = 600000
+	connections.max.reauth.ms = 0
+	control.plane.listener.name = null
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 5000
+	controller.socket.timeout.ms = 5000
+	create.topic.policy.class.name = null
+	default.replication.factor = 3
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	fetch.max.bytes = 57671680
+	fetch.purgatory.purge.interval.requests = 1000
+	group.initial.rebalance.delay.ms = 0
+	group.max.session.timeout.ms = 2000
+	group.max.size = 2147483647
+	group.min.session.timeout.ms = 0
+	host.name = 
+	inter.broker.listener.name = PLAINTEXT
+	inter.broker.protocol.version = 2.5-IV0
+	kafka.metrics.polling.interval.secs = 10
+	kafka.metrics.reporters = []
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL,OUTSIDE:PLAINTEXT
+	listeners = PLAINTEXT://:9092,OUTSIDE://:9094
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 134217728
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.max.compaction.lag.ms = 9223372036854775807
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = /tmp/kafka-logs
+	log.dirs = /var/lib/kafka/data/topics
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.message.downconversion.enable = true
+	log.message.format.version = 2.5-IV0
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = -1
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 60000
+	max.connections = 2147483647
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	message.max.bytes = 1048588
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 2
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 1
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 2
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 10080
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 2
+	offsets.topic.replication.factor = 5
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	port = 9092
+	principal.builder.class = null
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.consumer.default = 9223372036854775807
+	quota.producer.default = 9223372036854775807
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	replica.lag.time.max.ms = 5000
+	replica.selector.class = null
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 3000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 2000
+	reserved.broker.max.id = 1000
+	sasl.client.callback.handler.class = null
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	sasl.server.callback.handler.class = null
+	security.inter.broker.protocol = PLAINTEXT
+	security.providers = null
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.principal.mapping.rules = DEFAULT
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 10000
+	transaction.max.timeout.ms = 3000
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 2
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 3
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	zookeeper.clientCnxnSocket = null
+	zookeeper.connect = zookeeper:2181
+	zookeeper.connection.timeout.ms = 3000
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.session.timeout.ms = 5000
+	zookeeper.set.acl = false
+	zookeeper.ssl.cipher.suites = null
+	zookeeper.ssl.client.enable = false
+	zookeeper.ssl.crl.enable = false
+	zookeeper.ssl.enabled.protocols = null
+	zookeeper.ssl.endpoint.identification.algorithm = HTTPS
+	zookeeper.ssl.keystore.location = null
+	zookeeper.ssl.keystore.password = null
+	zookeeper.ssl.keystore.type = null
+	zookeeper.ssl.ocsp.enable = false
+	zookeeper.ssl.protocol = TLSv1.2
+	zookeeper.ssl.truststore.location = null
+	zookeeper.ssl.truststore.password = null
+	zookeeper.ssl.truststore.type = null
+	zookeeper.sync.time.ms = 2000
+ (kafka.server.KafkaConfig)
+[2020-10-26 20:31:12,771] INFO [ThrottledChannelReaper-Fetch]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2020-10-26 20:31:12,777] INFO [ThrottledChannelReaper-Produce]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2020-10-26 20:31:12,781] INFO [ThrottledChannelReaper-Request]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2020-10-26 20:31:12,819] INFO Log directory /var/lib/kafka/data/topics not found, creating it. (kafka.log.LogManager)
+[2020-10-26 20:31:12,824] INFO Loading logs. (kafka.log.LogManager)
+[2020-10-26 20:31:12,834] INFO Logs loading complete in 9 ms. (kafka.log.LogManager)
+[2020-10-26 20:31:12,853] INFO Starting log cleanup with a period of 300000 ms. (kafka.log.LogManager)
+[2020-10-26 20:31:12,855] INFO Starting log flusher with a default period of 9223372036854775807 ms. (kafka.log.LogManager)
+[2020-10-26 20:31:13,426] INFO Awaiting socket connections on 0.0.0.0:9092. (kafka.network.Acceptor)
+[2020-10-26 20:31:13,505] INFO [SocketServer brokerId=6] Created data-plane acceptor and processors for endpoint : EndPoint(null,9092,ListenerName(PLAINTEXT),PLAINTEXT) (kafka.network.SocketServer)
+[2020-10-26 20:31:13,525] INFO Awaiting socket connections on 0.0.0.0:9094. (kafka.network.Acceptor)
+[2020-10-26 20:31:13,542] INFO [SocketServer brokerId=6] Created data-plane acceptor and processors for endpoint : EndPoint(null,9094,ListenerName(OUTSIDE),PLAINTEXT) (kafka.network.SocketServer)
+[2020-10-26 20:31:13,543] INFO [SocketServer brokerId=6] Started 2 acceptor threads for data-plane (kafka.network.SocketServer)
+[2020-10-26 20:31:13,577] INFO [ExpirationReaper-6-Produce]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 20:31:13,577] INFO [ExpirationReaper-6-Fetch]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 20:31:13,594] INFO [ExpirationReaper-6-DeleteRecords]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 20:31:13,594] INFO [ExpirationReaper-6-ElectLeader]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 20:31:13,625] INFO [LogDirFailureHandler]: Starting (kafka.server.ReplicaManager$LogDirFailureHandler)
+[2020-10-26 20:31:13,723] INFO Creating /brokers/ids/6 (is it secure? false) (kafka.zk.KafkaZkClient)
+[2020-10-26 20:31:13,754] INFO Stat of the created znode at /brokers/ids/6 is: 4294967411,4294967411,1603744273739,1603744273739,1,0,0,216172895272763396,294,0,4294967411
+ (kafka.zk.KafkaZkClient)
+[2020-10-26 20:31:13,755] INFO Registered broker 6 at path /brokers/ids/6 with addresses: ArrayBuffer(EndPoint(kafka-6.kafka.kafka.svc.cluster.local,9092,ListenerName(PLAINTEXT),PLAINTEXT), EndPoint(10.0.2.51,32406,ListenerName(OUTSIDE),PLAINTEXT)), czxid (broker epoch): 4294967411 (kafka.zk.KafkaZkClient)
+[2020-10-26 20:31:13,838] INFO [ExpirationReaper-6-topic]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 20:31:13,849] INFO [ExpirationReaper-6-Heartbeat]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 20:31:13,857] INFO [ExpirationReaper-6-Rebalance]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 20:31:13,893] INFO [GroupCoordinator 6]: Starting up. (kafka.coordinator.group.GroupCoordinator)
+[2020-10-26 20:31:13,894] INFO [GroupCoordinator 6]: Startup complete. (kafka.coordinator.group.GroupCoordinator)
+[2020-10-26 20:31:13,903] INFO [GroupMetadataManager brokerId=6] Removed 0 expired offsets in 10 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2020-10-26 20:31:13,931] INFO [ProducerId Manager 6]: Acquired new producerId block (brokerId:6,blockStartProducerId:5000,blockEndProducerId:5999) by writing to Zk with path version 6 (kafka.coordinator.transaction.ProducerIdManager)
+[2020-10-26 20:31:13,973] INFO [TransactionCoordinator id=6] Starting up. (kafka.coordinator.transaction.TransactionCoordinator)
+[2020-10-26 20:31:13,978] INFO [Transaction Marker Channel Manager 6]: Starting (kafka.coordinator.transaction.TransactionMarkerChannelManager)
+[2020-10-26 20:31:13,978] INFO [TransactionCoordinator id=6] Startup complete. (kafka.coordinator.transaction.TransactionCoordinator)
+[2020-10-26 20:31:14,006] INFO [ExpirationReaper-6-AlterAcls]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 20:31:14,042] INFO [/config/changes-event-process-thread]: Starting (kafka.common.ZkNodeChangeNotificationListener$ChangeEventProcessThread)
+[2020-10-26 20:31:14,132] INFO [SocketServer brokerId=6] Started data-plane processors for 2 acceptors (kafka.network.SocketServer)
+[2020-10-26 20:31:14,146] INFO Kafka version: 2.5.0 (org.apache.kafka.common.utils.AppInfoParser)
+[2020-10-26 20:31:14,146] INFO Kafka commitId: 66563e712b0b9f84 (org.apache.kafka.common.utils.AppInfoParser)
+[2020-10-26 20:31:14,146] INFO Kafka startTimeMs: 1603744274134 (org.apache.kafka.common.utils.AppInfoParser)
+[2020-10-26 20:31:14,150] INFO [KafkaServer id=6] started (kafka.server.KafkaServer)
+[2020-10-26 20:33:45,926] INFO [Log partition=t2_filtered-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 20:33:45,933] INFO [Log partition=t2_filtered-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 46 ms (kafka.log.Log)
+[2020-10-26 20:33:45,936] INFO Created log for partition t2_filtered-0 in /var/lib/kafka/data/topics/t2_filtered-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 20:33:45,942] INFO [Partition t2_filtered-0 broker=6] No checkpointed highwatermark is found for partition t2_filtered-0 (kafka.cluster.Partition)
+[2020-10-26 20:33:45,943] INFO [Partition t2_filtered-0 broker=6] Log loaded for partition t2_filtered-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 20:33:45,945] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t2_filtered-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:33:45,975] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 3 for partitions Map(t2_filtered-0 -> (offset=0, leaderEpoch=0)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:33:45,985] INFO [ReplicaFetcher replicaId=6, leaderId=3, fetcherId=0] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:33:45,989] INFO [ReplicaFetcher replicaId=6, leaderId=3, fetcherId=0] Truncating partition t2_filtered-0 to local high watermark 0 (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:33:45,991] INFO [Log partition=t2_filtered-0, dir=/var/lib/kafka/data/topics] Truncating to 0 has no effect as the largest offset in the log is -1 (kafka.log.Log)
+[2020-10-26 20:33:47,306] INFO [Log partition=t3_warnings-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 20:33:47,306] INFO [Log partition=t3_warnings-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 2 ms (kafka.log.Log)
+[2020-10-26 20:33:47,307] INFO Created log for partition t3_warnings-0 in /var/lib/kafka/data/topics/t3_warnings-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 20:33:47,307] INFO [Partition t3_warnings-0 broker=6] No checkpointed highwatermark is found for partition t3_warnings-0 (kafka.cluster.Partition)
+[2020-10-26 20:33:47,308] INFO [Partition t3_warnings-0 broker=6] Log loaded for partition t3_warnings-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 20:33:47,315] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t3_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:33:47,321] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 4 for partitions Map(t3_warnings-0 -> (offset=0, leaderEpoch=0)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:33:47,323] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=1] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:33:47,323] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=1] Truncating partition t3_warnings-0 to local high watermark 0 (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:33:47,323] INFO [Log partition=t3_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 0 has no effect as the largest offset in the log is -1 (kafka.log.Log)
+[2020-10-26 20:33:57,644] INFO [Log partition=t7_warnings-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 20:33:57,644] INFO [Log partition=t7_warnings-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 2 ms (kafka.log.Log)
+[2020-10-26 20:33:57,645] INFO Created log for partition t7_warnings-0 in /var/lib/kafka/data/topics/t7_warnings-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 20:33:57,646] INFO [Partition t7_warnings-0 broker=6] No checkpointed highwatermark is found for partition t7_warnings-0 (kafka.cluster.Partition)
+[2020-10-26 20:33:57,646] INFO [Partition t7_warnings-0 broker=6] Log loaded for partition t7_warnings-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 20:33:57,646] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t7_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:33:57,647] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 4 for partitions Map(t7_warnings-0 -> (offset=0, leaderEpoch=0)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:33:57,726] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=1] Truncating partition t7_warnings-0 to local high watermark 0 (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:33:57,727] INFO [Log partition=t7_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 0 has no effect as the largest offset in the log is -1 (kafka.log.Log)
+[2020-10-26 20:34:49,384] INFO [Log partition=t1-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 20:34:49,384] INFO [Log partition=t1-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 1 ms (kafka.log.Log)
+[2020-10-26 20:34:49,386] INFO Created log for partition t1-0 in /var/lib/kafka/data/topics/t1-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 20:34:49,386] INFO [Partition t1-0 broker=6] No checkpointed highwatermark is found for partition t1-0 (kafka.cluster.Partition)
+[2020-10-26 20:34:49,386] INFO [Partition t1-0 broker=6] Log loaded for partition t1-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 20:34:49,386] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t1-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:34:49,389] INFO [ReplicaFetcher replicaId=6, leaderId=0, fetcherId=1] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:34:49,390] INFO [ReplicaFetcher replicaId=6, leaderId=0, fetcherId=1] Truncating partition t1-0 to local high watermark 0 (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:34:49,390] INFO [Log partition=t1-0, dir=/var/lib/kafka/data/topics] Truncating to 0 has no effect as the largest offset in the log is -1 (kafka.log.Log)
+[2020-10-26 20:34:49,389] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 0 for partitions Map(t1-0 -> (offset=0, leaderEpoch=0)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:34:52,040] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t2-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:34:52,055] INFO [Log partition=t2-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 20:34:52,056] INFO [Log partition=t2-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 2 ms (kafka.log.Log)
+[2020-10-26 20:34:52,057] INFO Created log for partition t2-0 in /var/lib/kafka/data/topics/t2-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 20:34:52,057] INFO [Partition t2-0 broker=6] No checkpointed highwatermark is found for partition t2-0 (kafka.cluster.Partition)
+[2020-10-26 20:34:52,057] INFO [Partition t2-0 broker=6] Log loaded for partition t2-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 20:34:52,064] INFO [Partition t2-0 broker=6] t2-0 starts at leader epoch 0 from offset 0 with high watermark 0. Previous leader epoch was -1. (kafka.cluster.Partition)
+[2020-10-26 20:35:01,839] INFO [Log partition=t6-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 20:35:01,839] INFO [Log partition=t6-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 2 ms (kafka.log.Log)
+[2020-10-26 20:35:01,840] INFO Created log for partition t6-0 in /var/lib/kafka/data/topics/t6-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 20:35:01,841] INFO [Partition t6-0 broker=6] No checkpointed highwatermark is found for partition t6-0 (kafka.cluster.Partition)
+[2020-10-26 20:35:01,841] INFO [Partition t6-0 broker=6] Log loaded for partition t6-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 20:35:01,842] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t6-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:35:01,845] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 2 for partitions Map(t6-0 -> (offset=0, leaderEpoch=0)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:35:01,847] INFO [ReplicaFetcher replicaId=6, leaderId=2, fetcherId=0] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:35:01,847] INFO [ReplicaFetcher replicaId=6, leaderId=2, fetcherId=0] Truncating partition t6-0 to local high watermark 0 (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:35:01,848] INFO [Log partition=t6-0, dir=/var/lib/kafka/data/topics] Truncating to 0 has no effect as the largest offset in the log is -1 (kafka.log.Log)
+[2020-10-26 20:41:13,893] INFO [GroupMetadataManager brokerId=6] Removed 0 expired offsets in 0 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2020-10-26 20:46:20,283] INFO [ReplicaFetcher replicaId=6, leaderId=0, fetcherId=1] Partition t1-0 has an older epoch (0) than the current leader. Will await the new LeaderAndIsr state before resuming fetching. (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:46:20,284] WARN [ReplicaFetcher replicaId=6, leaderId=0, fetcherId=1] Partition t1-0 marked as failed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:46:20,401] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=1] Partition t3_warnings-0 has an older epoch (0) than the current leader. Will await the new LeaderAndIsr state before resuming fetching. (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:46:20,401] WARN [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=1] Partition t3_warnings-0 marked as failed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:46:20,445] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t2-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:46:20,446] INFO [Partition t2-0 broker=6] t2-0 starts at leader epoch 1 from offset 124977 with high watermark 124880. Previous leader epoch was 0. (kafka.cluster.Partition)
+[2020-10-26 20:46:20,465] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t3_warnings-0, t1-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:46:20,468] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 0 for partitions Map(t1-0 -> (offset=123982, leaderEpoch=1)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:46:20,468] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 4 for partitions Map(t3_warnings-0 -> (offset=2424, leaderEpoch=1)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:46:20,486] INFO [Log partition=t1-0, dir=/var/lib/kafka/data/topics] Truncating to 124212 has no effect as the largest offset in the log is 124211 (kafka.log.Log)
+[2020-10-26 20:46:20,514] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t6-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:46:20,522] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 4 for partitions Map(t6-0 -> (offset=124858, leaderEpoch=2)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:46:20,523] INFO [ReplicaFetcher replicaId=6, leaderId=2, fetcherId=0] Shutting down (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:46:20,532] INFO [ReplicaFetcher replicaId=6, leaderId=2, fetcherId=0] Error sending fetch request (sessionId=968465347, epoch=55803) to node 2: {}. (org.apache.kafka.clients.FetchSessionHandler)
+java.io.IOException: Client was shutdown before response was read
+	at org.apache.kafka.clients.NetworkClientUtils.sendAndReceive(NetworkClientUtils.java:109)
+	at kafka.server.ReplicaFetcherBlockingSend.sendRequest(ReplicaFetcherBlockingSend.scala:108)
+	at kafka.server.ReplicaFetcherThread.fetchFromLeader(ReplicaFetcherThread.scala:206)
+	at kafka.server.AbstractFetcherThread.processFetchRequest(AbstractFetcherThread.scala:300)
+	at kafka.server.AbstractFetcherThread.$anonfun$maybeFetch$3(AbstractFetcherThread.scala:135)
+	at kafka.server.AbstractFetcherThread.maybeFetch(AbstractFetcherThread.scala:134)
+	at kafka.server.AbstractFetcherThread.doWork(AbstractFetcherThread.scala:117)
+	at kafka.utils.ShutdownableThread.run(ShutdownableThread.scala:96)
+[2020-10-26 20:46:20,534] INFO [ReplicaFetcher replicaId=6, leaderId=2, fetcherId=0] Stopped (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:46:20,538] INFO [ReplicaFetcher replicaId=6, leaderId=2, fetcherId=0] Shutdown completed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:46:20,543] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=0] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:46:20,551] INFO [Log partition=t6-0, dir=/var/lib/kafka/data/topics] Truncating to 124858 has no effect as the largest offset in the log is 124857 (kafka.log.Log)
+[2020-10-26 20:46:20,904] INFO [Log partition=t3_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 2424 has no effect as the largest offset in the log is 2423 (kafka.log.Log)
+[2020-10-26 20:46:39,185] INFO Unable to read additional data from server sessionid 0x300001a58cd0004, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:46:41,341] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:46:41,356] INFO Socket connection established, initiating session, client: /10.233.109.4:56638, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:46:41,380] INFO Session establishment complete on server zookeeper/10.233.57.152:2181, sessionid = 0x300001a58cd0004, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:05,398] INFO Unable to read additional data from server sessionid 0x300001a58cd0004, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:07,438] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:10,441] WARN Client session timed out, have not heard from server in 4943ms for sessionid 0x300001a58cd0004 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:10,442] INFO Client session timed out, have not heard from server in 4943ms for sessionid 0x300001a58cd0004, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:11,498] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=0] Partition t6-0 has an older epoch (2) than the current leader. Will await the new LeaderAndIsr state before resuming fetching. (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:11,499] WARN [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=0] Partition t6-0 marked as failed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:11,807] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=1] Partition t3_warnings-0 has an older epoch (1) than the current leader. Will await the new LeaderAndIsr state before resuming fetching. (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:11,808] WARN [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=1] Partition t3_warnings-0 marked as failed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:11,808] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=1] Partition t7_warnings-0 has an older epoch (0) than the current leader. Will await the new LeaderAndIsr state before resuming fetching. (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:11,808] WARN [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=1] Partition t7_warnings-0 marked as failed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:12,126] INFO [ReplicaFetcher replicaId=6, leaderId=3, fetcherId=0] Partition t2_filtered-0 has an older epoch (0) than the current leader. Will await the new LeaderAndIsr state before resuming fetching. (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:12,127] WARN [ReplicaFetcher replicaId=6, leaderId=3, fetcherId=0] Partition t2_filtered-0 marked as failed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:13,444] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:13,459] INFO Socket connection established, initiating session, client: /10.233.109.4:56802, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:13,474] WARN Unable to reconnect to ZooKeeper service, session 0x300001a58cd0004 has expired (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:13,474] INFO Unable to reconnect to ZooKeeper service, session 0x300001a58cd0004 has expired, closing socket connection (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:13,475] INFO EventThread shut down for session: 0x300001a58cd0004 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:13,476] INFO [ZooKeeperClient Kafka server] Session expired. (kafka.zookeeper.ZooKeeperClient)
+[2020-10-26 20:47:13,481] INFO [ZooKeeperClient Kafka server] Initializing a new session to zookeeper:2181. (kafka.zookeeper.ZooKeeperClient)
+[2020-10-26 20:47:13,481] INFO Initiating client connection, connectString=zookeeper:2181 sessionTimeout=5000 watcher=kafka.zookeeper.ZooKeeperClient$ZooKeeperClientWatcher$@2fd953a6 (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 20:47:13,482] INFO jute.maxbuffer value is 4194304 Bytes (org.apache.zookeeper.ClientCnxnSocket)
+[2020-10-26 20:47:13,482] INFO zookeeper.request.timeout value is 0. feature enabled= (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:13,489] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:13,490] INFO Creating /brokers/ids/6 (is it secure? false) (kafka.zk.KafkaZkClient)
+[2020-10-26 20:47:13,505] INFO Socket connection established, initiating session, client: /10.233.109.4:56804, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:13,539] INFO Session establishment complete on server zookeeper/10.233.57.152:2181, sessionid = 0x20000291be30005, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:13,581] INFO Stat of the created znode at /brokers/ids/6 is: 12884901997,12884901997,1603745233551,1603745233551,1,0,0,144115364637376517,294,0,12884901997
+ (kafka.zk.KafkaZkClient)
+[2020-10-26 20:47:13,581] INFO Registered broker 6 at path /brokers/ids/6 with addresses: ArrayBuffer(EndPoint(kafka-6.kafka.kafka.svc.cluster.local,9092,ListenerName(PLAINTEXT),PLAINTEXT), EndPoint(10.0.2.51,32406,ListenerName(OUTSIDE),PLAINTEXT)), czxid (broker epoch): 12884901997 (kafka.zk.KafkaZkClient)
+[2020-10-26 20:47:13,704] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t7_warnings-0, t6-0, t3_warnings-0, t2-0, t2_filtered-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:47:13,706] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 4 for partitions Map(t2_filtered-0 -> (offset=135499, leaderEpoch=3), t6-0 -> (offset=135242, leaderEpoch=3)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:47:13,707] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 3 for partitions Map(t2-0 -> (offset=135860, leaderEpoch=4)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:47:13,707] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 4 for partitions Map(t3_warnings-0 -> (offset=2424, leaderEpoch=2), t7_warnings-0 -> (offset=2727, leaderEpoch=2)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:47:13,718] INFO [Log partition=t6-0, dir=/var/lib/kafka/data/topics] Truncating to 135242 has no effect as the largest offset in the log is 135241 (kafka.log.Log)
+[2020-10-26 20:47:13,718] INFO [Log partition=t3_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 2424 has no effect as the largest offset in the log is 2423 (kafka.log.Log)
+[2020-10-26 20:47:13,718] INFO [Log partition=t7_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 2727 has no effect as the largest offset in the log is 2726 (kafka.log.Log)
+[2020-10-26 20:47:13,719] INFO [Log partition=t2_filtered-0, dir=/var/lib/kafka/data/topics] Truncating to offset 135499 (kafka.log.Log)
+[2020-10-26 20:47:13,721] INFO [Log partition=t2_filtered-0, dir=/var/lib/kafka/data/topics] Scheduling segments for deletion List() (kafka.log.Log)
+[2020-10-26 20:47:13,725] INFO [Log partition=t2_filtered-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 135499 with message format version 2 (kafka.log.Log)
+[2020-10-26 20:47:13,726] INFO [ProducerStateManager partition=t2_filtered-0] Writing producer snapshot at offset 135499 (kafka.log.ProducerStateManager)
+[2020-10-26 20:47:13,727] INFO [Log partition=t2-0, dir=/var/lib/kafka/data/topics] Truncating to offset 135860 (kafka.log.Log)
+[2020-10-26 20:47:13,728] INFO [Log partition=t2-0, dir=/var/lib/kafka/data/topics] Scheduling segments for deletion List() (kafka.log.Log)
+[2020-10-26 20:47:13,728] INFO [Log partition=t2-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 135860 with message format version 2 (kafka.log.Log)
+[2020-10-26 20:47:13,729] INFO [ProducerStateManager partition=t2-0] Writing producer snapshot at offset 135860 (kafka.log.ProducerStateManager)
+[2020-10-26 20:47:13,732] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t1-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:47:13,732] INFO [Partition t1-0 broker=6] t1-0 starts at leader epoch 4 from offset 135973 with high watermark 135968. Previous leader epoch was 1. (kafka.cluster.Partition)
+[2020-10-26 20:47:13,734] INFO [ReplicaFetcher replicaId=6, leaderId=0, fetcherId=1] Shutting down (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:13,735] INFO [ReplicaFetcher replicaId=6, leaderId=0, fetcherId=1] Error sending fetch request (sessionId=1962579376, epoch=914) to node 0: {}. (org.apache.kafka.clients.FetchSessionHandler)
+java.io.IOException: Client was shutdown before response was read
+	at org.apache.kafka.clients.NetworkClientUtils.sendAndReceive(NetworkClientUtils.java:109)
+	at kafka.server.ReplicaFetcherBlockingSend.sendRequest(ReplicaFetcherBlockingSend.scala:108)
+	at kafka.server.ReplicaFetcherThread.fetchFromLeader(ReplicaFetcherThread.scala:206)
+	at kafka.server.AbstractFetcherThread.processFetchRequest(AbstractFetcherThread.scala:300)
+	at kafka.server.AbstractFetcherThread.$anonfun$maybeFetch$3(AbstractFetcherThread.scala:135)
+	at kafka.server.AbstractFetcherThread.maybeFetch(AbstractFetcherThread.scala:134)
+	at kafka.server.AbstractFetcherThread.doWork(AbstractFetcherThread.scala:117)
+	at kafka.utils.ShutdownableThread.run(ShutdownableThread.scala:96)
+[2020-10-26 20:47:13,736] INFO [ReplicaFetcher replicaId=6, leaderId=0, fetcherId=1] Shutdown completed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:13,736] INFO [ReplicaFetcher replicaId=6, leaderId=0, fetcherId=1] Stopped (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:13,764] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:13,790] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:13,816] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:13,843] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:13,879] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:13,904] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:13,929] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:13,953] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:13,978] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,014] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,044] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,069] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,096] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,122] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,378] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,413] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,437] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,464] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,488] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,513] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,538] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,563] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,588] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,612] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,638] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,666] ERROR [ReplicaManager broker=6] Error processing append operation on partition t1-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(6) is insufficient to satisfy the min.isr requirement of 2 for partition t1-0
+[2020-10-26 20:47:14,817] INFO [Partition t1-0 broker=6] Expanding ISR from 6 to 6,0 (kafka.cluster.Partition)
+[2020-10-26 20:47:15,111] INFO [Partition t1-0 broker=6] ISR updated to [6,0] and zkVersion updated to [5] (kafka.cluster.Partition)
+[2020-10-26 20:47:16,800] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t1-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:47:16,803] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 0 for partitions Map(t1-0 -> (offset=136292, leaderEpoch=5)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:47:16,806] INFO [ReplicaFetcher replicaId=6, leaderId=0, fetcherId=1] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:16,851] INFO [Log partition=t1-0, dir=/var/lib/kafka/data/topics] Truncating to 136492 has no effect as the largest offset in the log is 136491 (kafka.log.Log)
+[2020-10-26 20:47:17,070] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=0] Partition t2_filtered-0 has an older epoch (3) than the current leader. Will await the new LeaderAndIsr state before resuming fetching. (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:17,070] WARN [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=0] Partition t2_filtered-0 marked as failed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:17,085] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t2-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:47:17,086] INFO [Partition t2-0 broker=6] t2-0 starts at leader epoch 5 from offset 136754 with high watermark 136754. Previous leader epoch was 4. (kafka.cluster.Partition)
+[2020-10-26 20:47:17,088] INFO [ReplicaFetcher replicaId=6, leaderId=3, fetcherId=0] Shutting down (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:17,089] INFO [ReplicaFetcher replicaId=6, leaderId=3, fetcherId=0] Error sending fetch request (sessionId=1749258055, epoch=30) to node 3: {}. (org.apache.kafka.clients.FetchSessionHandler)
+java.io.IOException: Client was shutdown before response was read
+	at org.apache.kafka.clients.NetworkClientUtils.sendAndReceive(NetworkClientUtils.java:109)
+	at kafka.server.ReplicaFetcherBlockingSend.sendRequest(ReplicaFetcherBlockingSend.scala:108)
+	at kafka.server.ReplicaFetcherThread.fetchFromLeader(ReplicaFetcherThread.scala:206)
+	at kafka.server.AbstractFetcherThread.processFetchRequest(AbstractFetcherThread.scala:300)
+	at kafka.server.AbstractFetcherThread.$anonfun$maybeFetch$3(AbstractFetcherThread.scala:135)
+	at kafka.server.AbstractFetcherThread.maybeFetch(AbstractFetcherThread.scala:134)
+	at kafka.server.AbstractFetcherThread.doWork(AbstractFetcherThread.scala:117)
+	at kafka.utils.ShutdownableThread.run(ShutdownableThread.scala:96)
+[2020-10-26 20:47:17,090] INFO [ReplicaFetcher replicaId=6, leaderId=3, fetcherId=0] Stopped (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:17,090] INFO [ReplicaFetcher replicaId=6, leaderId=3, fetcherId=0] Shutdown completed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:17,112] WARN Client session timed out, have not heard from server in 2001ms for sessionid 0x20000291be30005 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:17,112] INFO Client session timed out, have not heard from server in 2001ms for sessionid 0x20000291be30005, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:17,115] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t2_filtered-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:47:17,121] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 3 for partitions Map(t2_filtered-0 -> (offset=136568, leaderEpoch=4)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:47:17,122] INFO [ReplicaFetcher replicaId=6, leaderId=3, fetcherId=0] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:47:17,213] INFO [ZooKeeperClient Kafka server] Waiting until connected. (kafka.zookeeper.ZooKeeperClient)
+[2020-10-26 20:47:17,213] INFO [ZooKeeperClient Kafka server] Connected. (kafka.zookeeper.ZooKeeperClient)
+[2020-10-26 20:47:18,189] INFO [Log partition=t2_filtered-0, dir=/var/lib/kafka/data/topics] Truncating to 136568 has no effect as the largest offset in the log is 136567 (kafka.log.Log)
+[2020-10-26 20:47:18,220] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:18,234] INFO Socket connection established, initiating session, client: /10.233.109.4:56830, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:47:18,249] INFO Session establishment complete on server zookeeper/10.233.57.152:2181, sessionid = 0x20000291be30005, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:08,104] INFO Unable to read additional data from server sessionid 0x20000291be30005, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:09,647] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:09,662] INFO Socket connection established, initiating session, client: /10.233.109.4:57192, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:09,688] INFO Session establishment complete on server zookeeper/10.233.57.152:2181, sessionid = 0x20000291be30005, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:13,723] INFO [Log partition=t2_filtered-0, dir=/var/lib/kafka/data/topics] Deleting segments List() (kafka.log.Log)
+[2020-10-26 20:48:13,729] INFO [Log partition=t2-0, dir=/var/lib/kafka/data/topics] Deleting segments List() (kafka.log.Log)
+[2020-10-26 20:48:38,195] INFO Unable to read additional data from server sessionid 0x20000291be30005, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:39,493] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:40,523] INFO Socket connection established, initiating session, client: /10.233.109.4:57416, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:40,915] WARN Session 0x20000291be30005 for server zookeeper/10.233.57.152:2181, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.io.IOException: Connection reset by peer
+	at java.base/sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at java.base/sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at java.base/sun.nio.ch.IOUtil.read(Unknown Source)
+	at java.base/sun.nio.ch.IOUtil.read(Unknown Source)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:75)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:363)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1223)
+[2020-10-26 20:48:42,566] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:42,580] INFO Socket connection established, initiating session, client: /10.233.109.4:57440, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:42,595] INFO Unable to read additional data from server sessionid 0x20000291be30005, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:44,339] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:44,354] INFO Socket connection established, initiating session, client: /10.233.109.4:57452, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:44,370] INFO Unable to read additional data from server sessionid 0x20000291be30005, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:46,135] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:46,149] INFO Socket connection established, initiating session, client: /10.233.109.4:57478, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:46,164] INFO Unable to read additional data from server sessionid 0x20000291be30005, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:47,599] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:47,614] INFO Socket connection established, initiating session, client: /10.233.109.4:57488, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:47,629] INFO Session establishment complete on server zookeeper/10.233.57.152:2181, sessionid = 0x20000291be30005, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:50,674] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=1] Partition t7_warnings-0 has an older epoch (2) than the current leader. Will await the new LeaderAndIsr state before resuming fetching. (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:48:50,675] WARN [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=1] Partition t7_warnings-0 marked as failed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:48:50,805] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t7_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:48:50,806] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 4 for partitions Map(t7_warnings-0 -> (offset=3078, leaderEpoch=3)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:48:51,199] INFO [Log partition=t7_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 3078 has no effect as the largest offset in the log is 3077 (kafka.log.Log)
+[2020-10-26 20:48:53,787] INFO Unable to read additional data from server sessionid 0x20000291be30005, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:55,308] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:55,322] INFO Socket connection established, initiating session, client: /10.233.109.4:57546, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:48:55,346] INFO Session establishment complete on server zookeeper/10.233.57.152:2181, sessionid = 0x20000291be30005, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:49:14,265] INFO Unable to read additional data from server sessionid 0x20000291be30005, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:49:16,757] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:49:16,771] INFO Socket connection established, initiating session, client: /10.233.109.4:57708, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:49:16,786] INFO Session establishment complete on server zookeeper/10.233.57.152:2181, sessionid = 0x20000291be30005, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:51:13,893] INFO [GroupMetadataManager brokerId=6] Removed 0 expired offsets in 0 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2020-10-26 20:51:46,468] INFO [Partition t2-0 broker=6] Expanding ISR from 3,6 to 3,6,2 (kafka.cluster.Partition)
+[2020-10-26 20:51:46,490] INFO [Partition t2-0 broker=6] ISR updated to [3,6,2] and zkVersion updated to [7] (kafka.cluster.Partition)
+[2020-10-26 20:52:17,137] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=0] Partition t6-0 has an older epoch (3) than the current leader. Will await the new LeaderAndIsr state before resuming fetching. (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:52:17,137] WARN [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=0] Partition t6-0 marked as failed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:52:17,141] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t6-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:52:17,144] INFO [ReplicaFetcher replicaId=6, leaderId=2, fetcherId=0] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:52:17,144] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 2 for partitions Map(t6-0 -> (offset=196416, leaderEpoch=4)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:52:17,144] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=0] Shutting down (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:52:17,145] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=0] Stopped (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:52:17,145] INFO [ReplicaFetcher replicaId=6, leaderId=4, fetcherId=0] Shutdown completed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 20:52:17,163] INFO [Log partition=t6-0, dir=/var/lib/kafka/data/topics] Truncating to offset 196416 (kafka.log.Log)
+[2020-10-26 20:52:17,163] INFO [Log partition=t6-0, dir=/var/lib/kafka/data/topics] Scheduling segments for deletion List() (kafka.log.Log)
+[2020-10-26 20:52:17,170] INFO [Log partition=t6-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 196416 with message format version 2 (kafka.log.Log)
+[2020-10-26 20:52:17,171] INFO [ProducerStateManager partition=t6-0] Writing producer snapshot at offset 196416 (kafka.log.ProducerStateManager)
+[2020-10-26 20:53:17,164] INFO [Log partition=t6-0, dir=/var/lib/kafka/data/topics] Deleting segments List() (kafka.log.Log)
+[2020-10-26 20:56:08,664] INFO Unable to read additional data from server sessionid 0x20000291be30005, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:10,190] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:10,200] INFO Socket connection established, initiating session, client: /10.233.109.4:60958, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:10,211] INFO Unable to read additional data from server sessionid 0x20000291be30005, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:11,357] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:11,366] INFO Socket connection established, initiating session, client: /10.233.109.4:60970, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:11,373] INFO Unable to read additional data from server sessionid 0x20000291be30005, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:12,998] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:13,007] INFO Socket connection established, initiating session, client: /10.233.109.4:60982, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:13,025] INFO Unable to read additional data from server sessionid 0x20000291be30005, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:15,062] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:15,069] INFO Socket connection established, initiating session, client: /10.233.109.4:32776, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:15,085] INFO Unable to read additional data from server sessionid 0x20000291be30005, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:17,053] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:17,062] INFO Socket connection established, initiating session, client: /10.233.109.4:32796, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:56:17,084] INFO Session establishment complete on server zookeeper/10.233.57.152:2181, sessionid = 0x20000291be30005, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:57:19,599] INFO Unable to read additional data from server sessionid 0x20000291be30005, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:57:21,715] INFO Opening socket connection to server zookeeper/10.233.57.152:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:57:21,724] INFO Socket connection established, initiating session, client: /10.233.109.4:33210, server: zookeeper/10.233.57.152:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:57:21,746] INFO Session establishment complete on server zookeeper/10.233.57.152:2181, sessionid = 0x20000291be30005, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 20:57:21,783] INFO [ReplicaFetcherManager on broker 6] Removed fetcher for partitions Set(t7_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:57:21,791] INFO [ReplicaFetcherManager on broker 6] Added fetcher to broker 4 for partitions Map(t7_warnings-0 -> (offset=4747, leaderEpoch=4)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 20:57:22,182] INFO [Log partition=t7_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 4747 has no effect as the largest offset in the log is 4746 (kafka.log.Log)
+[2020-10-26 21:01:13,893] INFO [GroupMetadataManager brokerId=6] Removed 0 expired offsets in 0 milliseconds. (kafka.coordinator.group.GroupMetadataManager)

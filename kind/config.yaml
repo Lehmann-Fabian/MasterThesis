@@ -29,3 +29,7 @@ nodes:
   extraPortMappings:
   - hostPort: 31117
     containerPort: 31111
+- role: worker
+  extraPortMappings:
+  - hostPort: 31118
+    containerPort: 31111

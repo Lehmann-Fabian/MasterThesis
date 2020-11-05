@@ -1,0 +1,15 @@
+﻿from;to;delay;rate;loss;corrupt
+server1;w1;2;10;1;0.01
+server2;w1;2;10;1;0.01
+server3;w1;2;10;1;0.01
+server4;w1;2;10;1;0.01
+server7;w1;3;10;1.5;0.01
+server8;w1;0;1000;0;0
+server11;w1;0;1000;0;0
+server12;w1;0;1000;0;0
+server5;w2;2;10;1;0.01
+server6;w2;2;10;1;0.01
+server9;w2;0;1000;0;0
+server10;w2;0;1000;0;0
+server13;w2;0;1000;0;0
+w1;w2;0;1000;0;0

@@ -22,6 +22,9 @@ public class AdminConnection {
 	public AdminConnection(String BOOTSTRAP_SERVERS) {
 		Properties config = new Properties();
 	    config.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
+	    config.put(AdminClientConfig.DEFAULT_API_TIMEOUT_MS_CONFIG, 5000);
+	    config.put(AdminClientConfig.METADATA_MAX_AGE_CONFIG, 1500);
+	    config.put(AdminClientConfig.REQUEST_TIMEOUT_MS_CONFIG, 3000);
 
 	    this.admin = AdminClient.create(config);
 	}
@@ -58,6 +61,10 @@ public class AdminConnection {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public void close() {
+		new Thread(() -> this.admin.close()).start();
 	}
 
 }

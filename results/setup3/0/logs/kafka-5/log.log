@@ -1,0 +1,1158 @@
+[2020-10-26 11:00:47,317] INFO Registered kafka:type=kafka.Log4jController MBean (kafka.utils.Log4jControllerRegistration$)
+[2020-10-26 11:00:47,919] INFO Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation (org.apache.zookeeper.common.X509Util)
+[2020-10-26 11:00:47,967] INFO Registered signal handlers for TERM, INT, HUP (org.apache.kafka.common.utils.LoggingSignalHandler)
+[2020-10-26 11:00:47,971] INFO starting (kafka.server.KafkaServer)
+[2020-10-26 11:00:47,972] INFO Connecting to zookeeper on zookeeper:2181 (kafka.server.KafkaServer)
+[2020-10-26 11:00:47,996] INFO [ZooKeeperClient Kafka server] Initializing a new session to zookeeper:2181. (kafka.zookeeper.ZooKeeperClient)
+[2020-10-26 11:00:48,008] INFO Client environment:zookeeper.version=3.5.7-f0fdd52973d373ffd9c86b81d99842dc2c7f660e, built on 02/10/2020 11:30 GMT (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,008] INFO Client environment:host.name=kafka-5.kafka.kafka.svc.cluster.local (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,008] INFO Client environment:java.version=11.0.7 (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,008] INFO Client environment:java.vendor=AdoptOpenJDK (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,008] INFO Client environment:java.home=/opt/java/openjdk (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,008] INFO Client environment:java.class.path=/opt/kafka/libs/extensions/*:/opt/kafka/libs/activation-1.1.1.jar:/opt/kafka/libs/aopalliance-repackaged-2.5.0.jar:/opt/kafka/libs/argparse4j-0.7.0.jar:/opt/kafka/libs/audience-annotations-0.5.0.jar:/opt/kafka/libs/commons-cli-1.4.jar:/opt/kafka/libs/commons-lang3-3.8.1.jar:/opt/kafka/libs/connect-api-2.5.0.jar:/opt/kafka/libs/connect-basic-auth-extension-2.5.0.jar:/opt/kafka/libs/connect-file-2.5.0.jar:/opt/kafka/libs/connect-json-2.5.0.jar:/opt/kafka/libs/connect-mirror-2.5.0.jar:/opt/kafka/libs/connect-mirror-client-2.5.0.jar:/opt/kafka/libs/connect-runtime-2.5.0.jar:/opt/kafka/libs/connect-transforms-2.5.0.jar:/opt/kafka/libs/hk2-api-2.5.0.jar:/opt/kafka/libs/hk2-locator-2.5.0.jar:/opt/kafka/libs/hk2-utils-2.5.0.jar:/opt/kafka/libs/jackson-annotations-2.10.2.jar:/opt/kafka/libs/jackson-core-2.10.2.jar:/opt/kafka/libs/jackson-databind-2.10.2.jar:/opt/kafka/libs/jackson-dataformat-csv-2.10.2.jar:/opt/kafka/libs/jackson-datatype-jdk8-2.10.2.jar:/opt/kafka/libs/jackson-jaxrs-base-2.10.2.jar:/opt/kafka/libs/jackson-jaxrs-json-provider-2.10.2.jar:/opt/kafka/libs/jackson-module-jaxb-annotations-2.10.2.jar:/opt/kafka/libs/jackson-module-paranamer-2.10.2.jar:/opt/kafka/libs/jackson-module-scala_2.12-2.10.2.jar:/opt/kafka/libs/jakarta.activation-api-1.2.1.jar:/opt/kafka/libs/jakarta.annotation-api-1.3.4.jar:/opt/kafka/libs/jakarta.inject-2.5.0.jar:/opt/kafka/libs/jakarta.ws.rs-api-2.1.5.jar:/opt/kafka/libs/jakarta.xml.bind-api-2.3.2.jar:/opt/kafka/libs/javassist-3.22.0-CR2.jar:/opt/kafka/libs/javassist-3.26.0-GA.jar:/opt/kafka/libs/javax.servlet-api-3.1.0.jar:/opt/kafka/libs/javax.ws.rs-api-2.1.1.jar:/opt/kafka/libs/jaxb-api-2.3.0.jar:/opt/kafka/libs/jersey-client-2.28.jar:/opt/kafka/libs/jersey-common-2.28.jar:/opt/kafka/libs/jersey-container-servlet-2.28.jar:/opt/kafka/libs/jersey-container-servlet-core-2.28.jar:/opt/kafka/libs/jersey-hk2-2.28.jar:/opt/kafka/libs/jersey-media-jaxb-2.28.jar:/opt/kafka/libs/jersey-server-2.28.jar:/opt/kafka/libs/jetty-client-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-continuation-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-http-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-io-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-security-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-server-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-servlet-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-servlets-9.4.24.v20191120.jar:/opt/kafka/libs/jetty-util-9.4.24.v20191120.jar:/opt/kafka/libs/jopt-simple-5.0.4.jar:/opt/kafka/libs/kafka-clients-2.5.0.jar:/opt/kafka/libs/kafka-log4j-appender-2.5.0.jar:/opt/kafka/libs/kafka-streams-2.5.0.jar:/opt/kafka/libs/kafka-streams-examples-2.5.0.jar:/opt/kafka/libs/kafka-streams-scala_2.12-2.5.0.jar:/opt/kafka/libs/kafka-streams-test-utils-2.5.0.jar:/opt/kafka/libs/kafka-tools-2.5.0.jar:/opt/kafka/libs/kafka_2.12-2.5.0-javadoc.jar:/opt/kafka/libs/kafka_2.12-2.5.0-scaladoc.jar:/opt/kafka/libs/kafka_2.12-2.5.0-sources.jar:/opt/kafka/libs/kafka_2.12-2.5.0-test-sources.jar:/opt/kafka/libs/kafka_2.12-2.5.0-test.jar:/opt/kafka/libs/kafka_2.12-2.5.0.jar:/opt/kafka/libs/log4j-1.2.17.jar:/opt/kafka/libs/lz4-java-1.7.1.jar:/opt/kafka/libs/maven-artifact-3.6.3.jar:/opt/kafka/libs/metrics-core-2.2.0.jar:/opt/kafka/libs/netty-buffer-4.1.45.Final.jar:/opt/kafka/libs/netty-codec-4.1.45.Final.jar:/opt/kafka/libs/netty-common-4.1.45.Final.jar:/opt/kafka/libs/netty-handler-4.1.45.Final.jar:/opt/kafka/libs/netty-resolver-4.1.45.Final.jar:/opt/kafka/libs/netty-transport-4.1.45.Final.jar:/opt/kafka/libs/netty-transport-native-epoll-4.1.45.Final.jar:/opt/kafka/libs/netty-transport-native-unix-common-4.1.45.Final.jar:/opt/kafka/libs/osgi-resource-locator-1.0.1.jar:/opt/kafka/libs/paranamer-2.8.jar:/opt/kafka/libs/plexus-utils-3.2.1.jar:/opt/kafka/libs/reflections-0.9.12.jar:/opt/kafka/libs/rocksdbjni-5.18.3.jar:/opt/kafka/libs/scala-java8-compat_2.12-0.9.0.jar:/opt/kafka/libs/scala-collection-compat_2.12-2.1.3.jar:/opt/kafka/libs/scala-library-2.12.10.jar:/opt/kafka/libs/scala-logging_2.12-3.9.2.jar:/opt/kafka/libs/scala-reflect-2.12.10.jar:/opt/kafka/libs/slf4j-api-1.7.30.jar:/opt/kafka/libs/slf4j-log4j12-1.7.30.jar:/opt/kafka/libs/snappy-java-1.1.7.3.jar:/opt/kafka/libs/validation-api-2.0.1.Final.jar:/opt/kafka/libs/zookeeper-3.5.7.jar:/opt/kafka/libs/zookeeper-jute-3.5.7.jar:/opt/kafka/libs/zstd-jni-1.4.4-7.jar (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,009] INFO Client environment:java.library.path=/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,009] INFO Client environment:java.io.tmpdir=/tmp (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,009] INFO Client environment:java.compiler=<NA> (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,009] INFO Client environment:os.name=Linux (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,009] INFO Client environment:os.arch=amd64 (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,009] INFO Client environment:os.version=4.14.193-149.317.amzn2.x86_64 (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,009] INFO Client environment:user.name=nonroot (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,009] INFO Client environment:user.home=/home/nonroot (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,009] INFO Client environment:user.dir=/opt/kafka (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,009] INFO Client environment:os.memory.free=983MB (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,009] INFO Client environment:os.memory.max=1024MB (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,009] INFO Client environment:os.memory.total=1024MB (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,012] INFO Initiating client connection, connectString=zookeeper:2181 sessionTimeout=5000 watcher=kafka.zookeeper.ZooKeeperClient$ZooKeeperClientWatcher$@141e5bef (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:00:48,017] INFO jute.maxbuffer value is 4194304 Bytes (org.apache.zookeeper.ClientCnxnSocket)
+[2020-10-26 11:00:48,022] INFO zookeeper.request.timeout value is 0. feature enabled= (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:00:48,026] INFO [ZooKeeperClient Kafka server] Waiting until connected. (kafka.zookeeper.ZooKeeperClient)
+[2020-10-26 11:00:48,065] INFO Opening socket connection to server zookeeper/10.233.17.172:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:00:48,083] INFO Socket connection established, initiating session, client: /10.233.109.4:53200, server: zookeeper/10.233.17.172:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:00:48,114] INFO Session establishment complete on server zookeeper/10.233.17.172:2181, sessionid = 0x3000018a4580000, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:00:48,117] INFO [ZooKeeperClient Kafka server] Connected. (kafka.zookeeper.ZooKeeperClient)
+[2020-10-26 11:00:48,636] INFO Cluster ID = I-cz0XINT9Gdw-7eRbudDQ (kafka.server.KafkaServer)
+[2020-10-26 11:00:48,641] WARN No meta.properties file under dir /var/lib/kafka/data/topics/meta.properties (kafka.server.BrokerMetadataCheckpoint)
+[2020-10-26 11:00:48,723] INFO KafkaConfig values: 
+	advertised.host.name = null
+	advertised.listeners = PLAINTEXT://:9092,OUTSIDE://10.0.2.16:32405
+	advertised.port = null
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = 
+	auto.create.topics.enable = false
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.id = 5
+	broker.id.generation.enable = true
+	broker.rack = null
+	client.quota.callback.class = null
+	compression.type = producer
+	connection.failed.authentication.delay.ms = 100
+	connections.max.idle.ms = 600000
+	connections.max.reauth.ms = 0
+	control.plane.listener.name = null
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 5000
+	controller.socket.timeout.ms = 5000
+	create.topic.policy.class.name = null
+	default.replication.factor = 3
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	fetch.max.bytes = 57671680
+	fetch.purgatory.purge.interval.requests = 1000
+	group.initial.rebalance.delay.ms = 0
+	group.max.session.timeout.ms = 2000
+	group.max.size = 2147483647
+	group.min.session.timeout.ms = 0
+	host.name = 
+	inter.broker.listener.name = PLAINTEXT
+	inter.broker.protocol.version = 2.5-IV0
+	kafka.metrics.polling.interval.secs = 10
+	kafka.metrics.reporters = []
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL,OUTSIDE:PLAINTEXT
+	listeners = PLAINTEXT://:9092,OUTSIDE://:9094
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 134217728
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.max.compaction.lag.ms = 9223372036854775807
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = /tmp/kafka-logs
+	log.dirs = /var/lib/kafka/data/topics
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.message.downconversion.enable = true
+	log.message.format.version = 2.5-IV0
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = -1
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 60000
+	max.connections = 2147483647
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	message.max.bytes = 1048588
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 2
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 1
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 2
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 10080
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 2
+	offsets.topic.replication.factor = 5
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	port = 9092
+	principal.builder.class = null
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.consumer.default = 9223372036854775807
+	quota.producer.default = 9223372036854775807
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	replica.lag.time.max.ms = 5000
+	replica.selector.class = null
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 3000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 2000
+	reserved.broker.max.id = 1000
+	sasl.client.callback.handler.class = null
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	sasl.server.callback.handler.class = null
+	security.inter.broker.protocol = PLAINTEXT
+	security.providers = null
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.principal.mapping.rules = DEFAULT
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 10000
+	transaction.max.timeout.ms = 3000
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 2
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 3
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	zookeeper.clientCnxnSocket = null
+	zookeeper.connect = zookeeper:2181
+	zookeeper.connection.timeout.ms = 3000
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.session.timeout.ms = 5000
+	zookeeper.set.acl = false
+	zookeeper.ssl.cipher.suites = null
+	zookeeper.ssl.client.enable = false
+	zookeeper.ssl.crl.enable = false
+	zookeeper.ssl.enabled.protocols = null
+	zookeeper.ssl.endpoint.identification.algorithm = HTTPS
+	zookeeper.ssl.keystore.location = null
+	zookeeper.ssl.keystore.password = null
+	zookeeper.ssl.keystore.type = null
+	zookeeper.ssl.ocsp.enable = false
+	zookeeper.ssl.protocol = TLSv1.2
+	zookeeper.ssl.truststore.location = null
+	zookeeper.ssl.truststore.password = null
+	zookeeper.ssl.truststore.type = null
+	zookeeper.sync.time.ms = 2000
+ (kafka.server.KafkaConfig)
+[2020-10-26 11:00:48,748] INFO KafkaConfig values: 
+	advertised.host.name = null
+	advertised.listeners = PLAINTEXT://:9092,OUTSIDE://10.0.2.16:32405
+	advertised.port = null
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = 
+	auto.create.topics.enable = false
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.id = 5
+	broker.id.generation.enable = true
+	broker.rack = null
+	client.quota.callback.class = null
+	compression.type = producer
+	connection.failed.authentication.delay.ms = 100
+	connections.max.idle.ms = 600000
+	connections.max.reauth.ms = 0
+	control.plane.listener.name = null
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 5000
+	controller.socket.timeout.ms = 5000
+	create.topic.policy.class.name = null
+	default.replication.factor = 3
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	fetch.max.bytes = 57671680
+	fetch.purgatory.purge.interval.requests = 1000
+	group.initial.rebalance.delay.ms = 0
+	group.max.session.timeout.ms = 2000
+	group.max.size = 2147483647
+	group.min.session.timeout.ms = 0
+	host.name = 
+	inter.broker.listener.name = PLAINTEXT
+	inter.broker.protocol.version = 2.5-IV0
+	kafka.metrics.polling.interval.secs = 10
+	kafka.metrics.reporters = []
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL,OUTSIDE:PLAINTEXT
+	listeners = PLAINTEXT://:9092,OUTSIDE://:9094
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 134217728
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.max.compaction.lag.ms = 9223372036854775807
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = /tmp/kafka-logs
+	log.dirs = /var/lib/kafka/data/topics
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.message.downconversion.enable = true
+	log.message.format.version = 2.5-IV0
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = -1
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 60000
+	max.connections = 2147483647
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	message.max.bytes = 1048588
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 2
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 1
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 2
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 10080
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 2
+	offsets.topic.replication.factor = 5
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	port = 9092
+	principal.builder.class = null
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.consumer.default = 9223372036854775807
+	quota.producer.default = 9223372036854775807
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	replica.lag.time.max.ms = 5000
+	replica.selector.class = null
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 3000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 2000
+	reserved.broker.max.id = 1000
+	sasl.client.callback.handler.class = null
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	sasl.server.callback.handler.class = null
+	security.inter.broker.protocol = PLAINTEXT
+	security.providers = null
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.principal.mapping.rules = DEFAULT
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 10000
+	transaction.max.timeout.ms = 3000
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 2
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 3
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	zookeeper.clientCnxnSocket = null
+	zookeeper.connect = zookeeper:2181
+	zookeeper.connection.timeout.ms = 3000
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.session.timeout.ms = 5000
+	zookeeper.set.acl = false
+	zookeeper.ssl.cipher.suites = null
+	zookeeper.ssl.client.enable = false
+	zookeeper.ssl.crl.enable = false
+	zookeeper.ssl.enabled.protocols = null
+	zookeeper.ssl.endpoint.identification.algorithm = HTTPS
+	zookeeper.ssl.keystore.location = null
+	zookeeper.ssl.keystore.password = null
+	zookeeper.ssl.keystore.type = null
+	zookeeper.ssl.ocsp.enable = false
+	zookeeper.ssl.protocol = TLSv1.2
+	zookeeper.ssl.truststore.location = null
+	zookeeper.ssl.truststore.password = null
+	zookeeper.ssl.truststore.type = null
+	zookeeper.sync.time.ms = 2000
+ (kafka.server.KafkaConfig)
+[2020-10-26 11:00:48,806] INFO [ThrottledChannelReaper-Request]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2020-10-26 11:00:48,806] INFO [ThrottledChannelReaper-Produce]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2020-10-26 11:00:48,806] INFO [ThrottledChannelReaper-Fetch]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2020-10-26 11:00:48,836] INFO Log directory /var/lib/kafka/data/topics not found, creating it. (kafka.log.LogManager)
+[2020-10-26 11:00:48,843] INFO Loading logs. (kafka.log.LogManager)
+[2020-10-26 11:00:48,852] INFO Logs loading complete in 9 ms. (kafka.log.LogManager)
+[2020-10-26 11:00:48,869] INFO Starting log cleanup with a period of 300000 ms. (kafka.log.LogManager)
+[2020-10-26 11:00:48,872] INFO Starting log flusher with a default period of 9223372036854775807 ms. (kafka.log.LogManager)
+[2020-10-26 11:00:49,480] INFO Awaiting socket connections on 0.0.0.0:9092. (kafka.network.Acceptor)
+[2020-10-26 11:00:49,554] INFO [SocketServer brokerId=5] Created data-plane acceptor and processors for endpoint : EndPoint(null,9092,ListenerName(PLAINTEXT),PLAINTEXT) (kafka.network.SocketServer)
+[2020-10-26 11:00:49,570] INFO Awaiting socket connections on 0.0.0.0:9094. (kafka.network.Acceptor)
+[2020-10-26 11:00:49,585] INFO [SocketServer brokerId=5] Created data-plane acceptor and processors for endpoint : EndPoint(null,9094,ListenerName(OUTSIDE),PLAINTEXT) (kafka.network.SocketServer)
+[2020-10-26 11:00:49,586] INFO [SocketServer brokerId=5] Started 2 acceptor threads for data-plane (kafka.network.SocketServer)
+[2020-10-26 11:00:49,612] INFO [ExpirationReaper-5-Produce]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 11:00:49,614] INFO [ExpirationReaper-5-Fetch]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 11:00:49,622] INFO [ExpirationReaper-5-DeleteRecords]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 11:00:49,622] INFO [ExpirationReaper-5-ElectLeader]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 11:00:49,640] INFO [LogDirFailureHandler]: Starting (kafka.server.ReplicaManager$LogDirFailureHandler)
+[2020-10-26 11:00:49,723] INFO Creating /brokers/ids/5 (is it secure? false) (kafka.zk.KafkaZkClient)
+[2020-10-26 11:00:49,755] INFO Stat of the created znode at /brokers/ids/5 is: 4294967357,4294967357,1603710049739,1603710049739,1,0,0,216172887950229504,294,0,4294967357
+ (kafka.zk.KafkaZkClient)
+[2020-10-26 11:00:49,755] INFO Registered broker 5 at path /brokers/ids/5 with addresses: ArrayBuffer(EndPoint(kafka-5.kafka.kafka.svc.cluster.local,9092,ListenerName(PLAINTEXT),PLAINTEXT), EndPoint(10.0.2.16,32405,ListenerName(OUTSIDE),PLAINTEXT)), czxid (broker epoch): 4294967357 (kafka.zk.KafkaZkClient)
+[2020-10-26 11:00:49,826] INFO [ExpirationReaper-5-topic]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 11:00:49,826] INFO [ExpirationReaper-5-Heartbeat]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 11:00:49,833] INFO [ExpirationReaper-5-Rebalance]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 11:00:49,870] INFO [GroupCoordinator 5]: Starting up. (kafka.coordinator.group.GroupCoordinator)
+[2020-10-26 11:00:49,870] INFO [GroupCoordinator 5]: Startup complete. (kafka.coordinator.group.GroupCoordinator)
+[2020-10-26 11:00:49,878] INFO [GroupMetadataManager brokerId=5] Removed 0 expired offsets in 8 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2020-10-26 11:00:49,910] INFO [ProducerId Manager 5]: Acquired new producerId block (brokerId:5,blockStartProducerId:2000,blockEndProducerId:2999) by writing to Zk with path version 3 (kafka.coordinator.transaction.ProducerIdManager)
+[2020-10-26 11:00:49,946] INFO [TransactionCoordinator id=5] Starting up. (kafka.coordinator.transaction.TransactionCoordinator)
+[2020-10-26 11:00:49,948] INFO [TransactionCoordinator id=5] Startup complete. (kafka.coordinator.transaction.TransactionCoordinator)
+[2020-10-26 11:00:49,958] INFO [Transaction Marker Channel Manager 5]: Starting (kafka.coordinator.transaction.TransactionMarkerChannelManager)
+[2020-10-26 11:00:50,002] INFO [ExpirationReaper-5-AlterAcls]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2020-10-26 11:00:50,051] INFO [/config/changes-event-process-thread]: Starting (kafka.common.ZkNodeChangeNotificationListener$ChangeEventProcessThread)
+[2020-10-26 11:00:50,123] INFO [SocketServer brokerId=5] Started data-plane processors for 2 acceptors (kafka.network.SocketServer)
+[2020-10-26 11:00:50,130] INFO Kafka version: 2.5.0 (org.apache.kafka.common.utils.AppInfoParser)
+[2020-10-26 11:00:50,130] INFO Kafka commitId: 66563e712b0b9f84 (org.apache.kafka.common.utils.AppInfoParser)
+[2020-10-26 11:00:50,131] INFO Kafka startTimeMs: 1603710050123 (org.apache.kafka.common.utils.AppInfoParser)
+[2020-10-26 11:00:50,134] INFO [KafkaServer id=5] started (kafka.server.KafkaServer)
+[2020-10-26 11:03:00,857] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t2_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:03:01,114] INFO [Log partition=t2_warnings-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 11:03:01,150] INFO [Log partition=t2_warnings-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 204 ms (kafka.log.Log)
+[2020-10-26 11:03:01,154] INFO Created log for partition t2_warnings-0 in /var/lib/kafka/data/topics/t2_warnings-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 11:03:01,155] INFO [Partition t2_warnings-0 broker=5] No checkpointed highwatermark is found for partition t2_warnings-0 (kafka.cluster.Partition)
+[2020-10-26 11:03:01,156] INFO [Partition t2_warnings-0 broker=5] Log loaded for partition t2_warnings-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 11:03:01,158] INFO [Partition t2_warnings-0 broker=5] t2_warnings-0 starts at leader epoch 0 from offset 0 with high watermark 0. Previous leader epoch was -1. (kafka.cluster.Partition)
+[2020-10-26 11:03:03,951] INFO [Log partition=t3_warnings-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 11:03:03,952] INFO [Log partition=t3_warnings-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 3 ms (kafka.log.Log)
+[2020-10-26 11:03:03,953] INFO Created log for partition t3_warnings-0 in /var/lib/kafka/data/topics/t3_warnings-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 11:03:03,953] INFO [Partition t3_warnings-0 broker=5] No checkpointed highwatermark is found for partition t3_warnings-0 (kafka.cluster.Partition)
+[2020-10-26 11:03:03,954] INFO [Partition t3_warnings-0 broker=5] Log loaded for partition t3_warnings-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 11:03:03,954] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t3_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:03:03,974] INFO [ReplicaFetcherManager on broker 5] Added fetcher to broker 1 for partitions Map(t3_warnings-0 -> (offset=0, leaderEpoch=0)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:03:03,978] INFO [ReplicaFetcher replicaId=5, leaderId=1, fetcherId=1] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:03:03,980] INFO [ReplicaFetcher replicaId=5, leaderId=1, fetcherId=1] Truncating partition t3_warnings-0 to local high watermark 0 (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:03:03,982] INFO [Log partition=t3_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 0 has no effect as the largest offset in the log is -1 (kafka.log.Log)
+[2020-10-26 11:03:05,728] INFO [Log partition=t4_warnings-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 11:03:05,732] INFO [Log partition=t4_warnings-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 6 ms (kafka.log.Log)
+[2020-10-26 11:03:05,733] INFO Created log for partition t4_warnings-0 in /var/lib/kafka/data/topics/t4_warnings-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 11:03:05,736] INFO [Partition t4_warnings-0 broker=5] No checkpointed highwatermark is found for partition t4_warnings-0 (kafka.cluster.Partition)
+[2020-10-26 11:03:05,736] INFO [Partition t4_warnings-0 broker=5] Log loaded for partition t4_warnings-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 11:03:05,737] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t4_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:03:05,746] INFO [ReplicaFetcherManager on broker 5] Added fetcher to broker 4 for partitions Map(t4_warnings-0 -> (offset=0, leaderEpoch=0)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:03:05,759] INFO [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=0] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:03:05,760] INFO [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=0] Truncating partition t4_warnings-0 to local high watermark 0 (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:03:05,760] INFO [Log partition=t4_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 0 has no effect as the largest offset in the log is -1 (kafka.log.Log)
+[2020-10-26 11:03:07,089] INFO [Log partition=t4_filtered-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 11:03:07,090] INFO [Log partition=t4_filtered-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 3 ms (kafka.log.Log)
+[2020-10-26 11:03:07,093] INFO Created log for partition t4_filtered-0 in /var/lib/kafka/data/topics/t4_filtered-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 11:03:07,093] INFO [Partition t4_filtered-0 broker=5] No checkpointed highwatermark is found for partition t4_filtered-0 (kafka.cluster.Partition)
+[2020-10-26 11:03:07,094] INFO [Partition t4_filtered-0 broker=5] Log loaded for partition t4_filtered-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 11:03:07,094] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t4_filtered-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:03:07,112] INFO [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=0] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:03:07,112] INFO [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=0] Truncating partition t4_filtered-0 to local high watermark 0 (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:03:07,112] INFO [Log partition=t4_filtered-0, dir=/var/lib/kafka/data/topics] Truncating to 0 has no effect as the largest offset in the log is -1 (kafka.log.Log)
+[2020-10-26 11:03:07,112] INFO [ReplicaFetcherManager on broker 5] Added fetcher to broker 0 for partitions Map(t4_filtered-0 -> (offset=0, leaderEpoch=0)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:03:07,139] ERROR [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=0] Error for partition t4_filtered-0 at offset 0 (kafka.server.ReplicaFetcherThread)
+org.apache.kafka.common.errors.UnknownTopicOrPartitionException: This server does not host this topic-partition.
+[2020-10-26 11:03:09,171] INFO [Log partition=t5_warnings-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 11:03:09,172] INFO [Log partition=t5_warnings-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 2 ms (kafka.log.Log)
+[2020-10-26 11:03:09,173] INFO Created log for partition t5_warnings-0 in /var/lib/kafka/data/topics/t5_warnings-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 11:03:09,173] INFO [Partition t5_warnings-0 broker=5] No checkpointed highwatermark is found for partition t5_warnings-0 (kafka.cluster.Partition)
+[2020-10-26 11:03:09,174] INFO [Partition t5_warnings-0 broker=5] Log loaded for partition t5_warnings-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 11:03:09,174] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t5_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:03:09,178] INFO [ReplicaFetcherManager on broker 5] Added fetcher to broker 0 for partitions Map(t5_warnings-0 -> (offset=0, leaderEpoch=0)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:03:09,180] INFO [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=1] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:03:09,181] INFO [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=1] Truncating partition t5_warnings-0 to local high watermark 0 (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:03:09,181] INFO [Log partition=t5_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 0 has no effect as the largest offset in the log is -1 (kafka.log.Log)
+[2020-10-26 11:03:10,553] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t5_filtered-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:03:10,566] INFO [Log partition=t5_filtered-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 11:03:10,566] INFO [Log partition=t5_filtered-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 2 ms (kafka.log.Log)
+[2020-10-26 11:03:10,567] INFO Created log for partition t5_filtered-0 in /var/lib/kafka/data/topics/t5_filtered-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 11:03:10,568] INFO [Partition t5_filtered-0 broker=5] No checkpointed highwatermark is found for partition t5_filtered-0 (kafka.cluster.Partition)
+[2020-10-26 11:03:10,568] INFO [Partition t5_filtered-0 broker=5] Log loaded for partition t5_filtered-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 11:03:10,568] INFO [Partition t5_filtered-0 broker=5] t5_filtered-0 starts at leader epoch 0 from offset 0 with high watermark 0. Previous leader epoch was -1. (kafka.cluster.Partition)
+[2020-10-26 11:03:12,899] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t7_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:03:13,126] INFO [Log partition=t7_warnings-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 11:03:13,127] INFO [Log partition=t7_warnings-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 2 ms (kafka.log.Log)
+[2020-10-26 11:03:13,128] INFO Created log for partition t7_warnings-0 in /var/lib/kafka/data/topics/t7_warnings-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 11:03:13,128] INFO [Partition t7_warnings-0 broker=5] No checkpointed highwatermark is found for partition t7_warnings-0 (kafka.cluster.Partition)
+[2020-10-26 11:03:13,128] INFO [Partition t7_warnings-0 broker=5] Log loaded for partition t7_warnings-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 11:03:13,128] INFO [Partition t7_warnings-0 broker=5] t7_warnings-0 starts at leader epoch 0 from offset 0 with high watermark 0. Previous leader epoch was -1. (kafka.cluster.Partition)
+[2020-10-26 11:04:14,778] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t2-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:04:14,791] INFO [Log partition=t2-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 11:04:14,791] INFO [Log partition=t2-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 2 ms (kafka.log.Log)
+[2020-10-26 11:04:14,792] INFO Created log for partition t2-0 in /var/lib/kafka/data/topics/t2-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 11:04:14,793] INFO [Partition t2-0 broker=5] No checkpointed highwatermark is found for partition t2-0 (kafka.cluster.Partition)
+[2020-10-26 11:04:14,793] INFO [Partition t2-0 broker=5] Log loaded for partition t2-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 11:04:14,793] INFO [Partition t2-0 broker=5] t2-0 starts at leader epoch 0 from offset 0 with high watermark 0. Previous leader epoch was -1. (kafka.cluster.Partition)
+[2020-10-26 11:04:21,402] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t5-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:04:21,414] INFO [Log partition=t5-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 11:04:21,415] INFO [Log partition=t5-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 2 ms (kafka.log.Log)
+[2020-10-26 11:04:21,416] INFO Created log for partition t5-0 in /var/lib/kafka/data/topics/t5-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 11:04:21,417] INFO [Partition t5-0 broker=5] No checkpointed highwatermark is found for partition t5-0 (kafka.cluster.Partition)
+[2020-10-26 11:04:21,417] INFO [Partition t5-0 broker=5] Log loaded for partition t5-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 11:04:21,417] INFO [Partition t5-0 broker=5] t5-0 starts at leader epoch 0 from offset 0 with high watermark 0. Previous leader epoch was -1. (kafka.cluster.Partition)
+[2020-10-26 11:04:25,479] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t6-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:04:25,492] INFO [Log partition=t6-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 11:04:25,493] INFO [Log partition=t6-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 2 ms (kafka.log.Log)
+[2020-10-26 11:04:25,494] INFO Created log for partition t6-0 in /var/lib/kafka/data/topics/t6-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 11:04:25,495] INFO [Partition t6-0 broker=5] No checkpointed highwatermark is found for partition t6-0 (kafka.cluster.Partition)
+[2020-10-26 11:04:25,495] INFO [Partition t6-0 broker=5] Log loaded for partition t6-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 11:04:25,495] INFO [Partition t6-0 broker=5] t6-0 starts at leader epoch 0 from offset 0 with high watermark 0. Previous leader epoch was -1. (kafka.cluster.Partition)
+[2020-10-26 11:04:27,089] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t7-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:04:27,102] INFO [Log partition=t7-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 0 with message format version 2 (kafka.log.Log)
+[2020-10-26 11:04:27,103] INFO [Log partition=t7-0, dir=/var/lib/kafka/data/topics] Completed load of log with 1 segments, log start offset 0 and log end offset 0 in 3 ms (kafka.log.Log)
+[2020-10-26 11:04:27,103] INFO Created log for partition t7-0 in /var/lib/kafka/data/topics/t7-0 with properties {compression.type -> producer, min.insync.replicas -> 2, message.downconversion.enable -> true, segment.jitter.ms -> 0, cleanup.policy -> [delete], flush.ms -> 9223372036854775807, retention.ms -> -1, segment.bytes -> 1073741824, flush.messages -> 9223372036854775807, message.format.version -> 2.5-IV0, max.compaction.lag.ms -> 9223372036854775807, file.delete.delay.ms -> 60000, max.message.bytes -> 1048588, min.compaction.lag.ms -> 0, message.timestamp.type -> CreateTime, preallocate -> false, index.interval.bytes -> 4096, min.cleanable.dirty.ratio -> 0.5, unclean.leader.election.enable -> false, retention.bytes -> -1, delete.retention.ms -> 86400000, segment.ms -> 604800000, message.timestamp.difference.max.ms -> 9223372036854775807, segment.index.bytes -> 10485760}. (kafka.log.LogManager)
+[2020-10-26 11:04:27,104] INFO [Partition t7-0 broker=5] No checkpointed highwatermark is found for partition t7-0 (kafka.cluster.Partition)
+[2020-10-26 11:04:27,104] INFO [Partition t7-0 broker=5] Log loaded for partition t7-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2020-10-26 11:04:27,104] INFO [Partition t7-0 broker=5] t7-0 starts at leader epoch 0 from offset 0 with high watermark 0. Previous leader epoch was -1. (kafka.cluster.Partition)
+[2020-10-26 11:10:49,870] INFO [GroupMetadataManager brokerId=5] Removed 0 expired offsets in 0 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2020-10-26 11:15:12,162] WARN Session 0x3000018a4580000 for server zookeeper/10.233.17.172:2181, unexpected error, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+java.io.IOException: Connection reset by peer
+	at java.base/sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at java.base/sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at java.base/sun.nio.ch.IOUtil.read(Unknown Source)
+	at java.base/sun.nio.ch.IOUtil.read(Unknown Source)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doIO(ClientCnxnSocketNIO.java:75)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:363)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1223)
+[2020-10-26 11:15:14,243] INFO Opening socket connection to server zookeeper/10.233.17.172:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:15:14,247] INFO Socket connection established, initiating session, client: /10.233.109.4:59674, server: zookeeper/10.233.17.172:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:15:14,257] INFO Session establishment complete on server zookeeper/10.233.17.172:2181, sessionid = 0x3000018a4580000, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:15:42,723] INFO [ReplicaFetcher replicaId=5, leaderId=1, fetcherId=1] Error sending fetch request (sessionId=555265901, epoch=2079) to node 1: {}. (org.apache.kafka.clients.FetchSessionHandler)
+java.io.IOException: Connection to 1 was disconnected before the response was read
+	at org.apache.kafka.clients.NetworkClientUtils.sendAndReceive(NetworkClientUtils.java:100)
+	at kafka.server.ReplicaFetcherBlockingSend.sendRequest(ReplicaFetcherBlockingSend.scala:108)
+	at kafka.server.ReplicaFetcherThread.fetchFromLeader(ReplicaFetcherThread.scala:206)
+	at kafka.server.AbstractFetcherThread.processFetchRequest(AbstractFetcherThread.scala:300)
+	at kafka.server.AbstractFetcherThread.$anonfun$maybeFetch$3(AbstractFetcherThread.scala:135)
+	at kafka.server.AbstractFetcherThread.maybeFetch(AbstractFetcherThread.scala:134)
+	at kafka.server.AbstractFetcherThread.doWork(AbstractFetcherThread.scala:117)
+	at kafka.utils.ShutdownableThread.run(ShutdownableThread.scala:96)
+[2020-10-26 11:15:42,724] WARN [ReplicaFetcher replicaId=5, leaderId=1, fetcherId=1] Error in response for fetch request (type=FetchRequest, replicaId=5, maxWait=500, minBytes=1, maxBytes=10485760, fetchData={}, isolationLevel=READ_UNCOMMITTED, toForget=, metadata=(sessionId=555265901, epoch=2079), rackId=) (kafka.server.ReplicaFetcherThread)
+java.io.IOException: Connection to 1 was disconnected before the response was read
+	at org.apache.kafka.clients.NetworkClientUtils.sendAndReceive(NetworkClientUtils.java:100)
+	at kafka.server.ReplicaFetcherBlockingSend.sendRequest(ReplicaFetcherBlockingSend.scala:108)
+	at kafka.server.ReplicaFetcherThread.fetchFromLeader(ReplicaFetcherThread.scala:206)
+	at kafka.server.AbstractFetcherThread.processFetchRequest(AbstractFetcherThread.scala:300)
+	at kafka.server.AbstractFetcherThread.$anonfun$maybeFetch$3(AbstractFetcherThread.scala:135)
+	at kafka.server.AbstractFetcherThread.maybeFetch(AbstractFetcherThread.scala:134)
+	at kafka.server.AbstractFetcherThread.doWork(AbstractFetcherThread.scala:117)
+	at kafka.utils.ShutdownableThread.run(ShutdownableThread.scala:96)
+[2020-10-26 11:15:46,387] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t3_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:15:46,388] INFO [Partition t3_warnings-0 broker=5] t3_warnings-0 starts at leader epoch 1 from offset 2424 with high watermark 2424. Previous leader epoch was 0. (kafka.cluster.Partition)
+[2020-10-26 11:15:46,395] INFO [ReplicaFetcher replicaId=5, leaderId=1, fetcherId=1] Shutting down (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:15:46,395] INFO [ReplicaFetcher replicaId=5, leaderId=1, fetcherId=1] Error sending fetch request (sessionId=555265901, epoch=INITIAL) to node 1: {}. (org.apache.kafka.clients.FetchSessionHandler)
+org.apache.kafka.common.errors.DisconnectException: NetworkClient is no longer active, state is CLOSING
+[2020-10-26 11:15:46,396] INFO [ReplicaFetcher replicaId=5, leaderId=1, fetcherId=1] Stopped (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:15:46,399] INFO [ReplicaFetcher replicaId=5, leaderId=1, fetcherId=1] Shutdown completed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:15:46,449] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t6-0, t2-0, t2_warnings-0, t7_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:15:46,449] INFO [Partition t6-0 broker=5] t6-0 starts at leader epoch 1 from offset 124404 with high watermark 124379. Previous leader epoch was 0. (kafka.cluster.Partition)
+[2020-10-26 11:15:46,455] INFO [Partition t2-0 broker=5] t2-0 starts at leader epoch 1 from offset 125676 with high watermark 124060. Previous leader epoch was 0. (kafka.cluster.Partition)
+[2020-10-26 11:15:46,458] INFO [Partition t2_warnings-0 broker=5] t2_warnings-0 starts at leader epoch 1 from offset 2424 with high watermark 2424. Previous leader epoch was 0. (kafka.cluster.Partition)
+[2020-10-26 11:15:46,460] INFO [Partition t7_warnings-0 broker=5] t7_warnings-0 starts at leader epoch 1 from offset 2471 with high watermark 2469. Previous leader epoch was 0. (kafka.cluster.Partition)
+[2020-10-26 11:18:09,005] INFO Unable to read additional data from server sessionid 0x3000018a4580000, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:18:12,046] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t6-0, t7_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:18:12,046] INFO [Partition t6-0 broker=5] t6-0 starts at leader epoch 2 from offset 154590 with high watermark 154535. Previous leader epoch was 1. (kafka.cluster.Partition)
+[2020-10-26 11:18:12,052] INFO [Partition t7_warnings-0 broker=5] t7_warnings-0 starts at leader epoch 2 from offset 3076 with high watermark 3076. Previous leader epoch was 1. (kafka.cluster.Partition)
+[2020-10-26 11:18:12,071] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,098] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,117] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,138] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,157] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,177] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,195] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,215] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,235] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,255] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,274] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,294] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,313] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,331] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,351] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,379] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,398] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,418] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,436] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,456] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,475] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,707] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,725] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,745] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,764] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,782] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,801] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,821] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,839] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,858] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:12,876] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,111] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,131] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,149] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,168] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,188] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,206] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,225] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,244] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,263] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,284] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,305] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,325] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,343] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,362] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,383] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,405] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,426] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,445] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,466] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,488] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,508] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,528] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,548] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,566] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,586] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,604] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,623] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,642] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,661] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,681] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,700] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,720] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,739] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,758] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,776] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,796] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,816] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,836] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,854] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,873] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,892] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,910] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,929] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,948] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,967] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:13,987] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,007] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,026] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,048] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,069] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,090] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,109] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,134] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,156] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,174] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,193] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,211] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,230] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,250] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,268] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,287] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,306] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,326] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,344] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,364] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,384] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,402] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,424] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,444] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,689] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,709] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,727] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,751] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,773] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,792] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,812] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,830] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,849] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,868] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,887] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,911] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,931] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,950] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,969] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:14,987] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,008] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,029] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,047] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,067] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,086] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,104] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,124] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,143] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,161] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,181] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,200] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,218] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,237] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,257] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,275] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,294] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,315] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,337] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,355] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,378] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,397] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,416] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,435] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,454] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,472] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,491] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,510] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,529] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,538] INFO Opening socket connection to server zookeeper/10.233.17.172:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:18:15,548] INFO Socket connection established, initiating session, client: /10.233.109.4:32960, server: zookeeper/10.233.17.172:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:18:15,549] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,568] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,571] WARN Unable to reconnect to ZooKeeper service, session 0x3000018a4580000 has expired (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:18:15,572] INFO Unable to reconnect to ZooKeeper service, session 0x3000018a4580000 has expired, closing socket connection (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:18:15,573] INFO EventThread shut down for session: 0x3000018a4580000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:18:15,573] INFO [ZooKeeperClient Kafka server] Session expired. (kafka.zookeeper.ZooKeeperClient)
+[2020-10-26 11:18:15,575] INFO [ZooKeeperClient Kafka server] Initializing a new session to zookeeper:2181. (kafka.zookeeper.ZooKeeperClient)
+[2020-10-26 11:18:15,575] INFO Initiating client connection, connectString=zookeeper:2181 sessionTimeout=5000 watcher=kafka.zookeeper.ZooKeeperClient$ZooKeeperClientWatcher$@141e5bef (org.apache.zookeeper.ZooKeeper)
+[2020-10-26 11:18:15,575] INFO jute.maxbuffer value is 4194304 Bytes (org.apache.zookeeper.ClientCnxnSocket)
+[2020-10-26 11:18:15,580] INFO zookeeper.request.timeout value is 0. feature enabled= (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:18:15,587] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,590] INFO Opening socket connection to server zookeeper/10.233.17.172:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:18:15,596] INFO Socket connection established, initiating session, client: /10.233.109.4:32962, server: zookeeper/10.233.17.172:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:18:15,593] INFO Creating /brokers/ids/5 (is it secure? false) (kafka.zk.KafkaZkClient)
+[2020-10-26 11:18:15,605] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,610] INFO Session establishment complete on server zookeeper/10.233.17.172:2181, sessionid = 0x2000025fde00003, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:18:15,625] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,631] INFO Stat of the created znode at /brokers/ids/5 is: 8589934671,8589934671,1603711095617,1603711095617,1,0,0,144115351248961539,294,0,8589934671
+ (kafka.zk.KafkaZkClient)
+[2020-10-26 11:18:15,632] INFO Registered broker 5 at path /brokers/ids/5 with addresses: ArrayBuffer(EndPoint(kafka-5.kafka.kafka.svc.cluster.local,9092,ListenerName(PLAINTEXT),PLAINTEXT), EndPoint(10.0.2.16,32405,ListenerName(OUTSIDE),PLAINTEXT)), czxid (broker epoch): 8589934671 (kafka.zk.KafkaZkClient)
+[2020-10-26 11:18:15,643] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,662] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,682] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,700] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,718] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,738] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,757] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,776] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,796] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,814] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,834] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,852] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,870] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,890] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:15,909] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,143] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,162] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,181] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,200] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,218] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,237] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,256] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,274] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,296] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,312] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t5_filtered-0, t5_warnings-0, t7-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:18:16,322] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,341] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,347] INFO [ReplicaFetcherManager on broker 5] Added fetcher to broker 3 for partitions Map(t7-0 -> (offset=154801, leaderEpoch=1), t5_warnings-0 -> (offset=3068, leaderEpoch=1), t5_filtered-0 -> (offset=154397, leaderEpoch=1)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:18:16,348] INFO [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=1] Shutting down (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:16,350] INFO [ReplicaFetcher replicaId=5, leaderId=3, fetcherId=1] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:16,351] INFO [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=1] Error sending fetch request (sessionId=1242137844, epoch=2110) to node 0: {}. (org.apache.kafka.clients.FetchSessionHandler)
+java.io.IOException: Client was shutdown before response was read
+	at org.apache.kafka.clients.NetworkClientUtils.sendAndReceive(NetworkClientUtils.java:109)
+	at kafka.server.ReplicaFetcherBlockingSend.sendRequest(ReplicaFetcherBlockingSend.scala:108)
+	at kafka.server.ReplicaFetcherThread.fetchFromLeader(ReplicaFetcherThread.scala:206)
+	at kafka.server.AbstractFetcherThread.processFetchRequest(AbstractFetcherThread.scala:300)
+	at kafka.server.AbstractFetcherThread.$anonfun$maybeFetch$3(AbstractFetcherThread.scala:135)
+	at kafka.server.AbstractFetcherThread.maybeFetch(AbstractFetcherThread.scala:134)
+	at kafka.server.AbstractFetcherThread.doWork(AbstractFetcherThread.scala:117)
+	at kafka.utils.ShutdownableThread.run(ShutdownableThread.scala:96)
+[2020-10-26 11:18:16,360] INFO [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=1] Stopped (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:16,360] INFO [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=1] Shutdown completed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:16,363] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,400] INFO [Log partition=t7-0, dir=/var/lib/kafka/data/topics] Truncating to offset 154801 (kafka.log.Log)
+[2020-10-26 11:18:16,406] INFO [Log partition=t7-0, dir=/var/lib/kafka/data/topics] Scheduling segments for deletion List() (kafka.log.Log)
+[2020-10-26 11:18:16,431] INFO [Log partition=t7-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 154801 with message format version 2 (kafka.log.Log)
+[2020-10-26 11:18:16,432] INFO [ProducerStateManager partition=t7-0] Writing producer snapshot at offset 154801 (kafka.log.ProducerStateManager)
+[2020-10-26 11:18:16,443] INFO [Log partition=t5_filtered-0, dir=/var/lib/kafka/data/topics] Truncating to offset 154397 (kafka.log.Log)
+[2020-10-26 11:18:16,443] INFO [Log partition=t5_filtered-0, dir=/var/lib/kafka/data/topics] Scheduling segments for deletion List() (kafka.log.Log)
+[2020-10-26 11:18:16,445] INFO [Log partition=t5_filtered-0, dir=/var/lib/kafka/data/topics] Loading producer state till offset 154397 with message format version 2 (kafka.log.Log)
+[2020-10-26 11:18:16,450] INFO [ProducerStateManager partition=t5_filtered-0] Writing producer snapshot at offset 154397 (kafka.log.ProducerStateManager)
+[2020-10-26 11:18:16,454] INFO [Log partition=t5_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 3068 has no effect as the largest offset in the log is 3067 (kafka.log.Log)
+[2020-10-26 11:18:16,638] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t6-0, t7_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:18:16,638] INFO [Partition t6-0 broker=5] t6-0 starts at leader epoch 4 from offset 154590 with high watermark 154590. Previous leader epoch was 2. (kafka.cluster.Partition)
+[2020-10-26 11:18:16,643] INFO [Partition t7_warnings-0 broker=5] t7_warnings-0 starts at leader epoch 4 from offset 3076 with high watermark 3076. Previous leader epoch was 2. (kafka.cluster.Partition)
+[2020-10-26 11:18:16,647] INFO [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=0] Partition t4_warnings-0 has an older epoch (0) than the current leader. Will await the new LeaderAndIsr state before resuming fetching. (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:16,648] WARN [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=0] Partition t4_warnings-0 marked as failed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:16,651] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t3_warnings-0, t2-0, t4_filtered-0, t2_warnings-0, t5-0, t4_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:18:16,660] INFO [ReplicaFetcherManager on broker 5] Added fetcher to broker 0 for partitions Map(t4_warnings-0 -> (offset=3030, leaderEpoch=4), t4_filtered-0 -> (offset=154562, leaderEpoch=4)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:18:16,661] INFO [ReplicaFetcherManager on broker 5] Added fetcher to broker 4 for partitions Map(t2-0 -> (offset=156494, leaderEpoch=4), t2_warnings-0 -> (offset=2424, leaderEpoch=4)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:18:16,672] INFO [ReplicaFetcherManager on broker 5] Added fetcher to broker 0 for partitions Map(t5-0 -> (offset=155098, leaderEpoch=4)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:18:16,675] INFO [ReplicaFetcherManager on broker 5] Added fetcher to broker 4 for partitions Map(t3_warnings-0 -> (offset=2424, leaderEpoch=4)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:18:16,678] INFO [Log partition=t2_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 2424 has no effect as the largest offset in the log is 2423 (kafka.log.Log)
+[2020-10-26 11:18:16,680] INFO [Log partition=t2-0, dir=/var/lib/kafka/data/topics] Truncating to 156494 has no effect as the largest offset in the log is 156493 (kafka.log.Log)
+[2020-10-26 11:18:16,696] INFO [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=1] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:16,704] INFO [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=1] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:16,719] INFO [Log partition=t3_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 2424 has no effect as the largest offset in the log is 2423 (kafka.log.Log)
+[2020-10-26 11:18:16,728] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,747] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,768] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,787] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,810] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,834] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,855] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,873] INFO [Partition t7_warnings-0 broker=5] Expanding ISR from 5 to 5,6 (kafka.cluster.Partition)
+[2020-10-26 11:18:16,879] ERROR [ReplicaManager broker=5] Error processing append operation on partition t6-0 (kafka.server.ReplicaManager)
+org.apache.kafka.common.errors.NotEnoughReplicasException: The size of the current ISR Set(5) is insufficient to satisfy the min.isr requirement of 2 for partition t6-0
+[2020-10-26 11:18:16,897] INFO [Partition t6-0 broker=5] Expanding ISR from 5 to 5,6 (kafka.cluster.Partition)
+[2020-10-26 11:18:16,922] INFO [Partition t7_warnings-0 broker=5] ISR updated to [5,6] and zkVersion updated to [5] (kafka.cluster.Partition)
+[2020-10-26 11:18:16,959] INFO [Partition t6-0 broker=5] ISR updated to [5,6] and zkVersion updated to [5] (kafka.cluster.Partition)
+[2020-10-26 11:18:17,122] INFO [Log partition=t4_filtered-0, dir=/var/lib/kafka/data/topics] Truncating to 154562 has no effect as the largest offset in the log is 154561 (kafka.log.Log)
+[2020-10-26 11:18:17,122] INFO [Log partition=t4_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 3030 has no effect as the largest offset in the log is 3029 (kafka.log.Log)
+[2020-10-26 11:18:17,292] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t5_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:18:17,293] INFO [ReplicaFetcherManager on broker 5] Added fetcher to broker 0 for partitions Map(t5_warnings-0 -> (offset=3068, leaderEpoch=2)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:18:17,364] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t2-0, t2_warnings-0, t7-0, t5_filtered-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:18:17,364] INFO [Partition t2-0 broker=5] t2-0 starts at leader epoch 5 from offset 156494 with high watermark 156494. Previous leader epoch was 4. (kafka.cluster.Partition)
+[2020-10-26 11:18:17,368] INFO [Partition t2_warnings-0 broker=5] t2_warnings-0 starts at leader epoch 5 from offset 2424 with high watermark 2424. Previous leader epoch was 4. (kafka.cluster.Partition)
+[2020-10-26 11:18:17,373] INFO [Partition t7-0 broker=5] t7-0 starts at leader epoch 2 from offset 155708 with high watermark 155701. Previous leader epoch was 1. (kafka.cluster.Partition)
+[2020-10-26 11:18:17,377] INFO [Partition t5_filtered-0 broker=5] t5_filtered-0 starts at leader epoch 2 from offset 155155 with high watermark 155155. Previous leader epoch was 1. (kafka.cluster.Partition)
+[2020-10-26 11:18:17,379] INFO [ReplicaFetcher replicaId=5, leaderId=3, fetcherId=1] Shutting down (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:17,380] INFO [ReplicaFetcher replicaId=5, leaderId=3, fetcherId=1] Error sending fetch request (sessionId=1155355818, epoch=28) to node 3: {}. (org.apache.kafka.clients.FetchSessionHandler)
+java.io.IOException: Client was shutdown before response was read
+	at org.apache.kafka.clients.NetworkClientUtils.sendAndReceive(NetworkClientUtils.java:109)
+	at kafka.server.ReplicaFetcherBlockingSend.sendRequest(ReplicaFetcherBlockingSend.scala:108)
+	at kafka.server.ReplicaFetcherThread.fetchFromLeader(ReplicaFetcherThread.scala:206)
+	at kafka.server.AbstractFetcherThread.processFetchRequest(AbstractFetcherThread.scala:300)
+	at kafka.server.AbstractFetcherThread.$anonfun$maybeFetch$3(AbstractFetcherThread.scala:135)
+	at kafka.server.AbstractFetcherThread.maybeFetch(AbstractFetcherThread.scala:134)
+	at kafka.server.AbstractFetcherThread.doWork(AbstractFetcherThread.scala:117)
+	at kafka.utils.ShutdownableThread.run(ShutdownableThread.scala:96)
+[2020-10-26 11:18:17,384] INFO [ReplicaFetcher replicaId=5, leaderId=3, fetcherId=1] Stopped (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:17,384] INFO [ReplicaFetcher replicaId=5, leaderId=3, fetcherId=1] Shutdown completed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:17,387] INFO [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=0] Shutting down (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:17,389] INFO [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=0] Stopped (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:17,391] INFO [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=0] Shutdown completed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:18:17,451] INFO [Partition t5_filtered-0 broker=5] Expanding ISR from 3,5 to 3,5,0 (kafka.cluster.Partition)
+[2020-10-26 11:18:17,465] INFO [Partition t5_filtered-0 broker=5] ISR updated to [3,5,0] and zkVersion updated to [4] (kafka.cluster.Partition)
+[2020-10-26 11:18:17,466] INFO [Partition t7-0 broker=5] Expanding ISR from 3,5 to 3,5,0 (kafka.cluster.Partition)
+[2020-10-26 11:18:17,476] INFO [Partition t7-0 broker=5] ISR updated to [3,5,0] and zkVersion updated to [4] (kafka.cluster.Partition)
+[2020-10-26 11:18:17,874] INFO [Log partition=t5-0, dir=/var/lib/kafka/data/topics] Truncating to 155194 has no effect as the largest offset in the log is 155193 (kafka.log.Log)
+[2020-10-26 11:18:17,915] INFO [Log partition=t5_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 3068 has no effect as the largest offset in the log is 3067 (kafka.log.Log)
+[2020-10-26 11:18:22,106] INFO [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=1] Error sending fetch request (sessionId=500551836, epoch=15) to node 0: {}. (org.apache.kafka.clients.FetchSessionHandler)
+java.io.IOException: Connection to 0 was disconnected before the response was read
+	at org.apache.kafka.clients.NetworkClientUtils.sendAndReceive(NetworkClientUtils.java:100)
+	at kafka.server.ReplicaFetcherBlockingSend.sendRequest(ReplicaFetcherBlockingSend.scala:108)
+	at kafka.server.ReplicaFetcherThread.fetchFromLeader(ReplicaFetcherThread.scala:206)
+	at kafka.server.AbstractFetcherThread.processFetchRequest(AbstractFetcherThread.scala:300)
+	at kafka.server.AbstractFetcherThread.$anonfun$maybeFetch$3(AbstractFetcherThread.scala:135)
+	at kafka.server.AbstractFetcherThread.maybeFetch(AbstractFetcherThread.scala:134)
+	at kafka.server.AbstractFetcherThread.doWork(AbstractFetcherThread.scala:117)
+	at kafka.utils.ShutdownableThread.run(ShutdownableThread.scala:96)
+[2020-10-26 11:18:22,107] WARN [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=1] Error in response for fetch request (type=FetchRequest, replicaId=5, maxWait=500, minBytes=1, maxBytes=10485760, fetchData={}, isolationLevel=READ_UNCOMMITTED, toForget=, metadata=(sessionId=500551836, epoch=15), rackId=) (kafka.server.ReplicaFetcherThread)
+java.io.IOException: Connection to 0 was disconnected before the response was read
+	at org.apache.kafka.clients.NetworkClientUtils.sendAndReceive(NetworkClientUtils.java:100)
+	at kafka.server.ReplicaFetcherBlockingSend.sendRequest(ReplicaFetcherBlockingSend.scala:108)
+	at kafka.server.ReplicaFetcherThread.fetchFromLeader(ReplicaFetcherThread.scala:206)
+	at kafka.server.AbstractFetcherThread.processFetchRequest(AbstractFetcherThread.scala:300)
+	at kafka.server.AbstractFetcherThread.$anonfun$maybeFetch$3(AbstractFetcherThread.scala:135)
+	at kafka.server.AbstractFetcherThread.maybeFetch(AbstractFetcherThread.scala:134)
+	at kafka.server.AbstractFetcherThread.doWork(AbstractFetcherThread.scala:117)
+	at kafka.utils.ShutdownableThread.run(ShutdownableThread.scala:96)
+[2020-10-26 11:19:16,410] INFO [Log partition=t7-0, dir=/var/lib/kafka/data/topics] Deleting segments List() (kafka.log.Log)
+[2020-10-26 11:19:16,443] INFO [Log partition=t5_filtered-0, dir=/var/lib/kafka/data/topics] Deleting segments List() (kafka.log.Log)
+[2020-10-26 11:20:49,870] INFO [GroupMetadataManager brokerId=5] Removed 0 expired offsets in 0 milliseconds. (kafka.coordinator.group.GroupMetadataManager)
+[2020-10-26 11:21:05,622] INFO [Partition t7_warnings-0 broker=5] Expanding ISR from 5,6 to 5,6,1 (kafka.cluster.Partition)
+[2020-10-26 11:21:05,633] INFO [Partition t7_warnings-0 broker=5] ISR updated to [5,6,1] and zkVersion updated to [6] (kafka.cluster.Partition)
+[2020-10-26 11:21:06,780] INFO [Partition t2_warnings-0 broker=5] Expanding ISR from 4,5 to 4,5,1 (kafka.cluster.Partition)
+[2020-10-26 11:21:06,792] INFO [Partition t2_warnings-0 broker=5] ISR updated to [4,5,1] and zkVersion updated to [7] (kafka.cluster.Partition)
+[2020-10-26 11:21:07,692] INFO [Partition t2-0 broker=5] Expanding ISR from 4,5 to 4,5,1 (kafka.cluster.Partition)
+[2020-10-26 11:21:07,701] INFO [Partition t2-0 broker=5] ISR updated to [4,5,1] and zkVersion updated to [7] (kafka.cluster.Partition)
+[2020-10-26 11:21:07,702] INFO [Partition t6-0 broker=5] Expanding ISR from 5,6 to 5,6,1 (kafka.cluster.Partition)
+[2020-10-26 11:21:07,711] INFO [Partition t6-0 broker=5] ISR updated to [5,6,1] and zkVersion updated to [6] (kafka.cluster.Partition)
+[2020-10-26 11:23:17,879] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t5-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:23:17,879] INFO [Partition t5-0 broker=5] t5-0 starts at leader epoch 5 from offset 215989 with high watermark 215983. Previous leader epoch was 4. (kafka.cluster.Partition)
+[2020-10-26 11:23:17,936] INFO [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=1] Partition t3_warnings-0 has an older epoch (4) than the current leader. Will await the new LeaderAndIsr state before resuming fetching. (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:23:17,936] WARN [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=1] Partition t3_warnings-0 marked as failed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:23:18,152] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t3_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:23:18,155] INFO [ReplicaFetcherManager on broker 5] Added fetcher to broker 1 for partitions Map(t3_warnings-0 -> (offset=4343, leaderEpoch=5)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:23:18,155] INFO [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=1] Shutting down (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:23:18,156] INFO [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=1] Stopped (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:23:18,156] INFO [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=1] Shutdown completed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:23:18,161] INFO [ReplicaFetcher replicaId=5, leaderId=1, fetcherId=1] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:23:18,179] INFO [Log partition=t3_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 4343 has no effect as the largest offset in the log is 4342 (kafka.log.Log)
+[2020-10-26 11:23:18,205] INFO [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=0] Partition t4_warnings-0 has an older epoch (4) than the current leader. Will await the new LeaderAndIsr state before resuming fetching. (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:23:18,206] WARN [ReplicaFetcher replicaId=5, leaderId=0, fetcherId=0] Partition t4_warnings-0 marked as failed (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:23:18,414] INFO [ReplicaFetcherManager on broker 5] Removed fetcher for partitions Set(t4_warnings-0) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:23:18,418] INFO [ReplicaFetcherManager on broker 5] Added fetcher to broker 4 for partitions Map(t4_warnings-0 -> (offset=4343, leaderEpoch=5)) (kafka.server.ReplicaFetcherManager)
+[2020-10-26 11:23:18,421] INFO [ReplicaFetcher replicaId=5, leaderId=4, fetcherId=0] Starting (kafka.server.ReplicaFetcherThread)
+[2020-10-26 11:23:18,439] INFO [Log partition=t4_warnings-0, dir=/var/lib/kafka/data/topics] Truncating to 4343 has no effect as the largest offset in the log is 4342 (kafka.log.Log)
+[2020-10-26 11:27:25,755] INFO Unable to read additional data from server sessionid 0x2000025fde00003, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:27:27,248] INFO Opening socket connection to server zookeeper/10.233.17.172:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:27:27,254] INFO Socket connection established, initiating session, client: /10.233.109.4:37374, server: zookeeper/10.233.17.172:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:27:27,259] INFO Unable to read additional data from server sessionid 0x2000025fde00003, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:27:28,939] INFO Opening socket connection to server zookeeper/10.233.17.172:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:27:28,947] INFO Socket connection established, initiating session, client: /10.233.109.4:37384, server: zookeeper/10.233.17.172:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:27:28,970] INFO Unable to read additional data from server sessionid 0x2000025fde00003, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:27:31,070] INFO Opening socket connection to server zookeeper/10.233.17.172:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:27:31,077] INFO Socket connection established, initiating session, client: /10.233.109.4:37400, server: zookeeper/10.233.17.172:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:27:31,084] INFO Unable to read additional data from server sessionid 0x2000025fde00003, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:27:32,828] INFO Opening socket connection to server zookeeper/10.233.17.172:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:27:32,829] INFO Socket connection established, initiating session, client: /10.233.109.4:37414, server: zookeeper/10.233.17.172:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:27:32,844] INFO Session establishment complete on server zookeeper/10.233.17.172:2181, sessionid = 0x2000025fde00003, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:28:06,494] INFO Unable to read additional data from server sessionid 0x2000025fde00003, likely server has closed socket, closing socket connection and attempting reconnect (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:28:08,074] INFO Opening socket connection to server zookeeper/10.233.17.172:2181. Will not attempt to authenticate using SASL (unknown error) (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:28:08,083] INFO Socket connection established, initiating session, client: /10.233.109.4:37632, server: zookeeper/10.233.17.172:2181 (org.apache.zookeeper.ClientCnxn)
+[2020-10-26 11:28:08,093] INFO Session establishment complete on server zookeeper/10.233.17.172:2181, sessionid = 0x2000025fde00003, negotiated timeout = 3000 (org.apache.zookeeper.ClientCnxn)

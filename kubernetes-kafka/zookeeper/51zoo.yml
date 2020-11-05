@@ -20,6 +20,23 @@ spec:
         storage: persistent-regional
       annotations:
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: "app"
+                    operator: In
+                    values:
+                    - zookeeper
+              topologyKey: "topology.kubernetes.io/region"
+            - labelSelector:
+                matchExpressions:
+                  - key: "app"
+                    operator: In
+                    values:
+                    - zookeeper
+              topologyKey: "kubernetes.io/hostname"
       terminationGracePeriodSeconds: 10
       initContainers:
       - name: init-config

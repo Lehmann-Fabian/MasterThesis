@@ -21,13 +21,17 @@ public class ProducerRunner {
     private static String BOOTSTRAP_SERVERS = "localhost:9093";
     private final static String OUTPUT_PATH = "data";
     private final static int FREQUENCY_IN_MS = 5;
+    private static int DURATION = 15;
 	
 	public static void main(String[] args) throws Exception {
+		
+		PropertyConfigurator.configure("log4j.properties");
+		log.info("Start");
 		
 		boolean prod = false;
 		boolean checkEverything = true;
 		
-		if(args.length >= 5) {
+		if(args.length >= 6) {
 			BOOTSTRAP_SERVERS = args[0];
 			TOPIC = args[1];
 			String nodestart = args[2];
@@ -35,22 +39,25 @@ public class ProducerRunner {
 			if(TOPIC.length() == 0) {
 				TOPIC = "t1";
 			}else {
-				TOPIC = "t" + TOPIC;
+				TOPIC = "t" + (Integer.parseInt(TOPIC));
 			}
-			System.out.println("Use server: " + BOOTSTRAP_SERVERS);
-			System.out.println("Use topic: " + TOPIC);
 			prod = args[3].toLowerCase().equals("true");
 			checkEverything = args[4].toLowerCase().equals("true");
-			System.out.println("Run Prod: " + prod);
-			System.out.println("Inspect all: " + prod);
+			DURATION = Integer.parseInt(args[5]);
 		}
+		log.info("Use server: " + BOOTSTRAP_SERVERS);
+		log.info("Use topic: " + TOPIC);
+		log.info("Run Prod: " + prod);
+		log.info("Inspect all: " + prod);
+		log.info("Run: " + DURATION + " min");
 		
 		try {
-			PropertyConfigurator.configure("log4j.properties");
 			
 			log.info("Start");
 			
-			SineCurveGenerator scg = new SineCurveGenerator(1000, 3);
+//			SineCurveGenerator scg = new SineCurveGenerator(1000, 3);
+			
+			SingleValueProducer scg = new SingleValueProducer();
 			
 			HashSet<Integer> secondsToChange = new HashSet<Integer>();
 			List<Integer> times = new LinkedList<Integer>();
@@ -67,7 +74,7 @@ public class ProducerRunner {
 					: new DoNothingInspector();
 					
 					
-			DataProducer dataProducer = new DataProducer(BOOTSTRAP_SERVERS, TOPIC, FREQUENCY_IN_MS, scg, inspector);
+			DataProducer dataProducer = new DataProducer(BOOTSTRAP_SERVERS, TOPIC, FREQUENCY_IN_MS, scg, inspector, DURATION);
 			
 			Thread producerThread = new Thread(() -> dataProducer.runProducer());
 			producerThread.start();
@@ -86,9 +93,19 @@ public class ProducerRunner {
 				}
 			}, "Shutdown-thread"));
 			log.warn("System is running");
+			
+			producerThread.join();
+			inspector.close();
+			
+			Thread.sleep(Integer.MAX_VALUE);
+			
 		}catch (Exception e) {
 			log.error("Error while running", e);
 		}
+		
+		
+		
+		
 		
 		if(!prod) {
 		    try {

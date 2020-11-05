@@ -11,28 +11,26 @@ public class AnalystRunner {
     private static String BOOTSTRAP_SERVERS = "localhost:9093";
 	
 	public static void main(String[] args) throws Exception {
+		PropertyConfigurator.configure("log4j.properties");
+		log.info("Start");
 		
 		if(args.length >= 3) {
 			BOOTSTRAP_SERVERS = args[0];
 			TOPIC = args[1];
 			String podstart = args[2];
 			TOPIC = TOPIC.substring(podstart.length());
-			if(TOPIC.length() == 0) {
-				TOPIC = "t1";
-			}else {
-				TOPIC = "t" + TOPIC;
-			}
+			TOPIC = "t" + (Integer.parseInt(TOPIC) + 1);
 			System.out.println("Use server: " + BOOTSTRAP_SERVERS);
 			System.out.println("Use topic: " + TOPIC);
 		}
 		
 		try {
-			PropertyConfigurator.configure("log4j.properties");
-			DataAnalyst dataFilter = new DataAnalyst(BOOTSTRAP_SERVERS, TOPIC, new SineFitterAnalyst(200, 3, 1000, 0.1), 500);
+			DataAnalyst dataFilter = new DataAnalyst(BOOTSTRAP_SERVERS, TOPIC, new ValueFitterAnalyst(), 1);
 			
 			dataFilter.runAnalysis();
 		}catch (Exception e) {
 			log.error("Error while running", e);
+			e.printStackTrace();
 		}
     	
 	}
